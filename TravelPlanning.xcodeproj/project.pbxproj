@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		5EC25AA722FC3FB400D9DA37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AA622FC3FB400D9DA37 /* AppDelegate.swift */; };
-		5EC25AA922FC3FB400D9DA37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AA822FC3FB400D9DA37 /* ViewController.swift */; };
+		5EC25AA922FC3FB400D9DA37 /* TravelListHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AA822FC3FB400D9DA37 /* TravelListHomeViewController.swift */; };
 		5EC25AAC22FC3FB400D9DA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC25AAA22FC3FB400D9DA37 /* Main.storyboard */; };
 		5EC25AAE22FC3FB600D9DA37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EC25AAD22FC3FB600D9DA37 /* Assets.xcassets */; };
 		5EC25AB122FC3FB600D9DA37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC25AAF22FC3FB600D9DA37 /* LaunchScreen.storyboard */; };
+		5EC25ABA22FC49D500D9DA37 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AB922FC49D500D9DA37 /* TravelCell.swift */; };
+		5EC25ABC22FC51BE00D9DA37 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25ABB22FC51BE00D9DA37 /* TravelModel.swift */; };
+		5EC25ABE22FC575100D9DA37 /* setValueForCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25ABD22FC575100D9DA37 /* setValueForCells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5EC25AA322FC3FB400D9DA37 /* TravelPlanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC25AA622FC3FB400D9DA37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5EC25AA822FC3FB400D9DA37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5EC25AA822FC3FB400D9DA37 /* TravelListHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListHomeViewController.swift; sourceTree = "<group>"; };
 		5EC25AAB22FC3FB400D9DA37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EC25AAD22FC3FB600D9DA37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EC25AB022FC3FB600D9DA37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EC25AB222FC3FB600D9DA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EC25AB922FC49D500D9DA37 /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
+		5EC25ABB22FC51BE00D9DA37 /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
+		5EC25ABD22FC575100D9DA37 /* setValueForCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setValueForCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,25 @@
 		5EC25AA522FC3FB400D9DA37 /* TravelPlanning */ = {
 			isa = PBXGroup;
 			children = (
+				5EC25AB822FC49B900D9DA37 /* TravelCell */,
 				5EC25AA622FC3FB400D9DA37 /* AppDelegate.swift */,
-				5EC25AA822FC3FB400D9DA37 /* ViewController.swift */,
+				5EC25AA822FC3FB400D9DA37 /* TravelListHomeViewController.swift */,
 				5EC25AAA22FC3FB400D9DA37 /* Main.storyboard */,
 				5EC25AAD22FC3FB600D9DA37 /* Assets.xcassets */,
 				5EC25AAF22FC3FB600D9DA37 /* LaunchScreen.storyboard */,
 				5EC25AB222FC3FB600D9DA37 /* Info.plist */,
 			);
 			path = TravelPlanning;
+			sourceTree = "<group>";
+		};
+		5EC25AB822FC49B900D9DA37 /* TravelCell */ = {
+			isa = PBXGroup;
+			children = (
+				5EC25AB922FC49D500D9DA37 /* TravelCell.swift */,
+				5EC25ABB22FC51BE00D9DA37 /* TravelModel.swift */,
+				5EC25ABD22FC575100D9DA37 /* setValueForCells.swift */,
+			);
+			path = TravelCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EC25AA922FC3FB400D9DA37 /* ViewController.swift in Sources */,
+				5EC25AA922FC3FB400D9DA37 /* TravelListHomeViewController.swift in Sources */,
+				5EC25ABE22FC575100D9DA37 /* setValueForCells.swift in Sources */,
+				5EC25ABA22FC49D500D9DA37 /* TravelCell.swift in Sources */,
 				5EC25AA722FC3FB400D9DA37 /* AppDelegate.swift in Sources */,
+				5EC25ABC22FC51BE00D9DA37 /* TravelModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
