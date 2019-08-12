@@ -11,6 +11,7 @@
 		5EA8B186230143B40020D664 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B185230143B40020D664 /* TableViewDataSource.swift */; };
 		5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B1872301481F0020D664 /* ExpandedSate.swift */; };
 		5EA8B18C230157AD0020D664 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B18B230157AD0020D664 /* TableViewDelegate.swift */; };
+		5EA8B18E23017D3C0020D664 /* allTravelsDataApi.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EA8B18D23017D3C0020D664 /* allTravelsDataApi.json */; };
 		5EAF152923012A4C00FC19DA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF152823012A4C00FC19DA /* Strings.swift */; };
 		5EAFF0E022FD353100C67211 /* getData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAFF0DF22FD353100C67211 /* getData.swift */; };
 		5EC25AA722FC3FB400D9DA37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AA622FC3FB400D9DA37 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 		5EA8B185230143B40020D664 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		5EA8B1872301481F0020D664 /* ExpandedSate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedSate.swift; sourceTree = "<group>"; };
 		5EA8B18B230157AD0020D664 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
+		5EA8B18D23017D3C0020D664 /* allTravelsDataApi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allTravelsDataApi.json; sourceTree = "<group>"; };
 		5EAF152823012A4C00FC19DA /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		5EAFF0DF22FD353100C67211 /* getData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getData.swift; sourceTree = "<group>"; };
 		5EC25AA322FC3FB400D9DA37 /* TravelPlanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 		5EC25AA522FC3FB400D9DA37 /* TravelPlanning */ = {
 			isa = PBXGroup;
 			children = (
+				5EA8B182230131F50020D664 /* DateSeperator.swift */,
 				5EA8B184230143990020D664 /* Extensions */,
 				5EAF1527230129F400FC19DA /* Constants */,
 				5EAFF0DE22FD350A00C67211 /* DataBase */,
@@ -103,9 +106,9 @@
 				5EC25AA822FC3FB400D9DA37 /* TravelListHomeViewController.swift */,
 				5EC25AAA22FC3FB400D9DA37 /* Main.storyboard */,
 				5EC25AAD22FC3FB600D9DA37 /* Assets.xcassets */,
+				5EA8B18D23017D3C0020D664 /* allTravelsDataApi.json */,
 				5EC25AAF22FC3FB600D9DA37 /* LaunchScreen.storyboard */,
 				5EC25AB222FC3FB600D9DA37 /* Info.plist */,
-				5EA8B182230131F50020D664 /* DateSeperator.swift */,
 			);
 			path = TravelPlanning;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA8B18E23017D3C0020D664 /* allTravelsDataApi.json in Resources */,
 				5EC25AB122FC3FB600D9DA37 /* LaunchScreen.storyboard in Resources */,
 				5EC25AAE22FC3FB600D9DA37 /* Assets.xcassets in Resources */,
 				5EC25AAC22FC3FB400D9DA37 /* Main.storyboard in Resources */,

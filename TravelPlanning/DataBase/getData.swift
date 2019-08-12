@@ -14,26 +14,28 @@ struct country:Decodable {
 }
 
 class getData {
-    class func getAllTravels() -> [TravelModel] {
+    class func getAllTravels(dispatchGroup:DispatchGroup) -> [TravelModel] {
+        dispatchGroup.enter();
         var tempTravelModel: TravelModel!
         var travelArray:[TravelModel] = []
-        let url = "https://anotherapi.000webhostapp.com/jsonresponse.json"
-        let urlObject = URL(string: url)
+//        let url = "https://anotherapi.000webhostapp.com/jsonresponse.json"
+        let url = Bundle.main.url(forResource: "allTravelsDataApi", withExtension: "json")
+//        let urlObject = URL(string: url)
 
-        URLSession.shared.dataTask(with: urlObject!) {(data, response, error) in
+        URLSession.shared.dataTask(with: url!) {(data, response, error) in
             print("This is working")
             do {
                 guard let data = data else{return}
                 let travels = try JSONDecoder().decode([TravelModel].self, from: data)
-                print(travels)
                 for travel in travels {
                     tempTravelModel = TravelModel(mode: travel.modeOfTransport!, from: travel.from, to: travel.to, date: travel.date, reason: travel.reason)
                     travelArray.append(tempTravelModel)
+                    TravelListHomeViewController.allTravels.append(tempTravelModel);
                 }
-                print(travelArray.count)
             } catch {
-                print(error)
+                print("Error: \(error)")
             }
+            dispatchGroup.leave();
         }.resume()
         print("Returning the objects")
         print(travelArray)

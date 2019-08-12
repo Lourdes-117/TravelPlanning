@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="TravelReusableIdentity" id="uQp-kr-bHY" customClass="TravelCell" customModule="TravelPlanning" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="TopLeft" semanticContentAttribute="spatial" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="TravelReusableIdentity" id="uQp-kr-bHY" customClass="TravelCell" customModule="TravelPlanning" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uQp-kr-bHY" id="Z5f-oj-rve">
@@ -71,8 +71,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uz2-Ch-Zzn">
-                                                    <rect key="frame" x="233" y="93" width="88" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uz2-Ch-Zzn">
+                                                    <rect key="frame" x="233" y="93" width="161" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="161" id="bDN-mZ-dlt"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="76" id="rzW-tj-r2O"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -133,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="-192"/>
+            <point key="canvasLocation" x="973.91304347826099" y="-192.1875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Skz-CQ-BAl">

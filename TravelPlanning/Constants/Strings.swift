@@ -14,6 +14,15 @@ enum TravelDates:String {
     case TODAY_TRAVELS = "Today's Travels"
     case FUTURE_TRAVELS = "Future Travels"
 }
+
+enum ModeOfTransports:String {
+    case FLIGHT = "Flight"
+    case MOTORBIKE = "Motorbike"
+    case CAR = "Car"
+    case BUS =  "Bus"
+    case TRAIN =  "Train"
+}
 enum Errors:String {
     case UNEXPECTED_INDEX = "Internal Error: Unexpedted Index Found"
+    case INVALID_MODE_OF_TRANSPORT = "Internal Error: Invalid Mode Of Transport"
 }

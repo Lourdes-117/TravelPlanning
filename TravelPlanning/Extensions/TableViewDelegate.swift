@@ -9,12 +9,11 @@
 import UIKit
 extension TravelListHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        print("View For Header In Section Is Called")
         let button = UIButton(type: .system)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .lightGray
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
-        button.addTarget(self, action: #selector(expendOrCloseSection(button:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(expandOrCloseSection), for: .touchUpInside)
         button.tag = section
         switch section {
         case 0:
@@ -51,7 +50,7 @@ extension TravelListHomeViewController: UITableViewDelegate {
         }
     }
 
-    @objc func expendOrCloseSection(button:UIButton){
+    @objc func expandOrCloseSection(button:UIButton){
         var indexPathsToModify:[IndexPath] = []
         let clickedButtonTag = button.tag
         var isExpanding:Bool = true
@@ -77,9 +76,9 @@ extension TravelListHomeViewController: UITableViewDelegate {
             print(Errors.UNEXPECTED_INDEX)
         }
         if(!isExpanding) {
-            tableView.deleteRows(at: indexPathsToModify, with: .automatic)
+            tableView.deleteRows(at: indexPathsToModify, with: .fade)
         } else {
-            tableView.insertRows(at: indexPathsToModify, with: .automatic)
+            tableView.insertRows(at: indexPathsToModify, with: .fade)
         }
     }
 
