@@ -17,11 +17,13 @@ class DateSeperator {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormat.DATE_FORMAT.rawValue
 
-        let todayDate = dateFormatter.string(from: date)
+        let todayDateString = dateFormatter.string(from: date)
+        let todayDate = dateFormatter.date(from:todayDateString)!
         for travel in allTravels {
-            if(todayDate > travel.date) {
+            let date = dateFormatter.date(from:travel.date)!
+            if(todayDate > date) {
                 pastTravels.append(travel)
-            } else if (todayDate == travel.date) {
+            } else if (todayDate == date) {
                 todayTravels.append(travel)
             } else {
                 futureTravels.append(travel)
