@@ -19,10 +19,10 @@ class getData {
         var tempTravelModel: TravelModel!
         var travelArray:[TravelModel] = []
 //        let url = "https://anotherapi.000webhostapp.com/jsonresponse.json"
-        let url = Bundle.main.url(forResource: "allTravelsDataApi", withExtension: "json")
 //        let urlObject = URL(string: url)
+        let urlObject = Bundle.main.url(forResource: "allTravelsDataApi", withExtension: "json")
 
-        URLSession.shared.dataTask(with: url!) {(data, response, error) in
+        URLSession.shared.dataTask(with: urlObject!) {(data, response, error) in
             print("This is working")
             do {
                 guard let data = data else{return}
