@@ -34,6 +34,23 @@ extension TravelListHomeViewController: UITableViewDelegate {
         return heightOfHeader
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            switch indexPath.section
+            {
+            case 0:
+                pastTravels.remove(at: indexPath.row)
+            case 1:
+                todayTravels.remove(at: indexPath.row)
+            case 2:
+                futureTravels.remove(at: indexPath.row)
+            default:
+                print(Errors.UNEXPECTED_INDEX)
+            }
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
+
     @objc func expendOrCloseSection(button:UIButton){
         var indexPathsToModify:[IndexPath] = []
         let clickedButtonTag = button.tag
@@ -60,9 +77,9 @@ extension TravelListHomeViewController: UITableViewDelegate {
             print(Errors.UNEXPECTED_INDEX)
         }
         if(!isExpanding) {
-            tableView.deleteRows(at: indexPathsToModify, with: .bottom)
+            tableView.deleteRows(at: indexPathsToModify, with: .automatic)
         } else {
-            tableView.insertRows(at: indexPathsToModify, with: .bottom)
+            tableView.insertRows(at: indexPathsToModify, with: .automatic)
         }
     }
 

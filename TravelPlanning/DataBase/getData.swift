@@ -34,9 +34,9 @@ class getData {
             } catch {
                 print(error)
             }
-        }
+        }.resume()
         print("Returning the objects")
-        print(travelArray.count)
+        print(travelArray)
         return travelArray;
     }
 }

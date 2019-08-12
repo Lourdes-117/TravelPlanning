@@ -20,15 +20,17 @@ class TravelListHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Home View Has Been Loaded")
-        initializeTravelData()
+        initializeFakeTravelDate()
         tableView.dataSource = self
         tableView.delegate = self
         seperateDate()
     }
 
     func initializeTravelData(){
-        print("This is the number of elements that i got here \(getData.getAllTravels().count)")
-//        allTravels = getData.getAllTravels()
+        allTravels = getData.getAllTravels()
+    }
+
+    func initializeFakeTravelDate() {
         var travel1 = TravelModel()
         travel1.from = "From1"
         travel1.to = "To"

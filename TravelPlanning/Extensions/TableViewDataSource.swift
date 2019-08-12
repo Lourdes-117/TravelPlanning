@@ -45,16 +45,7 @@ extension TravelListHomeViewController:UITableViewDataSource {
         default:
             print("Internal Error: More Sections Found")
         }
-
-
-        cell.fromLocation.text = travelDetailsToShowInSection[indexPath.row].from
-        cell.toLocation.text = travelDetailsToShowInSection[indexPath.row].to
-        cell.dateOfTravel.text = travelDetailsToShowInSection[indexPath.row].date
-        //        cell.travelModeImage.image = travelDetailsToShowInSection[indexPath.row].travelModeImage
-        //TEMP
-        cell.travelModeImage.image = #imageLiteral(resourceName: "flight-Icon")
-        //
-        cell.descriptionOfTravel.text = travelDetailsToShowInSection[indexPath.row].reason
+        cell.setValues(travelDetail: travelDetailsToShowInSection[indexPath.row])
         return cell
     }
 }
