@@ -7,10 +7,18 @@
 //
 
 import UIKit
-class TravelModel {
-    var travelModeImage:UIImage!
+struct TravelModel: Decodable {
+    var modeOfTransport:String!
     var from:String!
     var to:String!
     var date:String!
-    var description:String!
+    var reason:String!
+    init(mode:String, from:String, to:String, date:String, reason:String) {
+        self.modeOfTransport = mode
+        self.from = from
+        self.to = to
+        self.date = date
+        self.reason = reason
+    }
+    init(){}
 }

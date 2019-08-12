@@ -14,4 +14,12 @@ class TravelCell: UITableViewCell {
     @IBOutlet weak var toLocation: UILabel!
     @IBOutlet weak var dateOfTravel: UILabel!
     @IBOutlet weak var descriptionOfTravel: UILabel!
+
+    func setValues(travelDetail:TravelModel){
+        self.fromLocation.text = travelDetail.from
+        self.toLocation.text = travelDetail.from
+        self.dateOfTravel.text = travelDetail.date
+        self.descriptionOfTravel.text = travelDetail.reason
+        self.travelModeImage.image = #imageLiteral(resourceName: "flight-Icon")
+    }
 }
