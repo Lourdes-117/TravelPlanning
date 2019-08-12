@@ -35,18 +35,43 @@ extension TravelListHomeViewController: UITableViewDelegate {
     }
 
     @objc func expendOrCloseSection(button:UIButton){
+        var indexPathsToModify:[IndexPath] = []
         let clickedButtonTag = button.tag
+        var isExpanding:Bool = true
         print("The button clicked is of section \(clickedButtonTag)")
         switch clickedButtonTag {
         case 0:
             ExpandedSate.isPastTravelsExpanded = !ExpandedSate.isPastTravelsExpanded
+            isExpanding = ExpandedSate.isPastTravelsExpanded
+            indexPathsToModify = getIndicesToModify(array: pastTravels, section: 0)
+
         case 1:
             ExpandedSate.isTodayTravelsExpanded = !ExpandedSate.isTodayTravelsExpanded
+            isExpanding = ExpandedSate.isTodayTravelsExpanded
+
+            indexPathsToModify = getIndicesToModify(array: todayTravels, section: 1)
+            
         case 2:
             ExpandedSate.isFuruteTravelsExpanded = !ExpandedSate.isFuruteTravelsExpanded
+            isExpanding = ExpandedSate.isFuruteTravelsExpanded
+            indexPathsToModify = getIndicesToModify(array: futureTravels, section: 2)
+
         default:
             print(Errors.UNEXPECTED_INDEX)
         }
-        
+        if(!isExpanding) {
+            tableView.deleteRows(at: indexPathsToModify, with: .bottom)
+        } else {
+            tableView.insertRows(at: indexPathsToModify, with: .bottom)
+        }
+    }
+
+    func getIndicesToModify(array:[TravelModel], section:Int) -> [IndexPath] {
+        var indexPathsToReturn:[IndexPath] = []
+        for row in array.indices {
+            let indexPathToAppend = IndexPath(row: row, section: section)
+            indexPathsToReturn.append(indexPathToAppend)
+        }
+        return indexPathsToReturn
     }
 }
