@@ -40,7 +40,7 @@ class TravelCell: UITableViewCell {
         backgroundCardView.layer.cornerRadius = cornerRadius
         backgroundCardView.layer.masksToBounds = false
         backgroundCardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.8).cgColor
-        backgroundCardView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        backgroundCardView.layer.shadowOffset = CGSize(width: 2, height: 4)
         backgroundCardView.layer.shadowOpacity = 0.8
     }
 }
