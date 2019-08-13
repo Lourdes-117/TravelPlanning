@@ -11,7 +11,7 @@ extension TravelListHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let button = UIButton(type: .system)
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .lightGray
+        button.backgroundColor = UIColor(red: 83.0/255.0, green: 144.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
         button.addTarget(self, action: #selector(expandOrCloseSection), for: .touchUpInside)
         button.tag = section
@@ -29,7 +29,7 @@ extension TravelListHomeViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let heightOfHeader:CGFloat = 35
+        let heightOfHeader:CGFloat = 45
         return heightOfHeader
     }
 
