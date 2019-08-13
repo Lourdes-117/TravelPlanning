@@ -11,6 +11,7 @@ import UIKit
 class TravelListHomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let TravelCell = "TravelReusableIdentity"
+    let cellDescriptionSegueIdentifier:String = "CellDescriptionSegueIdentifier"
     let dispatchGroup = DispatchGroup()
     static var allTravels:[TravelModel] = []
 

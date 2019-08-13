@@ -48,4 +48,9 @@ extension TravelListHomeViewController:UITableViewDataSource {
         cell.setValues(travelDetail: travelDetailsToShowInSection[indexPath.row])
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        performSegue(withIdentifier: cellDescriptionSegueIdentifier, sender: self)
+    }
 }
