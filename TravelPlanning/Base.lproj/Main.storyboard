@@ -148,7 +148,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIR-sc-R93">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="rIR-sc-R93">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueb-0I-W1U">
@@ -164,14 +164,16 @@
                                                 <rect key="frame" x="107" y="20" width="200" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ubk-Kc-0Qx" secondAttribute="height" multiplier="1:1" id="Bez-GB-U77"/>
-                                                    <constraint firstAttribute="height" constant="200" id="Jad-xO-lWb"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Jad-xO-lWb">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="150"/>
+                                                    </constraint>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wS3-vs-Swp">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wS3-vs-Swp">
                                                 <rect key="frame" x="20" y="259" width="374" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbW-ja-zdZ">
                                                 <rect key="frame" x="20" y="304" width="40" height="21"/>
@@ -183,7 +185,7 @@
                                                 <rect key="frame" x="20" y="333" width="374" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" textContentType="address-level1"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKe-un-d7M">
                                                 <rect key="frame" x="20" y="378" width="19" height="21"/>
@@ -195,7 +197,7 @@
                                                 <rect key="frame" x="20" y="407" width="374" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" textContentType="address-level1"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason For Travel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdL-QL-W8z">
                                                 <rect key="frame" x="20" y="452" width="136" height="21"/>
@@ -203,23 +205,27 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Just a raodom text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U8M-W8-zDD">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" editable="NO" text="Just a raodom text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U8M-W8-zDD">
                                                 <rect key="frame" x="20" y="481" width="374" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="hSk-Lt-n8R"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwp-YY-ujH">
                                                 <rect key="frame" x="154.5" y="606" width="105" height="30"/>
                                                 <state key="normal" title="Edit This Travel"/>
+                                                <connections>
+                                                    <action selector="onClickEditTravelButton:" destination="L9E-bL-7is" eventType="touchUpInside" id="EUU-Df-c92"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="mbW-ja-zdZ" firstAttribute="leading" secondItem="dNY-r3-TXe" secondAttribute="leading" id="3wH-XL-rdN"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jwp-YY-ujH" secondAttribute="bottom" constant="10" id="7z1-9w-7bL"/>
                                             <constraint firstItem="wS3-vs-Swp" firstAttribute="top" secondItem="dNY-r3-TXe" secondAttribute="bottom" constant="8" id="Aa2-qG-3Ps"/>
                                             <constraint firstItem="jwp-YY-ujH" firstAttribute="centerX" secondItem="ueb-0I-W1U" secondAttribute="centerX" id="DEY-hB-RSx"/>
                                             <constraint firstItem="dNY-r3-TXe" firstAttribute="top" secondItem="ubk-Kc-0Qx" secondAttribute="bottom" constant="10" id="GFb-Ht-QS4"/>
@@ -249,7 +255,7 @@
                                 <constraints>
                                     <constraint firstItem="ueb-0I-W1U" firstAttribute="top" secondItem="rIR-sc-R93" secondAttribute="top" id="4br-hp-tfS"/>
                                     <constraint firstItem="ueb-0I-W1U" firstAttribute="width" secondItem="rIR-sc-R93" secondAttribute="width" id="DNJ-rC-OAZ"/>
-                                    <constraint firstItem="ueb-0I-W1U" firstAttribute="height" secondItem="rIR-sc-R93" secondAttribute="height" id="NPf-Dx-QPn"/>
+                                    <constraint firstItem="ueb-0I-W1U" firstAttribute="height" secondItem="rIR-sc-R93" secondAttribute="height" priority="250" id="NPf-Dx-QPn"/>
                                     <constraint firstItem="ueb-0I-W1U" firstAttribute="leading" secondItem="rIR-sc-R93" secondAttribute="leading" id="Sht-EX-s7G"/>
                                     <constraint firstAttribute="bottom" secondItem="ueb-0I-W1U" secondAttribute="bottom" id="ZTS-2v-amQ"/>
                                     <constraint firstAttribute="trailing" secondItem="ueb-0I-W1U" secondAttribute="trailing" id="yqI-c6-ypO"/>
@@ -266,6 +272,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZsI-Tx-k2Y"/>
                     </view>
+                    <connections>
+                        <outlet property="dateOfJourney" destination="wS3-vs-Swp" id="xiD-zU-ipw"/>
+                        <outlet property="editTravelButton" destination="jwp-YY-ujH" id="Usk-15-FcB"/>
+                        <outlet property="fromLocation" destination="YDw-vx-bCY" id="gIh-ir-XQD"/>
+                        <outlet property="modeOfTransport" destination="ubk-Kc-0Qx" id="Pab-Kz-6d2"/>
+                        <outlet property="reasonForTravel" destination="U8M-W8-zDD" id="Zde-V1-EqD"/>
+                        <outlet property="scrollView" destination="rIR-sc-R93" id="Kho-qh-lUg"/>
+                        <outlet property="toLocation" destination="TTW-dj-aIY" id="JCd-4x-MxQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vF6-uK-ulN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

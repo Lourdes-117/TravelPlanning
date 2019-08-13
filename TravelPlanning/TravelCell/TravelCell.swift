@@ -20,19 +20,6 @@ class TravelCell: UITableViewCell {
         self.toLocation.text = travelDetail.to
         self.dateOfTravel.text = travelDetail.date
         self.descriptionOfTravel.text = travelDetail.reason
-        switch travelDetail.modeOfTransport {
-        case ModeOfTransports.FLIGHT.rawValue:
-            self.travelModeImage.image = #imageLiteral(resourceName: "flight-Icon")
-        case ModeOfTransports.MOTORBIKE.rawValue:
-            self.travelModeImage.image = #imageLiteral(resourceName: "bike-Icon")
-        case ModeOfTransports.CAR.rawValue:
-            self.travelModeImage.image = #imageLiteral(resourceName: "car-Icon")
-        case ModeOfTransports.BUS.rawValue:
-            self.travelModeImage.image = #imageLiteral(resourceName: "bus-Icon")
-        case ModeOfTransports.TRAIN.rawValue:
-            self.travelModeImage.image = #imageLiteral(resourceName: "train-icon")
-        default:
-            print(Errors.INVALID_MODE_OF_TRANSPORT)
-        }
+        self.travelModeImage.image = GetTravelModeImage.getImage(ofString: travelDetail.modeOfTransport)
     }
 }

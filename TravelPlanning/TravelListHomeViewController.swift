@@ -13,6 +13,8 @@ class TravelListHomeViewController: UIViewController {
     let TravelCell = "TravelReusableIdentity"
     let cellDescriptionSegueIdentifier:String = "CellDescriptionSegueIdentifier"
     let dispatchGroup = DispatchGroup()
+    var selectedTravelDetail:TravelModel!
+
     static var allTravels:[TravelModel] = []
 
     var pastTravels:[TravelModel] = []
@@ -39,5 +41,8 @@ class TravelListHomeViewController: UIViewController {
     
     func seperateDate() {
         (pastTravels, todayTravels, futureTravels) = DateSeperator.seperateDate(allTravels: TravelListHomeViewController.allTravels)
+    }
+    deinit {
+        print("Travel List Page is Safe From Memory Leaks")
     }
 }

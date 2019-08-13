@@ -43,14 +43,31 @@ extension TravelListHomeViewController:UITableViewDataSource {
         case 2:
             travelDetailsToShowInSection = futureTravels
         default:
-            print("Internal Error: More Sections Found")
+            print("Internal Error: Invalid Sexrion Accessed")
         }
         cell.setValues(travelDetail: travelDetailsToShowInSection[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+
+        switch indexPath.section {
+        case 0:
+            selectedTravelDetail = pastTravels[indexPath.row]
+        case 1:
+            selectedTravelDetail = todayTravels[indexPath.row]
+        case 2:
+            selectedTravelDetail = futureTravels[indexPath.row]
+        default:
+            print("Internal Error: Invalid Sexrion Accessed")
+        }
         performSegue(withIdentifier: cellDescriptionSegueIdentifier, sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let travelDecriptionViewController = segue.destination as? TravelDecriptionViewController else {
+            return;
+        }
+        travelDecriptionViewController.travelDetails = selectedTravelDetail
     }
 }
