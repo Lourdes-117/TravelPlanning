@@ -15,14 +15,23 @@ class TravelCell: UITableViewCell {
     @IBOutlet weak var dateOfTravel: UILabel!
     @IBOutlet weak var descriptionOfTravel: UILabel!
     @IBOutlet weak var backgroundCardView: UIView!
+    @IBOutlet weak var travelTimeIndicator: UIView!
 
-    func setValues(travelDetail:TravelModel){
+    func setValues(travelDetail:TravelModel, travelTime:TravelTime){
         self.fromLocation.text = travelDetail.from
         self.toLocation.text = travelDetail.to
         self.dateOfTravel.text = travelDetail.date
         self.descriptionOfTravel.text = travelDetail.reason
         self.travelModeImage.image = GetTravelModeImage.getImage(ofString: travelDetail.modeOfTransport)
         setCardViewDesign()
+        switch travelTime {
+        case .Past:
+            travelTimeIndicator.backgroundColor = Colors.DARK_RED
+        case .Today:
+            travelTimeIndicator.backgroundColor = Colors.GREEN
+        case .Future:
+            travelTimeIndicator.backgroundColor = Colors.YELLOW
+        }
     }
 
     func setCardViewDesign() {
@@ -30,8 +39,8 @@ class TravelCell: UITableViewCell {
         let cornerRadius:CGFloat = 3.0
         backgroundCardView.layer.cornerRadius = cornerRadius
         backgroundCardView.layer.masksToBounds = false
-        backgroundCardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.6).cgColor
-        backgroundCardView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        backgroundCardView.layer.shadowOpacity = 0.6
+        backgroundCardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.8).cgColor
+        backgroundCardView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        backgroundCardView.layer.shadowOpacity = 0.8
     }
 }

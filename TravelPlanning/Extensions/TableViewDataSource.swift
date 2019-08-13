@@ -34,18 +34,23 @@ extension TravelListHomeViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TravelCell) as! TravelCell
         var travelDetailsToShowInSection:[TravelModel] = []
+        var travelTime:TravelTime
 
         switch indexPath.section {
         case 0:
             travelDetailsToShowInSection = pastTravels
+            travelTime = TravelTime.Past
         case 1:
             travelDetailsToShowInSection = todayTravels
+            travelTime = TravelTime.Today
         case 2:
             travelDetailsToShowInSection = futureTravels
+            travelTime = TravelTime.Future
         default:
+            travelTime = TravelTime.Past
             print("Internal Error: Invalid Sexrion Accessed")
         }
-        cell.setValues(travelDetail: travelDetailsToShowInSection[indexPath.row])
+        cell.setValues(travelDetail: travelDetailsToShowInSection[indexPath.row], travelTime: travelTime)
         return cell
     }
 
@@ -62,6 +67,7 @@ extension TravelListHomeViewController:UITableViewDataSource {
             print("Internal Error: Invalid Sexrion Accessed")
         }
         performSegue(withIdentifier: cellDescriptionSegueIdentifier, sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
