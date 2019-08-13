@@ -12,6 +12,7 @@
 		5E06D56E2302B77E00DE6EE1 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D56D2302B77E00DE6EE1 /* ViewExtensions.swift */; };
 		5E06D5702302B7D500DE6EE1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D56F2302B7D500DE6EE1 /* Colors.swift */; };
 		5E06D5722302BFD300DE6EE1 /* TravelTimeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D5712302BFD300DE6EE1 /* TravelTimeEnum.swift */; };
+		5E06D5752302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */; };
 		5EA8B183230131F50020D664 /* DateSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B182230131F50020D664 /* DateSeperator.swift */; };
 		5EA8B186230143B40020D664 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B185230143B40020D664 /* TableViewDataSource.swift */; };
 		5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B1872301481F0020D664 /* ExpandedSate.swift */; };
@@ -34,6 +35,7 @@
 		5E06D56D2302B77E00DE6EE1 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		5E06D56F2302B7D500DE6EE1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5E06D5712302BFD300DE6EE1 /* TravelTimeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeEnum.swift; sourceTree = "<group>"; };
+		5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTravelDetailsViewController.swift; sourceTree = "<group>"; };
 		5EA8B182230131F50020D664 /* DateSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSeperator.swift; sourceTree = "<group>"; };
 		5EA8B185230143B40020D664 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		5EA8B1872301481F0020D664 /* ExpandedSate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedSate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 				5E06D56923027FBD00DE6EE1 /* TravelDecriptionViewController.swift */,
 			);
 			path = TravelDescription;
+			sourceTree = "<group>";
+		};
+		5E06D5732302E0A700DE6EE1 /* NewTravelDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */,
+			);
+			path = NewTravelDetails;
 			sourceTree = "<group>";
 		};
 		5EA8B184230143990020D664 /* Extensions */ = {
@@ -119,6 +129,7 @@
 		5EC25AA522FC3FB400D9DA37 /* TravelPlanning */ = {
 			isa = PBXGroup;
 			children = (
+				5E06D5732302E0A700DE6EE1 /* NewTravelDetails */,
 				5E06D56823027F8500DE6EE1 /* TravelDescription */,
 				5EA8B182230131F50020D664 /* DateSeperator.swift */,
 				5EA8B184230143990020D664 /* Extensions */,
@@ -230,6 +241,7 @@
 				5E06D56E2302B77E00DE6EE1 /* ViewExtensions.swift in Sources */,
 				5E06D56A23027FBD00DE6EE1 /* TravelDecriptionViewController.swift in Sources */,
 				5EC25AA722FC3FB400D9DA37 /* AppDelegate.swift in Sources */,
+				5E06D5752302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift in Sources */,
 				5EAF152923012A4C00FC19DA /* Strings.swift in Sources */,
 				5EC25ABC22FC51BE00D9DA37 /* TravelModel.swift in Sources */,
 				5EA8B183230131F50020D664 /* DateSeperator.swift in Sources */,

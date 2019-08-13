@@ -12,6 +12,7 @@ class TravelListHomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let TravelCell = "TravelReusableIdentity"
     let cellDescriptionSegueIdentifier:String = "CellDescriptionSegueIdentifier"
+    let addNewEntrySegueIdentifier:String = "AddNewEntrySegueIdentifier"
     let dispatchGroup = DispatchGroup()
     var selectedTravelDetail:TravelModel!
 
@@ -39,6 +40,10 @@ class TravelListHomeViewController: UIViewController {
         TravelListHomeViewController.allTravels = getData.getAllTravels(dispatchGroup: dispatchGroup)
     }
     
+    @IBAction func onClickAddAnotherTravel(_ sender: Any) {
+        performSegue(withIdentifier: addNewEntrySegueIdentifier, sender: self)
+    }
+
     func seperateDate() {
         (pastTravels, todayTravels, futureTravels) = DateSeperator.seperateDate(allTravels: TravelListHomeViewController.allTravels)
     }
