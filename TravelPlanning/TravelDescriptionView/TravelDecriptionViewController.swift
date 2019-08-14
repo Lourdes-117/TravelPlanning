@@ -23,6 +23,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     let editTravelText = "Edit This Travel"
     let okText = "Ok"
     var travelDetails: TravelModel!
+    var indexToChange = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,17 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         setTextFieldDelegates()
         setAllFiendsEnabledStatus(withBool: false)
         initializeDatePicker()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        for something in TravelListHomeViewController.allTravels {
+            print(index)
+            if(something == travelDetails){
+                print(something)
+                break;
+            }
+            indexToChange = indexToChange + 1
+        }
     }
 
     private func setKeyboardNotificationListeners() {
@@ -99,11 +111,23 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         if(fromLocation.isEnabled) {
           editTravelButton.setTitle(editTravelText, for: .normal)
             setAllFiendsEnabledStatus(withBool: false)
+            updateCell()
         } else {
             editTravelButton.setTitle(okText, for: .normal)
             setAllFiendsEnabledStatus(withBool: true)
         }
     }
+
+    func updateCell(){
+        var travelModelToUpdate = TravelModel()
+        travelModelToUpdate.from = fromLocation.text!
+        travelModelToUpdate.to = toLocation.text!
+        travelModelToUpdate.date = dateOfJourney.text!
+        travelModelToUpdate.reason = reasonForTravel.text!
+        travelModelToUpdate.modeOfTransport = GetTravelModeImage.getString(ofImage: modeOfTransport.image!)
+        TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
+    }
+
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)

@@ -64,7 +64,7 @@ extension TravelListHomeViewController:UITableViewDataSource {
         case 2:
             selectedTravelDetail = futureTravels[indexPath.row]
         default:
-            print("Internal Error: Invalid Sexrion Accessed")
+            print("Internal Error: Invalid Section Accessed")
         }
         performSegue(withIdentifier: cellDescriptionSegueIdentifier, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)

@@ -25,4 +25,22 @@ class GetTravelModeImage {
         }
         return #imageLiteral(resourceName: "flight-Icon")
     }
+
+    class func getString(ofImage modeOfTransport:UIImage) -> String {
+        switch modeOfTransport {
+        case #imageLiteral(resourceName: "flight-Icon"):
+            return ModeOfTransports.FLIGHT.rawValue
+        case #imageLiteral(resourceName: "bike-Icon"):
+            return ModeOfTransports.MOTORBIKE.rawValue
+        case #imageLiteral(resourceName: "car-Icon"):
+            return ModeOfTransports.CAR.rawValue
+        case #imageLiteral(resourceName: "bus-Icon"):
+            return ModeOfTransports.BUS.rawValue
+        case #imageLiteral(resourceName: "train-icon"):
+            return ModeOfTransports.TRAIN.rawValue
+        default:
+            print()
+        }
+        return ModeOfTransports.FLIGHT.rawValue
+    }
 }
