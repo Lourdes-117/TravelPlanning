@@ -19,6 +19,8 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     //DatePicker
     private var dateOfJourneyPicker:UIDatePicker?
+    //Tap Gesture Recognizer
+    var imageViewTapGesture:UITapGestureRecognizer!
 
     let editTravelText = "Edit This Travel"
     let okText = "Ok"
@@ -31,6 +33,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         setDefaultValues()
         setKeyboardNotificationListeners()
         setTextFieldDelegates()
+        setTapGestureRecognizer()
         setAllFiendsEnabledStatus(withBool: false)
         initializeDatePicker()
     }
@@ -83,6 +86,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     func setAllFiendsEnabledStatus(withBool boolean:Bool) {
+        imageViewTapGesture.isEnabled = boolean
         dateOfJourney.isEnabled = boolean
         fromLocation.isEnabled = boolean
         toLocation.isEnabled = boolean
@@ -104,6 +108,17 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormat.DATE_FORMAT.rawValue
         dateOfJourney.text = dateFormatter.string(from: datepick.date)
+    }
+
+    func setTapGestureRecognizer() {
+        imageViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapUIImageView(gesture:)))
+        modeOfTransport.addGestureRecognizer(imageViewTapGesture)
+        modeOfTransport.isUserInteractionEnabled = true
+    }
+
+    
+    @objc func onTapUIImageView(gesture: UIGestureRecognizer) {
+        print("My taps have been read")
     }
 
     @IBAction func onClickEditTravelButton(_ sender: Any) {
