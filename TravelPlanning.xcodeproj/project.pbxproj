@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5E06D56A23027FBD00DE6EE1 /* TravelDecriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D56923027FBD00DE6EE1 /* TravelDecriptionViewController.swift */; };
 		5E06D56C2302896C00DE6EE1 /* GetTravelModeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D56B2302896C00DE6EE1 /* GetTravelModeImage.swift */; };
-		5E06D56E2302B77E00DE6EE1 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D56D2302B77E00DE6EE1 /* ViewExtensions.swift */; };
 		5E06D5702302B7D500DE6EE1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D56F2302B7D500DE6EE1 /* Colors.swift */; };
 		5E06D5722302BFD300DE6EE1 /* TravelTimeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D5712302BFD300DE6EE1 /* TravelTimeEnum.swift */; };
 		5E06D5752302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */; };
@@ -27,12 +26,18 @@
 		5EC25AB122FC3FB600D9DA37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC25AAF22FC3FB600D9DA37 /* LaunchScreen.storyboard */; };
 		5EC25ABA22FC49D500D9DA37 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AB922FC49D500D9DA37 /* TravelCell.swift */; };
 		5EC25ABC22FC51BE00D9DA37 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25ABB22FC51BE00D9DA37 /* TravelModel.swift */; };
+		5ECD942E2303D0D500AD6A63 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD942D2303D0D500AD6A63 /* StringExtension.swift */; };
+		5ECD94322303D25700AD6A63 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94312303D25700AD6A63 /* TextFieldDelegate.swift */; };
+		5ECD94342303D28600AD6A63 /* TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94332303D28600AD6A63 /* TextViewDelegate.swift */; };
+		5ECD94362303D48E00AD6A63 /* LabelStatusSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94352303D48E00AD6A63 /* LabelStatusSetter.swift */; };
+		5ECD94382303D54800AD6A63 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */; };
+		5ECD943A2303D59F00AD6A63 /* textViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94392303D59F00AD6A63 /* textViewDesign.swift */; };
+		5ECD943C2303E8D100AD6A63 /* ViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5E06D56923027FBD00DE6EE1 /* TravelDecriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDecriptionViewController.swift; sourceTree = "<group>"; };
 		5E06D56B2302896C00DE6EE1 /* GetTravelModeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTravelModeImage.swift; sourceTree = "<group>"; };
-		5E06D56D2302B77E00DE6EE1 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		5E06D56F2302B7D500DE6EE1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5E06D5712302BFD300DE6EE1 /* TravelTimeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeEnum.swift; sourceTree = "<group>"; };
 		5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTravelDetailsViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +57,13 @@
 		5EC25AB222FC3FB600D9DA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EC25AB922FC49D500D9DA37 /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		5EC25ABB22FC51BE00D9DA37 /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
+		5ECD942D2303D0D500AD6A63 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		5ECD94312303D25700AD6A63 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		5ECD94332303D28600AD6A63 /* TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDelegate.swift; sourceTree = "<group>"; };
+		5ECD94352303D48E00AD6A63 /* LabelStatusSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStatusSetter.swift; sourceTree = "<group>"; };
+		5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
+		5ECD94392303D59F00AD6A63 /* textViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewDesign.swift; sourceTree = "<group>"; };
+		5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,20 +77,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E06D56823027F8500DE6EE1 /* TravelDescription */ = {
+		5E06D56823027F8500DE6EE1 /* TravelDescriptionView */ = {
 			isa = PBXGroup;
 			children = (
 				5E06D56923027FBD00DE6EE1 /* TravelDecriptionViewController.swift */,
 			);
-			path = TravelDescription;
+			path = TravelDescriptionView;
 			sourceTree = "<group>";
 		};
-		5E06D5732302E0A700DE6EE1 /* NewTravelDetails */ = {
+		5E06D5732302E0A700DE6EE1 /* AddNewTravelView */ = {
 			isa = PBXGroup;
 			children = (
+				5ECD94302303D23300AD6A63 /* Extensions */,
 				5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */,
 			);
-			path = NewTravelDetails;
+			path = AddNewTravelView;
 			sourceTree = "<group>";
 		};
 		5EA8B184230143990020D664 /* Extensions */ = {
@@ -86,7 +99,6 @@
 			children = (
 				5EA8B185230143B40020D664 /* TableViewDataSource.swift */,
 				5EA8B18B230157AD0020D664 /* TableViewDelegate.swift */,
-				5E06D56D2302B77E00DE6EE1 /* ViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -111,6 +123,7 @@
 		5EC25A9A22FC3FB400D9DA37 = {
 			isa = PBXGroup;
 			children = (
+				5ECD942F2303D0DC00AD6A63 /* Extensions */,
 				5E06D56B2302896C00DE6EE1 /* GetTravelModeImage.swift */,
 				5EAF1527230129F400FC19DA /* Constants */,
 				5EC25AA522FC3FB400D9DA37 /* TravelPlanning */,
@@ -129,13 +142,13 @@
 		5EC25AA522FC3FB400D9DA37 /* TravelPlanning */ = {
 			isa = PBXGroup;
 			children = (
-				5E06D5732302E0A700DE6EE1 /* NewTravelDetails */,
-				5E06D56823027F8500DE6EE1 /* TravelDescription */,
-				5EA8B182230131F50020D664 /* DateSeperator.swift */,
+				5E06D5732302E0A700DE6EE1 /* AddNewTravelView */,
+				5E06D56823027F8500DE6EE1 /* TravelDescriptionView */,
 				5EA8B184230143990020D664 /* Extensions */,
 				5EAFF0DE22FD350A00C67211 /* DataBase */,
 				5EC25AB822FC49B900D9DA37 /* TravelCell */,
 				5EC25AA622FC3FB400D9DA37 /* AppDelegate.swift */,
+				5EA8B182230131F50020D664 /* DateSeperator.swift */,
 				5EC25AA822FC3FB400D9DA37 /* TravelListHomeViewController.swift */,
 				5EC25AAA22FC3FB400D9DA37 /* Main.storyboard */,
 				5EC25AAD22FC3FB600D9DA37 /* Assets.xcassets */,
@@ -155,6 +168,27 @@
 				5E06D5712302BFD300DE6EE1 /* TravelTimeEnum.swift */,
 			);
 			path = TravelCell;
+			sourceTree = "<group>";
+		};
+		5ECD942F2303D0DC00AD6A63 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5ECD942D2303D0D500AD6A63 /* StringExtension.swift */,
+				5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */,
+				5ECD94392303D59F00AD6A63 /* textViewDesign.swift */,
+				5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5ECD94302303D23300AD6A63 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5ECD94312303D25700AD6A63 /* TextFieldDelegate.swift */,
+				5ECD94332303D28600AD6A63 /* TextViewDelegate.swift */,
+				5ECD94352303D48E00AD6A63 /* LabelStatusSetter.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,15 +265,21 @@
 			files = (
 				5EA8B18C230157AD0020D664 /* TableViewDelegate.swift in Sources */,
 				5EAFF0E022FD353100C67211 /* getData.swift in Sources */,
+				5ECD94322303D25700AD6A63 /* TextFieldDelegate.swift in Sources */,
+				5ECD943A2303D59F00AD6A63 /* textViewDesign.swift in Sources */,
 				5EC25AA922FC3FB400D9DA37 /* TravelListHomeViewController.swift in Sources */,
 				5E06D5722302BFD300DE6EE1 /* TravelTimeEnum.swift in Sources */,
+				5ECD94362303D48E00AD6A63 /* LabelStatusSetter.swift in Sources */,
 				5E06D5702302B7D500DE6EE1 /* Colors.swift in Sources */,
+				5ECD943C2303E8D100AD6A63 /* ViewDesign.swift in Sources */,
 				5EA8B186230143B40020D664 /* TableViewDataSource.swift in Sources */,
 				5EC25ABA22FC49D500D9DA37 /* TravelCell.swift in Sources */,
 				5E06D56C2302896C00DE6EE1 /* GetTravelModeImage.swift in Sources */,
+				5ECD94342303D28600AD6A63 /* TextViewDelegate.swift in Sources */,
+				5ECD942E2303D0D500AD6A63 /* StringExtension.swift in Sources */,
 				5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */,
-				5E06D56E2302B77E00DE6EE1 /* ViewExtensions.swift in Sources */,
 				5E06D56A23027FBD00DE6EE1 /* TravelDecriptionViewController.swift in Sources */,
+				5ECD94382303D54800AD6A63 /* TextFieldDesign.swift in Sources */,
 				5EC25AA722FC3FB400D9DA37 /* AppDelegate.swift in Sources */,
 				5E06D5752302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift in Sources */,
 				5EAF152923012A4C00FC19DA /* Strings.swift in Sources */,

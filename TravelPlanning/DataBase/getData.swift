@@ -38,7 +38,6 @@ class getData {
             dispatchGroup.leave();
         }.resume()
         print("Returning the objects")
-        print(travelArray)
         return travelArray;
     }
 }

@@ -29,11 +29,21 @@ class TravelListHomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         dispatchGroup.notify(queue: .main, execute: {
-            print("Network Request in complete. Refreshing View");
-            print(TravelListHomeViewController.allTravels)
-            self.seperateDate()
-            self.tableView.reloadData()
+            print("Network Request in complete");
+            self.refreshViewController()
             })
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View Will Appear Called")
+        refreshViewController()
+    }
+
+    func refreshViewController() {
+        print("Refreshing TableViewController")
+        self.seperateDate()
+        self.tableView.reloadData()
     }
 
     func initializeTravelData(){

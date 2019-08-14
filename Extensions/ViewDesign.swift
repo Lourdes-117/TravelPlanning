@@ -1,12 +1,12 @@
 //
-//  ViewExtensions.swift
+//  ViewDesign.swift
 //  TravelPlanning
 //
-//  Created by Tringapps on 13/08/19.
+//  Created by Tringapps on 14/08/19.
 //  Copyright © 2019 Tringapps. All rights reserved.
 //
-
 import UIKit
+
 extension UIView {
     func setGradientBackground(startColor:UIColor, endColor:UIColor) {
         let gradientLayer = CAGradientLayer()
@@ -16,5 +16,14 @@ extension UIView {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         layer.insertSublayer(gradientLayer, at: 0)
+    }
+
+    func applyViewTheme(){
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 15;
+        self.layer.shadowColor = UIColor.black.cgColor;
+        self.layer.shadowRadius = 5;
+        self.layer.shadowOpacity = 0.5;
+        self.layer.shadowOffset = CGSize(width: 2, height: 2)
     }
 }
