@@ -26,4 +26,12 @@ extension UIView {
         self.layer.shadowOpacity = 0.5;
         self.layer.shadowOffset = CGSize(width: 2, height: 2)
     }
+
+    func removeViewTheme(){
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 0;
+        self.layer.shadowRadius = 0;
+        self.layer.shadowOpacity = 0;
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
 }

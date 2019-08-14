@@ -118,19 +118,19 @@ class NewTravelDetailsViewController: UIViewController {
     }
 
     func checkFromLocaion() -> Bool{
-        let isValid = fromLocation.text!.isOfValidFormat(Regex.Location.rawValue)
+        let isValid = fromLocation.text!.isOfValidFormat(Regex.LOCATION.rawValue)
         fromError.setStatusForLabel(ofTextField: fromLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
 
     func checkToLocaion() -> Bool{
-        let isValid = toLocation.text!.isOfValidFormat(Regex.Location.rawValue)
+        let isValid = toLocation.text!.isOfValidFormat(Regex.LOCATION.rawValue)
         toError.setStatusForLabel(ofTextField: toLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
 
     func checkReasonForTravel() -> Bool{
-        let isValid = reasonForTravel.text!.isOfValidFormat(Regex.Location.rawValue)
+        let isValid = reasonForTravel.text! != ""
         reasonError.setStatusForLabel(ofTextField: nil, ofTextView: reasonForTravel, validityStatus: isValid)
         return isValid
     }

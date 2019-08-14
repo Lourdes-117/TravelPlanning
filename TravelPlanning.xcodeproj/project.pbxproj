@@ -34,6 +34,7 @@
 		5ECD943A2303D59F00AD6A63 /* textViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94392303D59F00AD6A63 /* textViewDesign.swift */; };
 		5ECD943C2303E8D100AD6A63 /* ViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */; };
 		5ECD944023041AB500AD6A63 /* modeOfTravelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD943F23041AB500AD6A63 /* modeOfTravelSelectionViewController.swift */; };
+		5ECD94422304371D00AD6A63 /* AlertCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94412304371D00AD6A63 /* AlertCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		5ECD94392303D59F00AD6A63 /* textViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewDesign.swift; sourceTree = "<group>"; };
 		5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesign.swift; sourceTree = "<group>"; };
 		5ECD943F23041AB500AD6A63 /* modeOfTravelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modeOfTravelSelectionViewController.swift; sourceTree = "<group>"; };
+		5ECD94412304371D00AD6A63 /* AlertCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		5EC25A9A22FC3FB400D9DA37 = {
 			isa = PBXGroup;
 			children = (
+				5ECD94412304371D00AD6A63 /* AlertCreator.swift */,
 				5ECD942F2303D0DC00AD6A63 /* Extensions */,
 				5E06D56B2302896C00DE6EE1 /* GetTravelModeImage.swift */,
 				5EAF1527230129F400FC19DA /* Constants */,
@@ -279,6 +282,7 @@
 				5EA8B186230143B40020D664 /* TableViewDataSource.swift in Sources */,
 				5EC25ABA22FC49D500D9DA37 /* TravelCell.swift in Sources */,
 				5E06D56C2302896C00DE6EE1 /* GetTravelModeImage.swift in Sources */,
+				5ECD94422304371D00AD6A63 /* AlertCreator.swift in Sources */,
 				5ECD94342303D28600AD6A63 /* TextViewDelegate.swift in Sources */,
 				5ECD942E2303D0D500AD6A63 /* StringExtension.swift in Sources */,
 				5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */,

@@ -17,6 +17,11 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var reasonForTravel: UITextView!
     @IBOutlet weak var editTravelButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    //Error
+    @IBOutlet weak var dateError: UILabel!
+    @IBOutlet weak var fromError: UILabel!
+    @IBOutlet weak var toError: UILabel!
+    @IBOutlet weak var reasonError: UILabel!
     //DatePicker
     private var dateOfJourneyPicker:UIDatePicker?
     //Tap Gesture Recognizer
@@ -37,6 +42,14 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         setTapGestureRecognizer()
         setAllFiendsEnabledStatus(withBool: false)
         initializeDatePicker()
+        applyDesigns()
+    }
+
+    func applyDesigns() {
+        fromLocation.applyTextFieldTheme()
+        toLocation.applyTextFieldTheme()
+        dateOfJourney.applyTextFieldTheme()
+        reasonForTravel.applyTextViewTheme()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -125,13 +138,25 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     @IBAction func onClickEditTravelButton(_ sender: Any) {
         print("Edit Travel Button Clicked")
         if(fromLocation.isEnabled) {
-          editTravelButton.setTitle(editTravelText, for: .normal)
-            setAllFiendsEnabledStatus(withBool: false)
+            if(!isAllFieldsValid()) {
+                let invalidFieldAlert = AlertCreator.createAlert(title: "Invalid Fields", message: "Invalid Fields Founds. Please Check Again", buttonTitle: "Ok")
+                self.present(invalidFieldAlert, animated: true, completion: nil)
+                return
+            }
+            self.modeOfTransport.removeViewTheme()
             updateCell()
+            editTravelButton.setTitle(editTravelText, for: .normal)
+            setAllFiendsEnabledStatus(withBool: false)
         } else {
+            self.modeOfTransport.applyViewTheme()
             editTravelButton.setTitle(okText, for: .normal)
             setAllFiendsEnabledStatus(withBool: true)
         }
+    }
+
+    func isAllFieldsValid() -> Bool {
+        let isAllFieldsValid = checkFromLocaion() && checkToLocaion() && checkReasonForTravel() && checkDateOfTravel()
+        return isAllFieldsValid
     }
 
     func updateCell(){
@@ -142,6 +167,30 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         travelModelToUpdate.reason = reasonForTravel.text!
         travelModelToUpdate.modeOfTransport = GetTravelModeImage.getString(ofImage: modeOfTransport.image!)
         TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
+    }
+
+    func checkFromLocaion() -> Bool{
+        let isValid = fromLocation.text!.isOfValidFormat(Regex.LOCATION.rawValue)
+        fromError.setStatusForLabel(ofTextField: fromLocation, ofTextView: nil, validityStatus: isValid)
+        return isValid
+    }
+
+    func checkToLocaion() -> Bool{
+        let isValid = toLocation.text!.isOfValidFormat(Regex.LOCATION.rawValue)
+        toError.setStatusForLabel(ofTextField: toLocation, ofTextView: nil, validityStatus: isValid)
+        return isValid
+    }
+
+    func checkReasonForTravel() -> Bool{
+        let isValid = reasonForTravel.text! != ""
+        reasonError.setStatusForLabel(ofTextField: nil, ofTextView: reasonForTravel, validityStatus: isValid)
+        return isValid
+    }
+
+    func checkDateOfTravel() -> Bool {
+        let isValid = dateOfJourney.text!.isOfValidFormat(Regex.VALID_DATE.rawValue)
+        dateError.setStatusForLabel(ofTextField: dateOfJourney, ofTextView: nil, validityStatus: isValid)
+        return isValid
     }
 
     @IBAction func unwindToTravelDescriptionViewController(_ unwindSegue: UIStoryboardSegue) {

@@ -472,7 +472,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="rIR-sc-R93">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="rIR-sc-R93">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueb-0I-W1U">
@@ -546,34 +546,64 @@
                                                     <action selector="onClickEditTravelButton:" destination="L9E-bL-7is" eventType="touchUpInside" id="EUU-Df-c92"/>
                                                 </connections>
                                             </button>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lc-w3-H2X">
+                                                <rect key="frame" x="312" y="304" width="82" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhE-pU-ffE">
+                                                <rect key="frame" x="333" y="378" width="61" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZY-rD-3FK">
+                                                <rect key="frame" x="295" y="452" width="99" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dg3-ab-Von">
+                                                <rect key="frame" x="316" y="230" width="78" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="mbW-ja-zdZ" firstAttribute="leading" secondItem="dNY-r3-TXe" secondAttribute="leading" id="3wH-XL-rdN"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jwp-YY-ujH" secondAttribute="bottom" constant="10" id="7z1-9w-7bL"/>
+                                            <constraint firstItem="Dg3-ab-Von" firstAttribute="trailing" secondItem="wS3-vs-Swp" secondAttribute="trailing" id="8Dh-sI-iu6"/>
                                             <constraint firstItem="wS3-vs-Swp" firstAttribute="top" secondItem="dNY-r3-TXe" secondAttribute="bottom" constant="8" id="Aa2-qG-3Ps"/>
                                             <constraint firstItem="jwp-YY-ujH" firstAttribute="centerX" secondItem="ueb-0I-W1U" secondAttribute="centerX" id="DEY-hB-RSx"/>
                                             <constraint firstItem="dNY-r3-TXe" firstAttribute="top" secondItem="ubk-Kc-0Qx" secondAttribute="bottom" constant="10" id="GFb-Ht-QS4">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="35"/>
                                             </constraint>
+                                            <constraint firstItem="fhE-pU-ffE" firstAttribute="trailing" secondItem="TTW-dj-aIY" secondAttribute="trailing" id="J3k-ig-km3"/>
                                             <constraint firstItem="ubk-Kc-0Qx" firstAttribute="top" secondItem="ueb-0I-W1U" secondAttribute="top" constant="20" id="Ji2-dj-OVn"/>
                                             <constraint firstItem="TTW-dj-aIY" firstAttribute="leading" secondItem="YDw-vx-bCY" secondAttribute="leading" id="Jqt-rK-uvy"/>
                                             <constraint firstItem="jwp-YY-ujH" firstAttribute="top" secondItem="U8M-W8-zDD" secondAttribute="bottom" constant="50" id="K3E-LN-a1y"/>
                                             <constraint firstItem="wS3-vs-Swp" firstAttribute="leading" secondItem="ueb-0I-W1U" secondAttribute="leading" constant="20" id="KRU-Uk-JIh"/>
+                                            <constraint firstItem="xZY-rD-3FK" firstAttribute="trailing" secondItem="U8M-W8-zDD" secondAttribute="trailing" id="LWv-J1-hDN"/>
                                             <constraint firstItem="TTW-dj-aIY" firstAttribute="top" secondItem="gKe-un-d7M" secondAttribute="bottom" constant="8" id="NNB-bR-NNy"/>
                                             <constraint firstItem="ubk-Kc-0Qx" firstAttribute="centerX" secondItem="ueb-0I-W1U" secondAttribute="centerX" id="Nsb-eC-s2m"/>
                                             <constraint firstItem="YDw-vx-bCY" firstAttribute="leading" secondItem="wS3-vs-Swp" secondAttribute="leading" id="Pnb-xJ-RDn"/>
                                             <constraint firstAttribute="trailing" secondItem="wS3-vs-Swp" secondAttribute="trailing" constant="20" id="UvX-cW-KhC"/>
                                             <constraint firstItem="YDw-vx-bCY" firstAttribute="top" secondItem="mbW-ja-zdZ" secondAttribute="bottom" constant="8" id="VCd-BT-UQe"/>
                                             <constraint firstItem="YDw-vx-bCY" firstAttribute="trailing" secondItem="wS3-vs-Swp" secondAttribute="trailing" id="Vbk-Y5-tVt"/>
+                                            <constraint firstItem="3lc-w3-H2X" firstAttribute="top" secondItem="mbW-ja-zdZ" secondAttribute="top" id="Wl4-b7-EDK"/>
                                             <constraint firstItem="TTW-dj-aIY" firstAttribute="trailing" secondItem="YDw-vx-bCY" secondAttribute="trailing" id="bQl-Wk-5O4"/>
                                             <constraint firstItem="dNY-r3-TXe" firstAttribute="leading" secondItem="ueb-0I-W1U" secondAttribute="leading" constant="20" id="fWX-VH-wuu"/>
                                             <constraint firstItem="gKe-un-d7M" firstAttribute="top" secondItem="YDw-vx-bCY" secondAttribute="bottom" constant="15" id="ibx-My-f82">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="25"/>
                                             </constraint>
+                                            <constraint firstItem="3lc-w3-H2X" firstAttribute="trailing" secondItem="YDw-vx-bCY" secondAttribute="trailing" id="lcM-Pv-Zl5"/>
                                             <constraint firstItem="PdL-QL-W8z" firstAttribute="top" secondItem="TTW-dj-aIY" secondAttribute="bottom" constant="15" id="m5v-dP-8ES">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="25"/>
                                             </constraint>
+                                            <constraint firstItem="fhE-pU-ffE" firstAttribute="top" secondItem="gKe-un-d7M" secondAttribute="top" id="n73-MK-pmw"/>
                                             <constraint firstItem="U8M-W8-zDD" firstAttribute="trailing" secondItem="TTW-dj-aIY" secondAttribute="trailing" id="o2O-Mk-FNw"/>
                                             <constraint firstItem="U8M-W8-zDD" firstAttribute="top" secondItem="PdL-QL-W8z" secondAttribute="bottom" constant="8" id="oT6-zM-hyL"/>
                                             <constraint firstItem="gKe-un-d7M" firstAttribute="leading" secondItem="mbW-ja-zdZ" secondAttribute="leading" id="pTF-rJ-GtV"/>
@@ -581,7 +611,9 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="25"/>
                                             </constraint>
                                             <constraint firstItem="PdL-QL-W8z" firstAttribute="leading" secondItem="gKe-un-d7M" secondAttribute="leading" id="tFs-M1-HNd"/>
+                                            <constraint firstItem="Dg3-ab-Von" firstAttribute="top" secondItem="dNY-r3-TXe" secondAttribute="top" id="v7h-F6-9je"/>
                                             <constraint firstItem="U8M-W8-zDD" firstAttribute="leading" secondItem="TTW-dj-aIY" secondAttribute="leading" id="vOG-oq-86a"/>
+                                            <constraint firstItem="xZY-rD-3FK" firstAttribute="top" secondItem="PdL-QL-W8z" secondAttribute="top" id="yix-K2-h6w"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -606,12 +638,16 @@
                         <viewLayoutGuide key="safeArea" id="ZsI-Tx-k2Y"/>
                     </view>
                     <connections>
+                        <outlet property="dateError" destination="Dg3-ab-Von" id="AOy-a6-hmy"/>
                         <outlet property="dateOfJourney" destination="wS3-vs-Swp" id="xiD-zU-ipw"/>
                         <outlet property="editTravelButton" destination="jwp-YY-ujH" id="Usk-15-FcB"/>
+                        <outlet property="fromError" destination="3lc-w3-H2X" id="IGq-f1-I5v"/>
                         <outlet property="fromLocation" destination="YDw-vx-bCY" id="gIh-ir-XQD"/>
                         <outlet property="modeOfTransport" destination="ubk-Kc-0Qx" id="Pab-Kz-6d2"/>
+                        <outlet property="reasonError" destination="xZY-rD-3FK" id="93c-zv-wdV"/>
                         <outlet property="reasonForTravel" destination="U8M-W8-zDD" id="Zde-V1-EqD"/>
                         <outlet property="scrollView" destination="rIR-sc-R93" id="Kho-qh-lUg"/>
+                        <outlet property="toError" destination="fhE-pU-ffE" id="E6F-Gm-3K9"/>
                         <outlet property="toLocation" destination="TTW-dj-aIY" id="JCd-4x-MxQ"/>
                         <segue destination="JLc-JA-svl" kind="presentation" identifier="ModeOfTravelSelectionViewSegueIdentifier" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="6qL-Yy-N2Y"/>
                     </connections>

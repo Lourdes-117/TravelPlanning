@@ -30,7 +30,8 @@ enum Errors:String {
 }
 
 enum Regex:String {
-    case Location = "([A-Za-z\\s]){1,}"
+    case LOCATION = "([A-Za-z\\s]){1,}"
+    case REASON = "([\\s\\S])"
     case VALID_DATE = "(([0-9]{1,2})[//]([0-9]{1,2})[//]([0-9]{1,4}))"
 }
 
