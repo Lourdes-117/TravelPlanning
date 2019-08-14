@@ -22,6 +22,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     //Tap Gesture Recognizer
     var imageViewTapGesture:UITapGestureRecognizer!
 
+    let modeOfTravelSelectionSegueIdentifier = "ModeOfTravelSelectionViewSegueIdentifier"
     let editTravelText = "Edit This Travel"
     let okText = "Ok"
     var travelDetails: TravelModel!
@@ -118,7 +119,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
 
     
     @objc func onTapUIImageView(gesture: UIGestureRecognizer) {
-        print("My taps have been read")
+        performSegue(withIdentifier: modeOfTravelSelectionSegueIdentifier, sender: self)
     }
 
     @IBAction func onClickEditTravelButton(_ sender: Any) {
@@ -141,6 +142,14 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         travelModelToUpdate.reason = reasonForTravel.text!
         travelModelToUpdate.modeOfTransport = GetTravelModeImage.getString(ofImage: modeOfTransport.image!)
         TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
+    }
+
+    @IBAction func unwindToTravelDescriptionViewController(_ unwindSegue: UIStoryboardSegue) {
+        if let modeOfTravelSelectionViewController = unwindSegue.source as? ModeOfTravelSelectionViewController {
+            let selectedModeOfTransportImage = modeOfTravelSelectionViewController.selectedModeOfTransportImage
+            guard let selectedModeOfTransportImageUnwrapped = selectedModeOfTransportImage else {return}
+            modeOfTransport.image = selectedModeOfTransportImageUnwrapped
+        }
     }
 
     deinit {

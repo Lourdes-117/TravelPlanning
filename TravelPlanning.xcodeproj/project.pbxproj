@@ -33,6 +33,7 @@
 		5ECD94382303D54800AD6A63 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */; };
 		5ECD943A2303D59F00AD6A63 /* textViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94392303D59F00AD6A63 /* textViewDesign.swift */; };
 		5ECD943C2303E8D100AD6A63 /* ViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */; };
+		5ECD944023041AB500AD6A63 /* modeOfTravelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD943F23041AB500AD6A63 /* modeOfTravelSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
 		5ECD94392303D59F00AD6A63 /* textViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewDesign.swift; sourceTree = "<group>"; };
 		5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesign.swift; sourceTree = "<group>"; };
+		5ECD943F23041AB500AD6A63 /* modeOfTravelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modeOfTravelSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				5E06D56923027FBD00DE6EE1 /* TravelDecriptionViewController.swift */,
+				5ECD943F23041AB500AD6A63 /* modeOfTravelSelectionViewController.swift */,
 			);
 			path = TravelDescriptionView;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				5E06D5722302BFD300DE6EE1 /* TravelTimeEnum.swift in Sources */,
 				5ECD94362303D48E00AD6A63 /* LabelStatusSetter.swift in Sources */,
 				5E06D5702302B7D500DE6EE1 /* Colors.swift in Sources */,
+				5ECD944023041AB500AD6A63 /* modeOfTravelSelectionViewController.swift in Sources */,
 				5ECD943C2303E8D100AD6A63 /* ViewDesign.swift in Sources */,
 				5EA8B186230143B40020D664 /* TableViewDataSource.swift in Sources */,
 				5EC25ABA22FC49D500D9DA37 /* TravelCell.swift in Sources */,

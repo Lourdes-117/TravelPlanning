@@ -613,11 +613,148 @@
                         <outlet property="reasonForTravel" destination="U8M-W8-zDD" id="Zde-V1-EqD"/>
                         <outlet property="scrollView" destination="rIR-sc-R93" id="Kho-qh-lUg"/>
                         <outlet property="toLocation" destination="TTW-dj-aIY" id="JCd-4x-MxQ"/>
+                        <segue destination="JLc-JA-svl" kind="presentation" identifier="ModeOfTravelSelectionViewSegueIdentifier" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="6qL-Yy-N2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vF6-uK-ulN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2143" y="-192"/>
+        </scene>
+        <!--Mode Of Travel Selection View Controller-->
+        <scene sceneID="icN-hV-BCu">
+            <objects>
+                <viewController id="JLc-JA-svl" customClass="ModeOfTravelSelectionViewController" customModule="TravelPlanning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mxa-us-XWJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTx-wf-ryU">
+                                <rect key="frame" x="25" y="187" width="364" height="532"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Z3-8E-Axf">
+                                        <rect key="frame" x="15" y="70" width="124" height="124"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="124" id="Mks-BI-Yqe"/>
+                                            <constraint firstAttribute="width" secondItem="7Z3-8E-Axf" secondAttribute="height" multiplier="1:1" id="XL0-Bx-SgS"/>
+                                        </constraints>
+                                        <state key="normal" title="Bus" image="bus-Icon"/>
+                                        <connections>
+                                            <action selector="onSelectModeOfTransport:" destination="JLc-JA-svl" eventType="touchUpInside" id="bgP-CD-AVo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WP-Cs-saS">
+                                        <rect key="frame" x="120" y="378" width="124" height="124"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="124" id="Aa6-JJ-29V"/>
+                                            <constraint firstAttribute="width" secondItem="0WP-Cs-saS" secondAttribute="height" multiplier="1:1" id="Qow-ya-S4K"/>
+                                        </constraints>
+                                        <state key="normal" title="Train" image="train-icon"/>
+                                        <connections>
+                                            <action selector="onSelectModeOfTransport:" destination="JLc-JA-svl" eventType="touchUpInside" id="tny-91-V5r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWz-oz-6cH">
+                                        <rect key="frame" x="225" y="70" width="124" height="124"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="PWz-oz-6cH" secondAttribute="height" multiplier="1:1" id="IK3-Vi-hfA"/>
+                                            <constraint firstAttribute="height" constant="124" id="jpR-Fi-a11"/>
+                                        </constraints>
+                                        <state key="normal" title="Car" image="car-Icon"/>
+                                        <connections>
+                                            <action selector="onSelectModeOfTransport:" destination="JLc-JA-svl" eventType="touchUpInside" id="6Lw-fP-qed"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBs-lv-y0f">
+                                        <rect key="frame" x="8" y="29" width="57" height="30"/>
+                                        <state key="normal" title="&lt;Cancel"/>
+                                        <connections>
+                                            <action selector="onClickCancelButton:" destination="JLc-JA-svl" eventType="touchUpInside" id="IOz-Vf-qcd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0WP-Cs-saS" firstAttribute="centerX" secondItem="wTx-wf-ryU" secondAttribute="centerX" id="4dR-56-Srk"/>
+                                    <constraint firstItem="PWz-oz-6cH" firstAttribute="width" secondItem="PWz-oz-6cH" secondAttribute="height" multiplier="1:1" id="6XN-Rz-ATL"/>
+                                    <constraint firstAttribute="trailing" secondItem="PWz-oz-6cH" secondAttribute="trailing" constant="15" id="7Pf-co-TwL"/>
+                                    <constraint firstItem="0WP-Cs-saS" firstAttribute="width" secondItem="0WP-Cs-saS" secondAttribute="height" multiplier="1:1" id="FE0-pq-uff"/>
+                                    <constraint firstAttribute="bottom" secondItem="0WP-Cs-saS" secondAttribute="bottom" constant="30" id="LS6-Mb-cXi"/>
+                                    <constraint firstItem="PWz-oz-6cH" firstAttribute="top" secondItem="7Z3-8E-Axf" secondAttribute="top" id="OaW-Py-a7A"/>
+                                    <constraint firstItem="fBs-lv-y0f" firstAttribute="leading" secondItem="wTx-wf-ryU" secondAttribute="leading" constant="8" id="RXu-KQ-Crk"/>
+                                    <constraint firstItem="0WP-Cs-saS" firstAttribute="width" secondItem="0WP-Cs-saS" secondAttribute="height" multiplier="1:1" id="Zbe-Hb-zEF"/>
+                                    <constraint firstItem="7Z3-8E-Axf" firstAttribute="leading" secondItem="wTx-wf-ryU" secondAttribute="leading" constant="15" id="jd7-pO-o2E"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Mode Of Transport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycE-2I-vBZ">
+                                <rect key="frame" x="111.5" y="216" width="191.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Daj-kr-7p4">
+                                <rect key="frame" x="40" y="411" width="124" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Daj-kr-7p4" secondAttribute="height" multiplier="1:1" id="0LW-0b-OEw"/>
+                                    <constraint firstAttribute="height" constant="124" id="1H0-yk-ErT"/>
+                                </constraints>
+                                <state key="normal" title="Motorbike" image="bike-Icon"/>
+                                <connections>
+                                    <action selector="onSelectModeOfTransport:" destination="JLc-JA-svl" eventType="touchUpInside" id="PnA-6j-cQJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfQ-01-zM9">
+                                <rect key="frame" x="250" y="411" width="124" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="3cK-nu-Alz"/>
+                                    <constraint firstAttribute="width" secondItem="UfQ-01-zM9" secondAttribute="height" multiplier="1:1" id="jvg-YV-5dJ"/>
+                                </constraints>
+                                <state key="normal" title="Flight" image="flight-Icon"/>
+                                <connections>
+                                    <action selector="onSelectModeOfTransport:" destination="JLc-JA-svl" eventType="touchUpInside" id="vKL-U9-zgG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wTx-wf-ryU" firstAttribute="centerY" secondItem="YSE-Xe-hYI" secondAttribute="centerY" id="3wM-fM-0Oy"/>
+                            <constraint firstItem="UfQ-01-zM9" firstAttribute="top" secondItem="Daj-kr-7p4" secondAttribute="top" id="HC2-nW-qpL"/>
+                            <constraint firstItem="Daj-kr-7p4" firstAttribute="top" secondItem="7Z3-8E-Axf" secondAttribute="bottom" constant="30" id="Hfp-Yy-oav"/>
+                            <constraint firstItem="Daj-kr-7p4" firstAttribute="leading" secondItem="7Z3-8E-Axf" secondAttribute="leading" id="Hyx-Sf-nbr"/>
+                            <constraint firstItem="Daj-kr-7p4" firstAttribute="width" secondItem="Daj-kr-7p4" secondAttribute="height" multiplier="1:1" id="JnI-bt-Ct1"/>
+                            <constraint firstItem="PWz-oz-6cH" firstAttribute="top" secondItem="7Z3-8E-Axf" secondAttribute="top" id="Lwh-fZ-MbG"/>
+                            <constraint firstItem="wTx-wf-ryU" firstAttribute="top" secondItem="ycE-2I-vBZ" secondAttribute="bottom" constant="-50" id="Mmq-lc-jj0"/>
+                            <constraint firstItem="7Z3-8E-Axf" firstAttribute="leading" secondItem="mxa-us-XWJ" secondAttribute="leading" constant="40" id="PV0-9Z-Kmv"/>
+                            <constraint firstItem="wTx-wf-ryU" firstAttribute="centerX" secondItem="YSE-Xe-hYI" secondAttribute="centerX" id="SRZ-9Q-aa6"/>
+                            <constraint firstItem="7Z3-8E-Axf" firstAttribute="top" secondItem="ycE-2I-vBZ" secondAttribute="bottom" constant="20" id="SlV-Un-daa"/>
+                            <constraint firstItem="wTx-wf-ryU" firstAttribute="leading" secondItem="YSE-Xe-hYI" secondAttribute="leading" constant="25" id="Vc0-v7-G4Y"/>
+                            <constraint firstItem="YSE-Xe-hYI" firstAttribute="trailing" secondItem="wTx-wf-ryU" secondAttribute="trailing" constant="25" id="aP9-6h-Ta3"/>
+                            <constraint firstItem="UfQ-01-zM9" firstAttribute="trailing" secondItem="PWz-oz-6cH" secondAttribute="trailing" id="aVV-2a-4PK"/>
+                            <constraint firstItem="UfQ-01-zM9" firstAttribute="width" secondItem="UfQ-01-zM9" secondAttribute="height" multiplier="1:1" id="ljP-TS-0rR"/>
+                            <constraint firstItem="PWz-oz-6cH" firstAttribute="width" secondItem="PWz-oz-6cH" secondAttribute="height" multiplier="1:1" id="niV-6L-ElP"/>
+                            <constraint firstItem="0WP-Cs-saS" firstAttribute="top" secondItem="Daj-kr-7p4" secondAttribute="bottom" constant="30" id="pYO-m5-5o0"/>
+                            <constraint firstAttribute="trailing" secondItem="PWz-oz-6cH" secondAttribute="trailing" constant="40" id="rd2-5A-IcD"/>
+                            <constraint firstItem="fBs-lv-y0f" firstAttribute="top" secondItem="ycE-2I-vBZ" secondAttribute="top" id="s3V-42-dXN"/>
+                            <constraint firstItem="ycE-2I-vBZ" firstAttribute="centerX" secondItem="wTx-wf-ryU" secondAttribute="centerX" id="seV-aX-iAb"/>
+                            <constraint firstItem="UfQ-01-zM9" firstAttribute="width" secondItem="UfQ-01-zM9" secondAttribute="height" multiplier="1:1" id="zdw-DJ-ANo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YSE-Xe-hYI"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentBackgroundView" destination="wTx-wf-ryU" id="fCJ-tP-aa9"/>
+                        <outletCollection property="modeOfTransportButtonCollection" destination="7Z3-8E-Axf" collectionClass="NSMutableArray" id="SgT-Mv-juQ"/>
+                        <outletCollection property="modeOfTransportButtonCollection" destination="PWz-oz-6cH" collectionClass="NSMutableArray" id="nCJ-8U-CNA"/>
+                        <outletCollection property="modeOfTransportButtonCollection" destination="PWz-oz-6cH" collectionClass="NSMutableArray" id="7aV-II-tvV"/>
+                        <outletCollection property="modeOfTransportButtonCollection" destination="7Z3-8E-Axf" collectionClass="NSMutableArray" id="QA9-bZ-GFR"/>
+                        <outletCollection property="modeOfTransportButtonCollection" destination="Daj-kr-7p4" collectionClass="NSMutableArray" id="bLz-jW-nGH"/>
+                        <outletCollection property="modeOfTransportButtonCollection" destination="UfQ-01-zM9" collectionClass="NSMutableArray" id="KD4-W3-hxv"/>
+                        <outletCollection property="modeOfTransportButtonCollection" destination="0WP-Cs-saS" collectionClass="NSMutableArray" id="beo-8n-ohA"/>
+                        <segue destination="B4w-ja-j8s" kind="unwind" identifier="unwindToTravelDescriptionViewControllerIdentifier" unwindAction="unwindToTravelDescriptionViewController:" id="5tt-Ro-GhW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZP-YR-y9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="B4w-ja-j8s" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2139.130434782609" y="613.39285714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Skz-CQ-BAl">
@@ -638,4 +775,11 @@
             <point key="canvasLocation" x="14" y="-192"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bike-Icon" width="800" height="800"/>
+        <image name="bus-Icon" width="225" height="225"/>
+        <image name="car-Icon" width="800" height="800"/>
+        <image name="flight-Icon" width="800" height="800"/>
+        <image name="train-icon" width="800" height="800"/>
+    </resources>
 </document>
