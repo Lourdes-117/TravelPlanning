@@ -57,6 +57,12 @@ class TravelListHomeViewController: UIViewController {
     func seperateDate() {
         (pastTravels, todayTravels, futureTravels) = DateSeperator.seperateDate(allTravels: TravelListHomeViewController.allTravels)
     }
+
+    @IBAction func unwindToTravelListHomeViewController(_ unwindSegue: UIStoryboardSegue) {
+        print("Segue Unwinded To Home Controller")
+        refreshViewController();
+    }
+
     deinit {
         print("Travel List Page is Safe From Memory Leaks")
     }

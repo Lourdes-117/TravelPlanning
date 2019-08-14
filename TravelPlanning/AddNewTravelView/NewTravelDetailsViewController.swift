@@ -11,7 +11,6 @@ import UIKit
 class NewTravelDetailsViewController: UIViewController {
 
     //Views
-
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     //Field And Buttons
@@ -30,6 +29,7 @@ class NewTravelDetailsViewController: UIViewController {
     //DatePicker
     private var dateOfTravelPicker:UIDatePicker?
 
+    let HomeControllerUnwindSegue = "unwindToTravelListHomeViewController"
     var isModeOfTransportSelected = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,11 +152,16 @@ class NewTravelDetailsViewController: UIViewController {
             newTravelModel.modeOfTransport = modeOfTransportSelectionButton.titleLabel?.text!
             newTravelModel.reason = reasonForTravel.text!
             TravelListHomeViewController.allTravels.append(newTravelModel)
-            self.dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: HomeControllerUnwindSegue, sender: self)
             return
         }
         print("Invalid Fields Found")
     }
+
+    @IBAction func onClickCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)

@@ -18,7 +18,7 @@ class getData {
         dispatchGroup.enter();
         var tempTravelModel: TravelModel!
         var travelArray:[TravelModel] = []
-//        let url = "https://anotherapi.000webhostapp.com/jsonresponse.json"
+//        let url = "https://learningwebapifortravelapp.000webhostapp.com/jsonResponse.json"
 //        let urlObject = URL(string: url)
         let urlObject = Bundle.main.url(forResource: "allTravelsDataApi", withExtension: "json")
 
