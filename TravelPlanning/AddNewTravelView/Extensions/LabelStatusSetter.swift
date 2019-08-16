@@ -11,7 +11,7 @@ extension UILabel {
     public func setStatusForLabel(ofTextField textField: UITextField?, ofTextView textView:UITextView?, validityStatus IsValid:Bool) {
         self.isHidden = false
         if(IsValid) {
-            self.text! = RegistrationStatus.VALID_FIELD.rawValue
+            self.text! = RegistrationStatus.VALID_FIELD
             self.textColor = Colors.GREEN
             guard let textFieldUnwrapped = textField else {
                 textView!.setBottomBorder(withColor: Colors.DARK_BLUE.cgColor)
@@ -19,7 +19,7 @@ extension UILabel {
             }
             textFieldUnwrapped.setBottomBorder(withColor: Colors.DARK_BLUE.cgColor)
         } else {
-            self.text! = RegistrationStatus.INVALID_FIELD.rawValue
+            self.text! = RegistrationStatus.INVALID_FIELD
             self.textColor = Colors.RED
             guard let textFieldUnwrapped = textField else {
                 textView!.setBottomBorder(withColor: Colors.RED.cgColor)

@@ -21,11 +21,11 @@ extension TravelListHomeViewController: UITableViewDelegate {
         button.tag = section
         switch section {
         case 0:
-            button.setTitle(TravelDates.PAST_TRAVELS.rawValue, for: .normal)
+            button.setTitle(TravelDates.PAST_TRAVELS, for: .normal)
         case 1:
-            button.setTitle(TravelDates.TODAY_TRAVELS.rawValue, for: .normal)
+            button.setTitle(TravelDates.TODAY_TRAVELS, for: .normal)
         case 2:
-            button.setTitle(TravelDates.FUTURE_TRAVELS.rawValue, for: .normal)
+            button.setTitle(TravelDates.FUTURE_TRAVELS, for: .normal)
         default:
             print(Errors.UNEXPECTED_INDEX)
         }

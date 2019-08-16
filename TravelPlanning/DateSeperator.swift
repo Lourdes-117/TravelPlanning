@@ -15,7 +15,7 @@ class DateSeperator {
 
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = DateFormat.DATE_FORMAT.rawValue
+        dateFormatter.dateFormat = DateFormat.DATE_FORMAT
 
         let todayDateString = dateFormatter.string(from: date)
         let todayDate = dateFormatter.date(from:todayDateString)!

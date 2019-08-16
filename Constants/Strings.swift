@@ -6,36 +6,36 @@
 //  Copyright © 2019 Tringapps. All rights reserved.
 //
 
-enum DateFormat:String {
-    case DATE_FORMAT = "dd/MM/yyyy"
+struct DateFormat {
+    static let DATE_FORMAT:String = "dd/MM/yyyy"
 }
 
-enum TravelDates:String {
-    case PAST_TRAVELS = "Past Travels"
-    case TODAY_TRAVELS = "Today's Travels"
-    case FUTURE_TRAVELS = "Future Travels"
+struct TravelDates {
+    static let  PAST_TRAVELS:String = "Past Travels"
+    static let  TODAY_TRAVELS:String = "Today's Travels"
+    static let  FUTURE_TRAVELS:String = "Future Travels"
 }
 
-enum ModeOfTransports:String {
-    case FLIGHT = "Flight"
-    case MOTORBIKE = "Motorbike"
-    case CAR = "Car"
-    case BUS =  "Bus"
-    case TRAIN =  "Train"
+struct ModeOfTransports {
+    static let FLIGHT:String = "Flight"
+    static let MOTORBIKE:String = "Motorbike"
+    static let CAR:String = "Car"
+    static let BUS:String =  "Bus"
+    static let TRAIN:String =  "Train"
 }
 
-enum Errors:String {
-    case UNEXPECTED_INDEX = "Internal Error: Unexpedted Index Found"
-    case INVALID_MODE_OF_TRANSPORT = "Internal Error: Invalid Mode Of Transport"
+struct Errors {
+    static let UNEXPECTED_INDEX:String = "Internal Error: Unexpedted Index Found"
+    static let INVALID_MODE_OF_TRANSPORT:String = "Internal Error: Invalid Mode Of Transport"
 }
 
-enum Regex:String {
-    case LOCATION = "([A-Za-z\\s]){1,}"
-    case REASON = "([\\s\\S])"
-    case VALID_DATE = "(([0-9]{1,2})[//]([0-9]{1,2})[//]([0-9]{1,4}))"
+struct Regex {
+    static let LOCATION:String = "([A-Za-z\\s]){1,}"
+    static let REASON:String = "([\\s\\S])"
+    static let VALID_DATE:String = "(([0-9]{1,2})[//]([0-9]{1,2})[//]([0-9]{1,4}))"
 }
 
-enum RegistrationStatus:String {
-    case VALID_FIELD = "Valid"
-    case INVALID_FIELD = "Invalid"
+struct RegistrationStatus {
+    static let VALID_FIELD:String = "Valid"
+    static let INVALID_FIELD:String = "Invalid"
 }

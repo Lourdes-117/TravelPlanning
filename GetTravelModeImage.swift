@@ -10,15 +10,15 @@ import UIKit
 class GetTravelModeImage {
     class func getImage(ofString modeOfTransport:String) -> UIImage {
         switch modeOfTransport {
-        case ModeOfTransports.FLIGHT.rawValue:
+        case ModeOfTransports.FLIGHT:
             return #imageLiteral(resourceName: "flight-Icon")
-        case ModeOfTransports.MOTORBIKE.rawValue:
+        case ModeOfTransports.MOTORBIKE:
             return #imageLiteral(resourceName: "bike-Icon")
-        case ModeOfTransports.CAR.rawValue:
+        case ModeOfTransports.CAR:
             return #imageLiteral(resourceName: "car-Icon")
-        case ModeOfTransports.BUS.rawValue:
+        case ModeOfTransports.BUS:
             return #imageLiteral(resourceName: "bus-Icon")
-        case ModeOfTransports.TRAIN.rawValue:
+        case ModeOfTransports.TRAIN:
             return #imageLiteral(resourceName: "train-icon")
         default:
             print()
@@ -29,18 +29,18 @@ class GetTravelModeImage {
     class func getString(ofImage modeOfTransport:UIImage) -> String {
         switch modeOfTransport {
         case #imageLiteral(resourceName: "flight-Icon"):
-            return ModeOfTransports.FLIGHT.rawValue
+            return ModeOfTransports.FLIGHT
         case #imageLiteral(resourceName: "bike-Icon"):
-            return ModeOfTransports.MOTORBIKE.rawValue
+            return ModeOfTransports.MOTORBIKE
         case #imageLiteral(resourceName: "car-Icon"):
-            return ModeOfTransports.CAR.rawValue
+            return ModeOfTransports.CAR
         case #imageLiteral(resourceName: "bus-Icon"):
-            return ModeOfTransports.BUS.rawValue
+            return ModeOfTransports.BUS
         case #imageLiteral(resourceName: "train-icon"):
-            return ModeOfTransports.TRAIN.rawValue
+            return ModeOfTransports.TRAIN
         default:
             print()
         }
-        return ModeOfTransports.FLIGHT.rawValue
+        return ModeOfTransports.FLIGHT
     }
 }

@@ -109,7 +109,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
 
     func initializeDatePicker() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = DateFormat.DATE_FORMAT.rawValue
+        dateFormatter.dateFormat = DateFormat.DATE_FORMAT
         let defaultDate = dateFormatter.date(from: dateOfJourney.text!)
         dateOfJourneyPicker = UIDatePicker()
         dateOfJourneyPicker?.datePickerMode = .date
@@ -120,7 +120,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
 
     @objc func  datechange(datepick:UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = DateFormat.DATE_FORMAT.rawValue
+        dateFormatter.dateFormat = DateFormat.DATE_FORMAT
         dateOfJourney.text = dateFormatter.string(from: datepick.date)
     }
 
@@ -173,13 +173,13 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     func checkFromLocaion() -> Bool{
-        let isValid = fromLocation.text!.isOfValidFormat(Regex.LOCATION.rawValue)
+        let isValid = fromLocation.text!.isOfValidFormat(Regex.LOCATION)
         fromError.setStatusForLabel(ofTextField: fromLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
 
     func checkToLocaion() -> Bool{
-        let isValid = toLocation.text!.isOfValidFormat(Regex.LOCATION.rawValue)
+        let isValid = toLocation.text!.isOfValidFormat(Regex.LOCATION)
         toError.setStatusForLabel(ofTextField: toLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
@@ -191,7 +191,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     func checkDateOfTravel() -> Bool {
-        let isValid = dateOfJourney.text!.isOfValidFormat(Regex.VALID_DATE.rawValue)
+        let isValid = dateOfJourney.text!.isOfValidFormat(Regex.VALID_DATE)
         dateError.setStatusForLabel(ofTextField: dateOfJourney, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
