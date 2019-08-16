@@ -48,7 +48,7 @@ extension TravelListHomeViewController:UITableViewDataSource {
             travelTime = TravelTime.Future
         default:
             travelTime = TravelTime.Past
-            print("Internal Error: Invalid Sexrion Accessed")
+            print("Internal Error: Invalid Section Accessed")
         }
         cell.setValues(travelDetail: travelDetailsToShowInSection[indexPath.row], travelTime: travelTime)
         return cell
