@@ -18,6 +18,4 @@ struct TravelModel: Decodable, Equatable {
     static func == (left: TravelModel, right: TravelModel) -> Bool{
         return (left.id == right.id )
     }
-
-    init(){}
 }

@@ -32,6 +32,7 @@ class NewTravelDetailsViewController: UIViewController {
     let HomeControllerUnwindSegue = "unwindToTravelListHomeViewController"
     let animationTimeDuration:TimeInterval = 0.3
     var isModeOfTransportSelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("New Travel Details Veiw Loaded")
@@ -40,7 +41,7 @@ class NewTravelDetailsViewController: UIViewController {
         applyAllFieldThemes()
     }
 
-    func applyAllFieldThemes(){
+    func applyAllFieldThemes() {
         scrollView.applyViewTheme()
         contentView.applyViewTheme()
         fromLocation.applyTextFieldTheme()
@@ -69,7 +70,7 @@ class NewTravelDetailsViewController: UIViewController {
         reasonForTravel.delegate = self
     }
 
-    @objc func  datechange(datepick:UIDatePicker){
+    @objc func  datechange(datepick:UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormat.DATE_FORMAT
         dateOfTravel.text = dateFormatter.string(from: datepick.date)
@@ -103,7 +104,7 @@ class NewTravelDetailsViewController: UIViewController {
         toggleButtonListHiddenProperty(withDuration: animationTimeDuration)
     }
 
-    func toggleButtonListHiddenProperty(withDuration duration:TimeInterval){
+    func toggleButtonListHiddenProperty(withDuration duration:TimeInterval) {
         UIView.animate(withDuration:duration) {
             self.modeOfTransportButtons.forEach{(button) in
                 button.isHidden = !button.isHidden
@@ -118,19 +119,19 @@ class NewTravelDetailsViewController: UIViewController {
         isModeOfTransportSelected = true
     }
 
-    func checkFromLocaion() -> Bool{
+    func checkFromLocaion() -> Bool {
         let isValid = fromLocation.text!.isOfValidFormat(Regex.LOCATION)
         fromError.setStatusForLabel(ofTextField: fromLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
 
-    func checkToLocaion() -> Bool{
+    func checkToLocaion() -> Bool {
         let isValid = toLocation.text!.isOfValidFormat(Regex.LOCATION)
         toError.setStatusForLabel(ofTextField: toLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
 
-    func checkReasonForTravel() -> Bool{
+    func checkReasonForTravel() -> Bool {
         let isValid = reasonForTravel.text! != ""
         reasonError.setStatusForLabel(ofTextField: nil, ofTextView: reasonForTravel, validityStatus: isValid)
         return isValid
@@ -144,7 +145,7 @@ class NewTravelDetailsViewController: UIViewController {
 
     @IBAction func onClickDoneButton(_ sender: Any) {
         let isAllFieldsValid = checkFromLocaion() && checkToLocaion() && checkReasonForTravel() && checkDateOfTravel() && isModeOfTransportSelected
-        if(isAllFieldsValid){
+        if(isAllFieldsValid) {
             print("All Fields Are Valid")
             var newTravelModel:TravelModel = TravelModel()
             TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId + 1

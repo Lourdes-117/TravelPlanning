@@ -54,7 +54,6 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         for something in TravelListHomeViewController.allTravels {
-            print(index)
             if(something == travelDetails){
                 print(something)
                 break;
