@@ -30,7 +30,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     let modeOfTravelSelectionSegueIdentifier = "ModeOfTravelSelectionViewSegueIdentifier"
     let editTravelText = "Edit This Travel"
     let okText = "Ok"
-    var travelDetails: TravelModel!
+    var selectedTravelDetails: TravelModel!
     var indexToChange = 0
 
     override func viewDidLoad() {
@@ -54,7 +54,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         for something in TravelListHomeViewController.allTravels {
-            if(something == travelDetails){
+            if(something == selectedTravelDetails){
                 print(something)
                 break;
             }
@@ -91,11 +91,11 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     func setDefaultValues() {
-        modeOfTransport.image = GetTravelModeImage.getImage(ofString: travelDetails.modeOfTransport)
-        dateOfJourney.text = travelDetails.date
-        fromLocation.text = travelDetails.from
-        toLocation.text = travelDetails.to
-        reasonForTravel.text = travelDetails.reason
+        modeOfTransport.image = GetTravelModeImage.getImage(ofString: selectedTravelDetails.modeOfTransport)
+        dateOfJourney.text = selectedTravelDetails.date
+        fromLocation.text = selectedTravelDetails.from
+        toLocation.text = selectedTravelDetails.to
+        reasonForTravel.text = selectedTravelDetails.reason
     }
 
     func setAllFiendsEnabledStatus(withBool boolean:Bool) {
@@ -161,8 +161,9 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         return isAllFieldsValid
     }
 
-    func updateCell(){
+    func updateCell() {
         var travelModelToUpdate = TravelModel()
+        travelModelToUpdate.id = selectedTravelDetails.id
         travelModelToUpdate.from = fromLocation.text!
         travelModelToUpdate.to = toLocation.text!
         travelModelToUpdate.date = dateOfJourney.text!
@@ -171,19 +172,19 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
     }
 
-    func checkFromLocaion() -> Bool{
+    func checkFromLocaion() -> Bool {
         let isValid = fromLocation.text!.isOfValidFormat(Regex.LOCATION)
         fromError.setStatusForLabel(ofTextField: fromLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
 
-    func checkToLocaion() -> Bool{
+    func checkToLocaion() -> Bool {
         let isValid = toLocation.text!.isOfValidFormat(Regex.LOCATION)
         toError.setStatusForLabel(ofTextField: toLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
 
-    func checkReasonForTravel() -> Bool{
+    func checkReasonForTravel() -> Bool {
         let isValid = reasonForTravel.text! != ""
         reasonError.setStatusForLabel(ofTextField: nil, ofTextView: reasonForTravel, validityStatus: isValid)
         return isValid

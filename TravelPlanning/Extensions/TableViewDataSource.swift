@@ -74,6 +74,6 @@ extension TravelListHomeViewController:UITableViewDataSource {
         guard let travelDecriptionViewController = segue.destination as? TravelDecriptionViewController else {
             return;
         }
-        travelDecriptionViewController.travelDetails = selectedTravelDetail
+        travelDecriptionViewController.selectedTravelDetails = selectedTravelDetail
     }
 }
