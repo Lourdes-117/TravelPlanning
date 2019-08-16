@@ -139,7 +139,10 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         print("Edit Travel Button Clicked")
         if(fromLocation.isEnabled) {
             if(!isAllFieldsValid()) {
-                let invalidFieldAlert = AlertCreator.createAlert(title: "Invalid Fields", message: "Invalid Fields Founds. Please Check Again", buttonTitle: "Ok")
+                let alertTitle:String = "Invalid Fields"
+                let alertMessage:String = "Invalid Fields Founds. Please Check Again"
+                let alertButtonTitle:String = "Ok"
+                let invalidFieldAlert = AlertCreator.createAlert(title: alertTitle, message: alertMessage, buttonTitle: alertButtonTitle)
                 self.present(invalidFieldAlert, animated: true, completion: nil)
                 return
             }

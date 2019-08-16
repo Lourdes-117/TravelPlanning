@@ -30,6 +30,7 @@ class NewTravelDetailsViewController: UIViewController {
     private var dateOfTravelPicker:UIDatePicker?
 
     let HomeControllerUnwindSegue = "unwindToTravelListHomeViewController"
+    let animationTimeDuration:TimeInterval = 0.3
     var isModeOfTransportSelected = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,11 +100,11 @@ class NewTravelDetailsViewController: UIViewController {
 
     @IBAction func onClickSelectATravelMode(_ sender: Any) {
         view.endEditing(true)
-        toggleButtonListHiddenProperty(withDuration: 0.3)
+        toggleButtonListHiddenProperty(withDuration: animationTimeDuration)
     }
 
     func toggleButtonListHiddenProperty(withDuration duration:TimeInterval){
-        UIView.animate(withDuration: duration) {
+        UIView.animate(withDuration:duration) {
             self.modeOfTransportButtons.forEach{(button) in
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
@@ -113,7 +114,7 @@ class NewTravelDetailsViewController: UIViewController {
 
     @IBAction func onClickTransportMode(_ sender: UIButton) {
         modeOfTransportSelectionButton.setTitle(sender.titleLabel?.text!, for: .normal)
-        toggleButtonListHiddenProperty(withDuration: 0.3)
+        toggleButtonListHiddenProperty(withDuration: animationTimeDuration)
         isModeOfTransportSelected = true
     }
 

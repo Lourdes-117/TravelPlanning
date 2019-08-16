@@ -10,8 +10,13 @@ import UIKit
 extension TravelListHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let button = UIButton(type: .system)
+        let sectionHeaderButtonFontSize:CGFloat = 16.0
+        let sectionHeaderShadowAlpha :CGFloat = 0.8
+        let sectionHeaderShadowOpacity:Float = 0.8
+        let sectionHeaderShadhowOffsetWidth:CGFloat = 2
+        let sectionHeaderShadowOffsetHeight:CGFloat = 8
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: sectionHeaderButtonFontSize)
         button.addTarget(self, action: #selector(expandOrCloseSection), for: .touchUpInside)
         button.tag = section
         switch section {
@@ -26,9 +31,9 @@ extension TravelListHomeViewController: UITableViewDelegate {
         }
         button.backgroundColor = Colors.ORANGE
         button.layer.masksToBounds = false
-        button.layer.shadowColor = UIColor.black.withAlphaComponent(0.8).cgColor
-        button.layer.shadowOffset = CGSize(width: 2, height: 8)
-        button.layer.shadowOpacity = 0.8
+        button.layer.shadowColor = UIColor.black.withAlphaComponent(sectionHeaderShadowAlpha).cgColor
+        button.layer.shadowOffset = CGSize(width: sectionHeaderShadhowOffsetWidth, height: sectionHeaderShadowOffsetHeight)
+        button.layer.shadowOpacity = sectionHeaderShadowOpacity
         return button;
     }
 

@@ -18,9 +18,11 @@ class getData {
         dispatchGroup.enter();
         var tempTravelModel: TravelModel!
         var travelArray:[TravelModel] = []
+        let fileName:String = "allTravelsDataApi"
+        let fileExtension:String = "json"
 //        let url = "https://learningwebapifortravelapp.000webhostapp.com/jsonResponse.json"
 //        let urlObject = URL(string: url)
-        let urlObject = Bundle.main.url(forResource: "allTravelsDataApi", withExtension: "json")
+        let urlObject = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
 
         URLSession.shared.dataTask(with: urlObject!) {(data, response, error) in
             print("This is working")

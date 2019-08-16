@@ -129,8 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				5ECD94412304371D00AD6A63 /* AlertCreator.swift */,
-				5ECD942F2303D0DC00AD6A63 /* Extensions */,
 				5E06D56B2302896C00DE6EE1 /* GetTravelModeImage.swift */,
+				5ECD942F2303D0DC00AD6A63 /* Extensions */,
 				5EAF1527230129F400FC19DA /* Constants */,
 				5EC25AA522FC3FB400D9DA37 /* TravelPlanning */,
 				5EC25AA422FC3FB400D9DA37 /* Products */,
