@@ -44,18 +44,36 @@ extension TravelListHomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            switch indexPath.section
-            {
+            switch indexPath.section {
             case 0:
+                removeElementFromMainArray(elementToRemove: pastTravels[indexPath.row])
                 pastTravels.remove(at: indexPath.row)
             case 1:
+                removeElementFromMainArray(elementToRemove: todayTravels[indexPath.row])
                 todayTravels.remove(at: indexPath.row)
             case 2:
+                removeElementFromMainArray(elementToRemove: futureTravels[indexPath.row])
                 futureTravels.remove(at: indexPath.row)
             default:
                 print(Errors.UNEXPECTED_INDEX)
             }
             tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
+
+    func removeElementFromMainArray(elementToRemove: TravelModel) {
+        var iterator: Int = 0
+        if TravelListHomeViewController.allTravelDetailsMaxId ==  elementToRemove.id {
+            TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId - 1
+        }
+        for travelModeIterator in TravelListHomeViewController.allTravels {
+            if(travelModeIterator == elementToRemove) {
+                print("Deleted ", travelModeIterator)
+                print(TravelListHomeViewController.allTravels[iterator])
+                TravelListHomeViewController.allTravels.remove(at: iterator)
+                break
+            }
+            iterator = iterator + 1
         }
     }
 
