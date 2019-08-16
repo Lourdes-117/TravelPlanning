@@ -18,11 +18,11 @@ class getData {
         dispatchGroup.enter();
         var tempTravelModel: TravelModel!
         var travelArray:[TravelModel] = []
-        let fileName:String = "allTravelsDataApi"
-        let fileExtension:String = "json"
-//        let url = "https://learningwebapifortravelapp.000webhostapp.com/jsonResponse.json"
-//        let urlObject = URL(string: url)
-        let urlObject = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
+        let url = "https://api.myjson.com/bins/14u2y7"
+        let urlObject = URL(string: url)
+//        let fileName:String = "allTravelsDataApi"
+//        let fileExtension:String = "json"
+//        let urlObject = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
 
         URLSession.shared.dataTask(with: urlObject!) {(data, response, error) in
             print("This is working")
@@ -30,7 +30,16 @@ class getData {
                 guard let data = data else{return}
                 let travels = try JSONDecoder().decode([TravelModel].self, from: data)
                 for travel in travels {
-                    tempTravelModel = TravelModel(mode: travel.modeOfTransport!, from: travel.from, to: travel.to, date: travel.date, reason: travel.reason)
+                    if(TravelListHomeViewController.allTravelDetailsMaxId < travel.id){
+                        TravelListHomeViewController.allTravelDetailsMaxId = travel.id
+                    }
+                    tempTravelModel = TravelModel()
+                    tempTravelModel.id = travel.id
+                    tempTravelModel.modeOfTransport = travel.modeOfTransport
+                    tempTravelModel.from = travel.from
+                    tempTravelModel.to = travel.to
+                    tempTravelModel.date = travel.date
+                    tempTravelModel.reason = travel.reason
                     travelArray.append(tempTravelModel)
                     TravelListHomeViewController.allTravels.append(tempTravelModel);
                 }

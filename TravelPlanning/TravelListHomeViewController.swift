@@ -17,6 +17,7 @@ class TravelListHomeViewController: UIViewController {
     var selectedTravelDetail:TravelModel!
 
     static var allTravels:[TravelModel] = []
+    static var allTravelDetailsMaxId:Int = 0
 
     var pastTravels:[TravelModel] = []
     var todayTravels:[TravelModel] = []

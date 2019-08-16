@@ -147,6 +147,8 @@ class NewTravelDetailsViewController: UIViewController {
         if(isAllFieldsValid){
             print("All Fields Are Valid")
             var newTravelModel:TravelModel = TravelModel()
+            TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId + 1
+            newTravelModel.id = TravelListHomeViewController.allTravelDetailsMaxId
             newTravelModel.from = fromLocation.text!
             newTravelModel.to = toLocation.text!
             newTravelModel.date = dateOfTravel.text!
