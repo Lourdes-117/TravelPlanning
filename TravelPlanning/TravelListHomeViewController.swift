@@ -13,6 +13,7 @@ class TravelListHomeViewController: UIViewController {
     let TravelCell = "TravelReusableIdentity"
     let cellDescriptionSegueIdentifier:String = "CellDescriptionSegueIdentifier"
     let addNewEntrySegueIdentifier:String = "AddNewEntrySegueIdentifier"
+    let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     let dispatchGroup = DispatchGroup()
     var selectedTravelDetail:TravelModel!
 
@@ -26,13 +27,26 @@ class TravelListHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Home View Has Been Loaded")
+        startLoadingActivity()
         initializeTravelData()
         tableView.dataSource = self
         tableView.delegate = self
         dispatchGroup.notify(queue: .main, execute: {
             print("Network Request in complete");
+            self.stopLoadingActivity()
             self.refreshViewController()
             })
+    }
+
+    func startLoadingActivity(){
+        tableView.backgroundView = activityIndicatorView
+        activityIndicatorView.isHidden = false
+        activityIndicatorView.startAnimating()
+    }
+
+    func stopLoadingActivity(){
+        activityIndicatorView.isHidden = true
+        activityIndicatorView.stopAnimating()
     }
 
     override func viewWillAppear(_ animated: Bool) {
