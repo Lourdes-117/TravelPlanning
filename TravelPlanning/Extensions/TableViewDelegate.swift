@@ -61,7 +61,7 @@ extension TravelListHomeViewController: UITableViewDelegate {
         }
     }
 
-    func removeElementFromMainArray(elementToRemove: TravelModel) {
+    fileprivate func removeElementFromMainArray(elementToRemove: TravelModel) {
         var iterator: Int = 0
         if TravelListHomeViewController.allTravelDetailsMaxId ==  elementToRemove.id {
             TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId - 1
@@ -109,7 +109,7 @@ extension TravelListHomeViewController: UITableViewDelegate {
         }
     }
 
-    func getIndicesToModify(array:[TravelModel], section:Int) -> [IndexPath] {
+    fileprivate func getIndicesToModify(array:[TravelModel], section:Int) -> [IndexPath] {
         var indexPathsToReturn:[IndexPath] = []
         for row in array.indices {
             let indexPathToAppend = IndexPath(row: row, section: section)

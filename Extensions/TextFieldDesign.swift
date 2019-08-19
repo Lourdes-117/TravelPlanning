@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITextField {
-    func setBottomBorder(withColor borderColorToSet: CGColor) {
+    public func setBottomBorder(withColor borderColorToSet: CGColor) {
         self.borderStyle = .none
         self.layer.backgroundColor = UIColor.white.cgColor
 
@@ -20,7 +20,7 @@ extension UITextField {
         self.layer.shadowRadius = 0.0
     }
 
-    func applyTextFieldTheme(){
+    public func applyTextFieldTheme(){
         self.setBottomBorder(withColor: Colors.DARK_BLUE.cgColor)
     }
 }

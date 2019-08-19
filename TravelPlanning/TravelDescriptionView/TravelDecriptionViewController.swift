@@ -90,15 +90,15 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
-    func setDefaultValues() {
-        modeOfTransport.image = GetTravelModeImage.getImage(ofString: selectedTravelDetails.modeOfTransport)
+    fileprivate func setDefaultValues() {
+        modeOfTransport.image = GetTravelModeInfo.getImage(ofString: selectedTravelDetails.modeOfTransport)
         dateOfJourney.text = selectedTravelDetails.date
         fromLocation.text = selectedTravelDetails.from
         toLocation.text = selectedTravelDetails.to
         reasonForTravel.text = selectedTravelDetails.reason
     }
 
-    func setAllFiendsEnabledStatus(withBool boolean:Bool) {
+    fileprivate func setAllFiendsEnabledStatus(withBool boolean:Bool) {
         imageViewTapGesture.isEnabled = boolean
         dateOfJourney.isEnabled = boolean
         fromLocation.isEnabled = boolean
@@ -106,7 +106,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         reasonForTravel.isEditable = boolean
     }
 
-    func initializeDatePicker() {
+    fileprivate func initializeDatePicker() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormat.DATE_FORMAT
         let defaultDate = dateFormatter.date(from: dateOfJourney.text!)
@@ -156,41 +156,41 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    func isAllFieldsValid() -> Bool {
+    fileprivate func isAllFieldsValid() -> Bool {
         let isAllFieldsValid = checkFromLocaion() && checkToLocaion() && checkReasonForTravel() && checkDateOfTravel()
         return isAllFieldsValid
     }
 
-    func updateCell() {
+    fileprivate func updateCell() {
         var travelModelToUpdate = TravelModel()
         travelModelToUpdate.id = selectedTravelDetails.id
         travelModelToUpdate.from = fromLocation.text!
         travelModelToUpdate.to = toLocation.text!
         travelModelToUpdate.date = dateOfJourney.text!
         travelModelToUpdate.reason = reasonForTravel.text!
-        travelModelToUpdate.modeOfTransport = GetTravelModeImage.getString(ofImage: modeOfTransport.image!)
+        travelModelToUpdate.modeOfTransport = GetTravelModeInfo.getString(ofImage: modeOfTransport.image!)
         TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
     }
 
-    func checkFromLocaion() -> Bool {
+    fileprivate func checkFromLocaion() -> Bool {
         let isValid = fromLocation.text!.isOfValidFormat(Regex.LOCATION)
         fromError.setStatusForLabel(ofTextField: fromLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
 
-    func checkToLocaion() -> Bool {
+    fileprivate func checkToLocaion() -> Bool {
         let isValid = toLocation.text!.isOfValidFormat(Regex.LOCATION)
         toError.setStatusForLabel(ofTextField: toLocation, ofTextView: nil, validityStatus: isValid)
         return isValid
     }
 
-    func checkReasonForTravel() -> Bool {
+    fileprivate func checkReasonForTravel() -> Bool {
         let isValid = reasonForTravel.text! != ""
         reasonError.setStatusForLabel(ofTextField: nil, ofTextView: reasonForTravel, validityStatus: isValid)
         return isValid
     }
 
-    func checkDateOfTravel() -> Bool {
+    fileprivate func checkDateOfTravel() -> Bool {
         let isValid = dateOfJourney.text!.isOfValidFormat(Regex.VALID_DATE)
         dateError.setStatusForLabel(ofTextField: dateOfJourney, ofTextView: nil, validityStatus: isValid)
         return isValid

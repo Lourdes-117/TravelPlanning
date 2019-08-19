@@ -22,7 +22,7 @@ class TravelCell: UITableViewCell {
         self.toLocation.text = travelDetail.to
         self.dateOfTravel.text = travelDetail.date
         self.descriptionOfTravel.text = travelDetail.reason
-        self.travelModeImage.image = GetTravelModeImage.getImage(ofString: travelDetail.modeOfTransport)
+        self.travelModeImage.image = GetTravelModeInfo.getImage(ofString: travelDetail.modeOfTransport)
         setCardViewDesign()
         switch travelTime {
         case .Past:

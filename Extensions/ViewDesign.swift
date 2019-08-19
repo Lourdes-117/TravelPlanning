@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIView {
-    func setGradientBackground(startColor:UIColor, endColor:UIColor) {
+    public func setGradientBackground(startColor:UIColor, endColor:UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
@@ -18,7 +18,7 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
 
-    func applyViewTheme(){
+    public func applyViewTheme(){
         self.layer.masksToBounds = false
         self.layer.cornerRadius = 15;
         self.layer.shadowColor = UIColor.black.cgColor;
@@ -27,7 +27,7 @@ extension UIView {
         self.layer.shadowOffset = CGSize(width: 2, height: 2)
     }
 
-    func removeViewTheme(){
+    public func removeViewTheme(){
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 0;
         self.layer.shadowRadius = 0;

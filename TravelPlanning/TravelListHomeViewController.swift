@@ -35,16 +35,16 @@ class TravelListHomeViewController: UIViewController {
             print("Network Request in complete");
             self.stopLoadingActivity()
             self.refreshViewController()
-            })
+        })
     }
 
-    func startLoadingActivity(){
+    fileprivate func startLoadingActivity(){
         tableView.backgroundView = activityIndicatorView
         activityIndicatorView.isHidden = false
         activityIndicatorView.startAnimating()
     }
 
-    func stopLoadingActivity(){
+    fileprivate func stopLoadingActivity(){
         activityIndicatorView.isHidden = true
         activityIndicatorView.stopAnimating()
     }
@@ -61,15 +61,32 @@ class TravelListHomeViewController: UIViewController {
         self.tableView.reloadData()
     }
 
-    func initializeTravelData(){
-        TravelListHomeViewController.allTravels = getData.getAllTravels(dispatchGroup: dispatchGroup)
+    fileprivate func initializeTravelData() {
+        let urlToFetchData:String = "https://api.myjson.com/bins/14u2y7"
+        getData.getJsonArray(fromUrl: urlToFetchData, dispatchGroup: dispatchGroup, completion: {
+            (travels: [TravelModel]) in
+            var tempTravelModel: TravelModel!
+            for travel in travels {
+                if(TravelListHomeViewController.allTravelDetailsMaxId < travel.id){
+                    TravelListHomeViewController.allTravelDetailsMaxId = travel.id
+                }
+                tempTravelModel = TravelModel()
+                tempTravelModel.id = travel.id
+                tempTravelModel.modeOfTransport = travel.modeOfTransport
+                tempTravelModel.from = travel.from
+                tempTravelModel.to = travel.to
+                tempTravelModel.date = travel.date
+                tempTravelModel.reason = travel.reason
+                TravelListHomeViewController.allTravels.append(tempTravelModel);
+            }
+        });
     }
     
     @IBAction func onClickAddAnotherTravel(_ sender: Any) {
         performSegue(withIdentifier: addNewEntrySegueIdentifier, sender: self)
     }
 
-    func seperateDate() {
+    fileprivate func seperateDate() {
         (pastTravels, todayTravels, futureTravels) = DateSeperator.seperateDate(allTravels: TravelListHomeViewController.allTravels)
     }
 

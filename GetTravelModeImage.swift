@@ -7,8 +7,8 @@
 //
 
 import UIKit
-class GetTravelModeImage {
-    class func getImage(ofString modeOfTransport:String) -> UIImage {
+class GetTravelModeInfo {
+    public class func getImage(ofString modeOfTransport:String) -> UIImage {
         switch modeOfTransport {
         case ModeOfTransports.FLIGHT:
             return #imageLiteral(resourceName: "flight-Icon")
@@ -26,7 +26,7 @@ class GetTravelModeImage {
         return #imageLiteral(resourceName: "flight-Icon")
     }
 
-    class func getString(ofImage modeOfTransport:UIImage) -> String {
+    public class func getString(ofImage modeOfTransport:UIImage) -> String {
         switch modeOfTransport {
         case #imageLiteral(resourceName: "flight-Icon"):
             return ModeOfTransports.FLIGHT

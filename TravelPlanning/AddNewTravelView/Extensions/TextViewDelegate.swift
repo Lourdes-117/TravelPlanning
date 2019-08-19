@@ -10,6 +10,6 @@ import UIKit
 extension NewTravelDetailsViewController:UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         view.endEditing(true)
-        if(checkReasonForTravel()){}
+        let _ = checkReasonForTravel()
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITextView {
-    func setBottomBorder(withColor borderColorToSet: CGColor) {
+    public func setBottomBorder(withColor borderColorToSet: CGColor) {
         self.layer.backgroundColor = UIColor.white.cgColor
 
         self.layer.masksToBounds = false
@@ -19,7 +19,7 @@ extension UITextView {
         self.layer.shadowRadius = 0.0
     }
 
-    func applyTextViewTheme(){
+    public func applyTextViewTheme(){
         self.setBottomBorder(withColor: Colors.DARK_BLUE.cgColor)
     }
 }

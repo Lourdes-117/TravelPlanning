@@ -13,6 +13,7 @@ class NewTravelDetailsViewController: UIViewController {
     //Views
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+
     //Field And Buttons
     @IBOutlet weak var fromLocation: UITextField!
     @IBOutlet weak var toLocation: UITextField!
@@ -26,6 +27,7 @@ class NewTravelDetailsViewController: UIViewController {
     @IBOutlet weak var toError: UILabel!
     @IBOutlet weak var dateError: UILabel!
     @IBOutlet weak var reasonError: UILabel!
+
     //DatePicker
     private var dateOfTravelPicker:UIDatePicker?
 
@@ -63,7 +65,7 @@ class NewTravelDetailsViewController: UIViewController {
         dateOfTravelPicker?.date = defaultDate!
     }
 
-    func initializeDelegates() {
+    fileprivate func initializeDelegates() {
         fromLocation.delegate = self
         toLocation.delegate = self
         dateOfTravel.delegate = self
@@ -76,7 +78,7 @@ class NewTravelDetailsViewController: UIViewController {
         dateOfTravel.text = dateFormatter.string(from: datepick.date)
     }
 
-    func addKeyboardObersers() {
+    fileprivate func addKeyboardObersers() {
         NotificationCenter.default.addObserver(self, selector: #selector(moveScrollViewUp(notification:)), name: UIResponder.keyboardWillHideNotification , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(moveScrollViewUp(notification:)), name: UIResponder.keyboardWillChangeFrameNotification , object: nil)
     }
@@ -104,7 +106,7 @@ class NewTravelDetailsViewController: UIViewController {
         toggleButtonListHiddenProperty(withDuration: animationTimeDuration)
     }
 
-    func toggleButtonListHiddenProperty(withDuration duration:TimeInterval) {
+    fileprivate func toggleButtonListHiddenProperty(withDuration duration:TimeInterval) {
         UIView.animate(withDuration:duration) {
             self.modeOfTransportButtons.forEach{(button) in
                 button.isHidden = !button.isHidden
@@ -137,7 +139,7 @@ class NewTravelDetailsViewController: UIViewController {
         return isValid
     }
 
-    func checkDateOfTravel() -> Bool {
+    fileprivate func checkDateOfTravel() -> Bool {
         let isValid = dateOfTravel.text!.isOfValidFormat(Regex.VALID_DATE)
         dateError.setStatusForLabel(ofTextField: dateOfTravel, ofTextView: nil, validityStatus: isValid)
         return isValid
@@ -160,6 +162,11 @@ class NewTravelDetailsViewController: UIViewController {
             return
         }
         print("Invalid Fields Found")
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("Touching Outside the View")
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func onClickCancelButton(_ sender: Any) {

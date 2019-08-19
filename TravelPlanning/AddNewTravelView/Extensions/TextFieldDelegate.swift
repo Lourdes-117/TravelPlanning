@@ -29,9 +29,9 @@ extension NewTravelDetailsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField {
         case fromLocation:
-            if(checkFromLocaion()){}
+            let _ = checkFromLocaion()
         case toLocation:
-            if(checkToLocaion()){}
+            let _ = checkToLocaion()
         default:
             print("")
         }

@@ -33,6 +33,11 @@ class ModeOfTravelSelectionViewController: UIViewController {
     @IBAction func onClickCancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("Touching Outside the View")
+        self.dismiss(animated: true, completion: nil)
+    }
 
     deinit {
         print("Mode Of Travel Selection View Controller Is Safe From Memory Leaks")
