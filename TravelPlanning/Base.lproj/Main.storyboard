@@ -41,7 +41,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ir-TX-6eD">
-                                                    <rect key="frame" x="10" y="10" width="876" height="199.5"/>
+                                                    <rect key="frame" x="10" y="10" width="355" height="199.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLs-Ij-QqW">
                                                             <rect key="frame" x="243" y="72" width="35" height="21"/>
@@ -207,10 +207,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="OfY-Cw-4q9">
-                                <rect key="frame" x="19" y="202" width="376" height="502"/>
+                                <rect key="frame" x="19" y="139.5" width="376" height="627"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="URG-MP-RHE">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="502"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="627"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Another Travel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGr-Dc-9Vb">
                                                 <rect key="frame" x="100.5" y="25" width="175" height="24"/>
@@ -448,7 +448,7 @@
                             <constraint firstItem="OfY-Cw-4q9" firstAttribute="centerX" secondItem="67X-Yv-gJw" secondAttribute="centerX" id="6PT-Mv-wPx"/>
                             <constraint firstItem="OfY-Cw-4q9" firstAttribute="width" secondItem="6Gi-j1-e0a" secondAttribute="width" multiplier="200:220" id="H3E-O7-nkE"/>
                             <constraint firstItem="OfY-Cw-4q9" firstAttribute="centerY" secondItem="67X-Yv-gJw" secondAttribute="centerY" id="f2V-YT-8PN"/>
-                            <constraint firstItem="OfY-Cw-4q9" firstAttribute="height" secondItem="6Gi-j1-e0a" secondAttribute="height" multiplier="280:500" id="mZe-nP-Kyu"/>
+                            <constraint firstItem="OfY-Cw-4q9" firstAttribute="height" secondItem="6Gi-j1-e0a" secondAttribute="height" multiplier="350:500" id="mZe-nP-Kyu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="67X-Yv-gJw"/>
                     </view>
