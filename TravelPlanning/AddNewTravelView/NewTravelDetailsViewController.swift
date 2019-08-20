@@ -159,6 +159,8 @@ class NewTravelDetailsViewController: UIViewController {
             newTravelModel.reason = reasonForTravel.text!
             TravelListHomeViewController.allTravels.append(newTravelModel)
             performSegue(withIdentifier: HomeControllerUnwindSegue, sender: self)
+            //Insert Row in Database
+            SqliteConnection.insertRow(withDetails: [newTravelModel])
             return
         }
         print("Invalid Fields Found")

@@ -25,6 +25,7 @@ class SqliteConnection {
              let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let fileUrl = documentDirectory.appendingPathComponent(Database.travelsDatabase).appendingPathExtension(Database.sqlite3Extension)
             databaseConnection = try Connection(fileUrl.path )
+            print("Initialized Database")
         } catch {
             print("Database Error ", error)
         }
@@ -58,7 +59,7 @@ class SqliteConnection {
                                                  Database.Expressions.reason <- travelModel.reason)
             do {
                 try databaseConnection.run(insertUser)
-                print("Inserted User")
+                print("Inserted New Travel Details")
             } catch {
                 print("Error In Inserting Element ", error)
             }
@@ -66,6 +67,7 @@ class SqliteConnection {
     }
 
     public static func getAllRows() -> AnySequence<Row>? {
+        print("Returning All Rows In Table")
         do {
             let travels = try databaseConnection.prepare(travelsTable)
             return travels
@@ -84,6 +86,7 @@ class SqliteConnection {
                                                  Database.Expressions.reason <- travelModel.reason)
         do {
             try databaseConnection.run(updateUser)
+            print("Travel Details Updated")
         } catch {
             print("Error In Updating Data ",error)
         }
@@ -94,20 +97,9 @@ class SqliteConnection {
         let deleteTravel = travelToDelete.delete()
         do {
             try databaseConnection.run(deleteTravel)
+            print("User Details Deleted")
         } catch {
             print("Error In Deleting Entry ",error)
-        }
-    }
-
-    public static func printAllRows() {
-        print("Listing Users")
-        do {
-            let travels = try databaseConnection.prepare(travelsTable)
-            for travel in travels {
-                print("id: ", travel[Database.Expressions.id], "fromLocation", travel[Database.Expressions.fromLocation]!, "toLocation", travel[Database.Expressions.toLocation])
-            }
-        } catch {
-            print("Data Fetch Error ", error )
         }
     }
 }
