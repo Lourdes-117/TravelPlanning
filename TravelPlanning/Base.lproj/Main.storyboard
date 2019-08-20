@@ -41,7 +41,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ir-TX-6eD">
-                                                    <rect key="frame" x="10" y="10" width="355" height="199.5"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="199.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLs-Ij-QqW">
                                                             <rect key="frame" x="243" y="72" width="35" height="21"/>
@@ -187,7 +187,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Travels" largeTitleDisplayMode="always" id="c7n-3l-ZqU"/>
+                    <navigationItem key="navigationItem" title="My Travels" largeTitleDisplayMode="always" id="c7n-3l-ZqU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="zGt-Xf-1jf">
+                            <connections>
+                                <action selector="onClickRefreshButton:" destination="BYZ-38-t0r" id="TnZ-ca-qvV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="hdX-TS-ah1" id="x8h-PE-9wX"/>
                         <segue destination="L9E-bL-7is" kind="show" identifier="CellDescriptionSegueIdentifier" id="2Jp-4d-qDk"/>

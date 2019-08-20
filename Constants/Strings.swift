@@ -39,3 +39,7 @@ struct RegistrationStatus {
     static let VALID_FIELD:String = "Valid"
     static let INVALID_FIELD:String = "Invalid"
 }
+
+struct Defaults {
+    static let IS_DATABASE_UPDATED = "isDatabaseUpdated"
+}

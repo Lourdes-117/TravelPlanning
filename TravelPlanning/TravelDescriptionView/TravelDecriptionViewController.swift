@@ -170,6 +170,8 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         travelModelToUpdate.reason = reasonForTravel.text!
         travelModelToUpdate.modeOfTransport = GetTravelModeInfo.getString(ofImage: modeOfTransport.image!)
         TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
+        //Update Entry in Sqlite
+        SqliteConnection.updateTravel(ofId: selectedTravelDetails.id, with: travelModelToUpdate)
     }
 
     fileprivate func checkFromLocaion() -> Bool {

@@ -32,7 +32,6 @@ class TravelListHomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         dispatchGroup.notify(queue: .main, execute: {
-            print("Network Request in complete");
             self.stopLoadingActivity()
             self.refreshViewController()
         })
@@ -63,23 +62,13 @@ class TravelListHomeViewController: UIViewController {
 
     fileprivate func initializeTravelData() {
         let urlToFetchData:String = "https://api.myjson.com/bins/14u2y7"
-        getData.getJsonArray(fromUrl: urlToFetchData, dispatchGroup: dispatchGroup, completion: {
-            (travels: [TravelModel]) in
-            var tempTravelModel: TravelModel!
-            for travel in travels {
-                if(TravelListHomeViewController.allTravelDetailsMaxId < travel.id){
-                    TravelListHomeViewController.allTravelDetailsMaxId = travel.id
-                }
-                tempTravelModel = TravelModel()
-                tempTravelModel.id = travel.id
-                tempTravelModel.modeOfTransport = travel.modeOfTransport
-                tempTravelModel.from = travel.from
-                tempTravelModel.to = travel.to
-                tempTravelModel.date = travel.date
-                tempTravelModel.reason = travel.reason
-                TravelListHomeViewController.allTravels.append(tempTravelModel);
-            }
-        });
+        if(UserDefaults.standard.bool(forKey: Defaults.IS_DATABASE_UPDATED)) {
+            print("Fetching Data From Database")
+            setAllTravelsData.getDataFromDatabase()
+        } else {
+            print("Fetching Data From API")
+            setAllTravelsData.getDataFromAPI(urlToFetchData: urlToFetchData, dispatchGroup: dispatchGroup)
+        }
     }
     
     @IBAction func onClickAddAnotherTravel(_ sender: Any) {
@@ -90,6 +79,10 @@ class TravelListHomeViewController: UIViewController {
         (pastTravels, todayTravels, futureTravels) = DateSeperator.seperateDate(allTravels: TravelListHomeViewController.allTravels)
     }
 
+    @IBAction func onClickRefreshButton(_ sender: Any) {
+        let urlToFetchData:String = "https://api.myjson.com/bins/14u2y7"
+        setAllTravelsData.getDataFromAPI(urlToFetchData: urlToFetchData, dispatchGroup: dispatchGroup)
+    }
     @IBAction func unwindToTravelListHomeViewController(_ unwindSegue: UIStoryboardSegue) {
         print("Segue Unwinded To Home Controller")
         refreshViewController();

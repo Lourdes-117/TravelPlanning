@@ -12,13 +12,19 @@
 		5E06D5702302B7D500DE6EE1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D56F2302B7D500DE6EE1 /* Colors.swift */; };
 		5E06D5722302BFD300DE6EE1 /* TravelTimeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D5712302BFD300DE6EE1 /* TravelTimeEnum.swift */; };
 		5E06D5752302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */; };
+		5E9B0294230BCB5A00AE6CAF /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9B0286230BCB2700AE6CAF /* SQLite.framework */; };
+		5E9B0295230BCB6800AE6CAF /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9B0286230BCB2700AE6CAF /* SQLite.framework */; };
+		5E9B0296230BCB6800AE6CAF /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9B0286230BCB2700AE6CAF /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E9B029B230BCC0300AE6CAF /* SqliteConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B029A230BCC0300AE6CAF /* SqliteConnection.swift */; };
+		5E9B029D230BCD8800AE6CAF /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B029C230BCD8800AE6CAF /* Database.swift */; };
+		5E9B029F230BF29100AE6CAF /* setAllTravelsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B029E230BF29100AE6CAF /* setAllTravelsData.swift */; };
 		5EA8B183230131F50020D664 /* DateSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B182230131F50020D664 /* DateSeperator.swift */; };
 		5EA8B186230143B40020D664 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B185230143B40020D664 /* TableViewDataSource.swift */; };
 		5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B1872301481F0020D664 /* ExpandedSate.swift */; };
 		5EA8B18C230157AD0020D664 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B18B230157AD0020D664 /* TableViewDelegate.swift */; };
 		5EA8B18E23017D3C0020D664 /* allTravelsDataApi.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EA8B18D23017D3C0020D664 /* allTravelsDataApi.json */; };
 		5EAF152923012A4C00FC19DA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF152823012A4C00FC19DA /* Strings.swift */; };
-		5EAFF0E022FD353100C67211 /* getData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAFF0DF22FD353100C67211 /* getData.swift */; };
+		5EAFF0E022FD353100C67211 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAFF0DF22FD353100C67211 /* ApiCall.swift */; };
 		5EC25AA722FC3FB400D9DA37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AA622FC3FB400D9DA37 /* AppDelegate.swift */; };
 		5EC25AA922FC3FB400D9DA37 /* TravelListHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AA822FC3FB400D9DA37 /* TravelListHomeViewController.swift */; };
 		5EC25AAC22FC3FB400D9DA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC25AAA22FC3FB400D9DA37 /* Main.storyboard */; };
@@ -37,19 +43,96 @@
 		5ECD94422304371D00AD6A63 /* AlertCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94412304371D00AD6A63 /* AlertCreator.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5E9B0285230BCB2700AE6CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		5E9B0287230BCB2700AE6CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		5E9B0289230BCB2700AE6CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		5E9B028B230BCB2700AE6CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		5E9B028D230BCB2700AE6CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		5E9B028F230BCB2700AE6CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		5E9B0291230BCB2700AE6CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+		5E9B0297230BCB6800AE6CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5E9B0299230BCB6800AE6CAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5E9B0296230BCB6800AE6CAF /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5E06D56923027FBD00DE6EE1 /* TravelDecriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDecriptionViewController.swift; sourceTree = "<group>"; };
 		5E06D56B2302896C00DE6EE1 /* GetTravelModeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTravelModeImage.swift; sourceTree = "<group>"; };
 		5E06D56F2302B7D500DE6EE1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5E06D5712302BFD300DE6EE1 /* TravelTimeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeEnum.swift; sourceTree = "<group>"; };
 		5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTravelDetailsViewController.swift; sourceTree = "<group>"; };
+		5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		5E9B029A230BCC0300AE6CAF /* SqliteConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteConnection.swift; sourceTree = "<group>"; };
+		5E9B029C230BCD8800AE6CAF /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		5E9B029E230BF29100AE6CAF /* setAllTravelsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setAllTravelsData.swift; sourceTree = "<group>"; };
 		5EA8B182230131F50020D664 /* DateSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSeperator.swift; sourceTree = "<group>"; };
 		5EA8B185230143B40020D664 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		5EA8B1872301481F0020D664 /* ExpandedSate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedSate.swift; sourceTree = "<group>"; };
 		5EA8B18B230157AD0020D664 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 		5EA8B18D23017D3C0020D664 /* allTravelsDataApi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allTravelsDataApi.json; sourceTree = "<group>"; };
 		5EAF152823012A4C00FC19DA /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		5EAFF0DF22FD353100C67211 /* getData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getData.swift; sourceTree = "<group>"; };
+		5EAFF0DF22FD353100C67211 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
 		5EC25AA322FC3FB400D9DA37 /* TravelPlanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC25AA622FC3FB400D9DA37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EC25AA822FC3FB400D9DA37 /* TravelListHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListHomeViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +158,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E9B0295230BCB6800AE6CAF /* SQLite.framework in Frameworks */,
+				5E9B0294230BCB5A00AE6CAF /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +184,27 @@
 			path = AddNewTravelView;
 			sourceTree = "<group>";
 		};
+		5E9B027C230BCB2700AE6CAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E9B0286230BCB2700AE6CAF /* SQLite.framework */,
+				5E9B0288230BCB2700AE6CAF /* SQLiteTests iOS.xctest */,
+				5E9B028A230BCB2700AE6CAF /* SQLite.framework */,
+				5E9B028C230BCB2700AE6CAF /* SQLiteTests Mac.xctest */,
+				5E9B028E230BCB2700AE6CAF /* SQLite.framework */,
+				5E9B0290230BCB2700AE6CAF /* SQLiteTests tvOS.xctest */,
+				5E9B0292230BCB2700AE6CAF /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E9B0293230BCB5A00AE6CAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5EA8B184230143990020D664 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +219,7 @@
 			children = (
 				5EAF152823012A4C00FC19DA /* Strings.swift */,
 				5E06D56F2302B7D500DE6EE1 /* Colors.swift */,
+				5E9B029C230BCD8800AE6CAF /* Database.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -120,7 +227,8 @@
 		5EAFF0DE22FD350A00C67211 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				5EAFF0DF22FD353100C67211 /* getData.swift */,
+				5EAFF0DF22FD353100C67211 /* ApiCall.swift */,
+				5E9B029A230BCC0300AE6CAF /* SqliteConnection.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -134,6 +242,8 @@
 				5EAF1527230129F400FC19DA /* Constants */,
 				5EC25AA522FC3FB400D9DA37 /* TravelPlanning */,
 				5EC25AA422FC3FB400D9DA37 /* Products */,
+				5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */,
+				5E9B0293230BCB5A00AE6CAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +266,7 @@
 				5EC25AA622FC3FB400D9DA37 /* AppDelegate.swift */,
 				5EA8B182230131F50020D664 /* DateSeperator.swift */,
 				5EC25AA822FC3FB400D9DA37 /* TravelListHomeViewController.swift */,
+				5E9B029E230BF29100AE6CAF /* setAllTravelsData.swift */,
 				5EC25AAA22FC3FB400D9DA37 /* Main.storyboard */,
 				5EC25AAD22FC3FB600D9DA37 /* Assets.xcassets */,
 				5EA8B18D23017D3C0020D664 /* allTravelsDataApi.json */,
@@ -207,10 +318,12 @@
 				5EC25A9F22FC3FB400D9DA37 /* Sources */,
 				5EC25AA022FC3FB400D9DA37 /* Frameworks */,
 				5EC25AA122FC3FB400D9DA37 /* Resources */,
+				5E9B0299230BCB6800AE6CAF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5E9B0298230BCB6800AE6CAF /* PBXTargetDependency */,
 			);
 			name = TravelPlanning;
 			productName = TravelPlanning;
@@ -243,12 +356,70 @@
 			mainGroup = 5EC25A9A22FC3FB400D9DA37;
 			productRefGroup = 5EC25AA422FC3FB400D9DA37 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5E9B027C230BCB2700AE6CAF /* Products */;
+					ProjectRef = 5E9B027B230BCB2700AE6CAF /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5EC25AA222FC3FB400D9DA37 /* TravelPlanning */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5E9B0286230BCB2700AE6CAF /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 5E9B0285230BCB2700AE6CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9B0288230BCB2700AE6CAF /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = 5E9B0287230BCB2700AE6CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9B028A230BCB2700AE6CAF /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 5E9B0289230BCB2700AE6CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9B028C230BCB2700AE6CAF /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = 5E9B028B230BCB2700AE6CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9B028E230BCB2700AE6CAF /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 5E9B028D230BCB2700AE6CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9B0290230BCB2700AE6CAF /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = 5E9B028F230BCB2700AE6CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9B0292230BCB2700AE6CAF /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 5E9B0291230BCB2700AE6CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5EC25AA122FC3FB400D9DA37 /* Resources */ = {
@@ -270,10 +441,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA8B18C230157AD0020D664 /* TableViewDelegate.swift in Sources */,
-				5EAFF0E022FD353100C67211 /* getData.swift in Sources */,
+				5EAFF0E022FD353100C67211 /* ApiCall.swift in Sources */,
 				5ECD94322303D25700AD6A63 /* TextFieldDelegate.swift in Sources */,
 				5ECD943A2303D59F00AD6A63 /* textViewDesign.swift in Sources */,
 				5EC25AA922FC3FB400D9DA37 /* TravelListHomeViewController.swift in Sources */,
+				5E9B029F230BF29100AE6CAF /* setAllTravelsData.swift in Sources */,
 				5E06D5722302BFD300DE6EE1 /* TravelTimeEnum.swift in Sources */,
 				5ECD94362303D48E00AD6A63 /* LabelStatusSetter.swift in Sources */,
 				5E06D5702302B7D500DE6EE1 /* Colors.swift in Sources */,
@@ -285,6 +457,7 @@
 				5ECD94422304371D00AD6A63 /* AlertCreator.swift in Sources */,
 				5ECD94342303D28600AD6A63 /* TextViewDelegate.swift in Sources */,
 				5ECD942E2303D0D500AD6A63 /* StringExtension.swift in Sources */,
+				5E9B029B230BCC0300AE6CAF /* SqliteConnection.swift in Sources */,
 				5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */,
 				5E06D56A23027FBD00DE6EE1 /* TravelDecriptionViewController.swift in Sources */,
 				5ECD94382303D54800AD6A63 /* TextFieldDesign.swift in Sources */,
@@ -292,11 +465,20 @@
 				5E06D5752302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift in Sources */,
 				5EAF152923012A4C00FC19DA /* Strings.swift in Sources */,
 				5EC25ABC22FC51BE00D9DA37 /* TravelModel.swift in Sources */,
+				5E9B029D230BCD8800AE6CAF /* Database.swift in Sources */,
 				5EA8B183230131F50020D664 /* DateSeperator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E9B0298230BCB6800AE6CAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SQLite iOS";
+			targetProxy = 5E9B0297230BCB6800AE6CAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5EC25AAA22FC3FB400D9DA37 /* Main.storyboard */ = {
@@ -437,6 +619,7 @@
 		5EC25AB622FC3FB600D9DA37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TravelPlanning/Info.plist;
@@ -454,6 +637,7 @@
 		5EC25AB722FC3FB600D9DA37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TravelPlanning/Info.plist;
