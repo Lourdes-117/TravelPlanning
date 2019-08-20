@@ -82,6 +82,9 @@ class TravelListHomeViewController: UIViewController {
     @IBAction func onClickRefreshButton(_ sender: Any) {
         let urlToFetchData:String = "https://api.myjson.com/bins/14u2y7"
         setAllTravelsData.getDataFromAPI(urlToFetchData: urlToFetchData, dispatchGroup: dispatchGroup)
+        dispatchGroup.notify(queue: .main, execute: {
+            self.refreshViewController()
+        })
     }
     @IBAction func unwindToTravelListHomeViewController(_ unwindSegue: UIStoryboardSegue) {
         print("Segue Unwinded To Home Controller")

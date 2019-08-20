@@ -31,6 +31,7 @@ class setAllTravelsData {
 
     public class func getDataFromAPI(urlToFetchData:String, dispatchGroup: DispatchGroup) {
         UserDefaults.standard.set(true, forKey: Defaults.IS_DATABASE_UPDATED)
+        TravelListHomeViewController.allTravels.removeAll()
         ApiCall.getJsonArrayFromApi(fromUrl: urlToFetchData, dispatchGroup: dispatchGroup, completion: {
             (travels: [TravelModel]) in
             var tempTravelModel: TravelModel = TravelModel()
