@@ -62,6 +62,9 @@ extension TravelListHomeViewController: UITableViewDelegate {
     }
 
     fileprivate func removeElementFromMainArray(elementToRemove: TravelModel) {
+        //Delete From SqlDatabase
+        SqliteConnection.deleteTravel(ofID: elementToRemove.id)
+        //Delete From Array
         var iterator: Int = 0
         if TravelListHomeViewController.allTravelDetailsMaxId ==  elementToRemove.id {
             TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId - 1

@@ -89,6 +89,16 @@ class SqliteConnection {
         }
     }
 
+    public static func deleteTravel(ofID travelIDToDelete: Int) {
+        let travelToDelete = travelsTable.filter(travelIDToDelete == Database.Expressions.id)
+        let deleteTravel = travelToDelete.delete()
+        do {
+            try databaseConnection.run(deleteTravel)
+        } catch {
+            print("Error In Deleting Entry ",error)
+        }
+    }
+
     public static func printAllRows() {
         print("Listing Users")
         do {
