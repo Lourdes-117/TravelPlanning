@@ -102,4 +102,14 @@ class SqliteConnection {
             print("Error In Deleting Entry ",error)
         }
     }
+
+    public static func deleteAllTravels() {
+        let deleteTravels = travelsTable.delete()
+        do {
+            try databaseConnection.run(deleteTravels)
+            print("All Items in Table Are Deleted")
+        } catch {
+            print("Error In Deleting Elements ",error)
+        }
+    }
 }

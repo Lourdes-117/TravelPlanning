@@ -31,6 +31,7 @@ class setAllTravelsData {
 
     public class func getDataFromAPI(urlToFetchData:String, dispatchGroup: DispatchGroup) {
         UserDefaults.standard.set(true, forKey: Defaults.IS_DATABASE_UPDATED)
+        SqliteConnection.deleteAllTravels()
         TravelListHomeViewController.allTravels.removeAll()
         ApiCall.getJsonArrayFromApi(fromUrl: urlToFetchData, dispatchGroup: dispatchGroup, completion: {
             (travels: [TravelModel]) in
@@ -47,7 +48,7 @@ class setAllTravelsData {
                 tempTravelModel.reason = travel.reason
                 TravelListHomeViewController.allTravels.append(tempTravelModel);
             }
+            SqliteConnection.insertRow(withDetails: TravelListHomeViewController.allTravels)
         });
-        SqliteConnection.insertRow(withDetails: TravelListHomeViewController.allTravels)
     }
 }
