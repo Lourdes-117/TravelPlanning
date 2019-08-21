@@ -29,6 +29,7 @@ class TravelListHomeViewController: UIViewController {
         print("Home View Has Been Loaded")
         startLoadingActivity()
         initializeTravelData()
+        applyAllThemes()
         tableView.dataSource = self
         tableView.delegate = self
         dispatchGroup.notify(queue: .main, execute: {
@@ -37,13 +38,19 @@ class TravelListHomeViewController: UIViewController {
         })
     }
 
-    fileprivate func startLoadingActivity(){
+    fileprivate func applyAllThemes() {
+        navigationController?.navigationBar.barTintColor = CurrentTheme.BACKGROUND_COLOR
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: CurrentTheme.FONT_COLOR!]
+        view.layer.backgroundColor = CurrentTheme.BACKGROUND_COLOR.cgColor
+    }
+
+    fileprivate func startLoadingActivity() {
         tableView.backgroundView = activityIndicatorView
         activityIndicatorView.isHidden = false
         activityIndicatorView.startAnimating()
     }
 
-    fileprivate func stopLoadingActivity(){
+    fileprivate func stopLoadingActivity() {
         activityIndicatorView.isHidden = true
         activityIndicatorView.stopAnimating()
     }

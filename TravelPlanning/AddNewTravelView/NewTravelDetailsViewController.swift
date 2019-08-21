@@ -28,6 +28,9 @@ class NewTravelDetailsViewController: UIViewController {
     @IBOutlet weak var dateError: UILabel!
     @IBOutlet weak var reasonError: UILabel!
 
+    //Labels
+
+    @IBOutlet var allLabels: [UILabel]!
     //DatePicker
     private var dateOfTravelPicker:UIDatePicker?
 
@@ -50,6 +53,11 @@ class NewTravelDetailsViewController: UIViewController {
         toLocation.applyTextFieldTheme()
         dateOfTravel.applyTextFieldTheme()
         reasonForTravel.applyTextViewTheme()
+
+        view.backgroundColor = CurrentTheme.BACKGROUND_COLOR
+        allLabels.forEach { (label) in
+            label.textColor = CurrentTheme.FONT_COLOR
+        }
     }
 
     func initializeDatePicker() {

@@ -22,6 +22,7 @@ class ModeOfTravelSelectionViewController: UIViewController {
         modeOfTransportButtonCollection.forEach { (button) in
             button.applyViewTheme()
             button.imageView?.applyViewTheme()
+            view.backgroundColor = CurrentTheme.OVERLAY_BACKGROUND_COLOR
         }
     }
 

@@ -27,6 +27,11 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     //Tap Gesture Recognizer
     var imageViewTapGesture:UITapGestureRecognizer!
 
+    //ForTheme
+
+    @IBOutlet weak var scrollContentView: UIView!
+    @IBOutlet var allLabels: [UILabel]!
+
     let modeOfTravelSelectionSegueIdentifier = "ModeOfTravelSelectionViewSegueIdentifier"
     let editTravelText = "Edit This Travel"
     let okText = "Ok"
@@ -50,6 +55,13 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         toLocation.applyTextFieldTheme()
         dateOfJourney.applyTextFieldTheme()
         reasonForTravel.applyTextViewTheme()
+        //Theme
+        view.layer.backgroundColor = CurrentTheme.BACKGROUND_COLOR.cgColor
+        modeOfTransport.layer.cornerRadius = 15.0;
+        scrollContentView.backgroundColor = CurrentTheme.BACKGROUND_COLOR
+        allLabels.forEach { (label) in
+            label.textColor = CurrentTheme.FONT_COLOR
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

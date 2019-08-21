@@ -20,16 +20,16 @@ extension UIView {
 
     public func applyViewTheme(){
         self.layer.masksToBounds = false
-        self.layer.cornerRadius = 15;
-        self.layer.shadowColor = UIColor.black.cgColor;
-        self.layer.shadowRadius = 5;
-        self.layer.shadowOpacity = 0.5;
-        self.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.layer.cornerRadius = 15.0;
+        self.layer.shadowColor = CurrentTheme.SHADOW_COLOR.cgColor;
+        self.layer.backgroundColor = CurrentTheme.BACKGROUND_COLOR.cgColor
+        self.layer.shadowRadius = 5.0;
+        self.layer.shadowOpacity = 0.7;
+        self.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
 
     public func removeViewTheme(){
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = 0;
         self.layer.shadowRadius = 0;
         self.layer.shadowOpacity = 0;
         self.layer.shadowOffset = CGSize(width: 0, height: 0)

@@ -16,6 +16,7 @@ class TravelCell: UITableViewCell {
     @IBOutlet weak var descriptionOfTravel: UILabel!
     @IBOutlet weak var backgroundCardView: UIView!
     @IBOutlet weak var travelTimeIndicator: UIView!
+    @IBOutlet var allTextsInView: [UILabel]!
 
     func setValues(travelDetail:TravelModel, travelTime:TravelTime){
         self.fromLocation.text = travelDetail.from
@@ -42,5 +43,10 @@ class TravelCell: UITableViewCell {
         backgroundCardView.layer.shadowColor = UIColor.black.withAlphaComponent(0.8).cgColor
         backgroundCardView.layer.shadowOffset = CGSize(width: 2, height: 4)
         backgroundCardView.layer.shadowOpacity = 0.8
+
+        backgroundCardView.layer.backgroundColor = CurrentTheme.BACKGROUND_COLOR.cgColor
+        allTextsInView.forEach { (label) in
+            label.textColor = CurrentTheme.FONT_COLOR
+        }
     }
 }
