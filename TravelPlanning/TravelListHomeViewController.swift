@@ -171,7 +171,7 @@ extension TravelListHomeViewController:UITableViewDataSource {
         guard let travelDecriptionViewController = segue.destination as? TravelDecriptionViewController else {
             return;
         }
-//        travelDecriptionViewController.selectedTravelDetails = selectedTravelDetail
+        travelDecriptionViewController.selectedTravelDetails = selectedTravelDetail
     }
 }
 
@@ -232,7 +232,10 @@ extension TravelListHomeViewController: UITableViewDelegate {
 
     fileprivate func removeElementFromMainArray(elementToRemove: Travels) {
 //        Delete From SqlDatabase
-        SqliteConnection.deleteTravel(ofID: Int(elementToRemove.id))
+//        SqliteConnection.deleteTravel(ofID: Int(elementToRemove.id))
+
+        //Delete From Core Date
+        PersistantService.context.delete(elementToRemove)
 //        Delete From Array
         let indexToDelete: Int = TravelListHomeViewController.allTravels.firstIndex(of: elementToRemove)!
         if TravelListHomeViewController.allTravelDetailsMaxId ==  elementToRemove.id {

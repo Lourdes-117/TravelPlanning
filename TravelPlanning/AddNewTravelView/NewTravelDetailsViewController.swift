@@ -166,7 +166,7 @@ class NewTravelDetailsViewController: UIViewController {
             newTravelModel.reason = reasonForTravel.text!
             TravelListHomeViewController.allTravels.append(newTravelModel)
             performSegue(withIdentifier: unwindSegue, sender: self)
-            PersistantService.saveContext()
+            PersistantService.saveContext() 
             return
         }
         print("Invalid Fields Found")

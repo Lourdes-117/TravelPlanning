@@ -35,7 +35,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     let segueIdentifier = "ModeOfTravelSelectionViewSegueIdentifier"
     let editTravelText = "Edit This Travel"
     let okText = "Ok"
-    var selectedTravelDetails: TravelModel!
+    var selectedTravelDetails: Travels!
     var indexToChange = 0
 
     override func viewDidLoad() {
@@ -65,7 +65,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-//        indexToChange = TravelListHomeViewController.allTravels.firstIndex(of: selectedTravelDetails)!
+        indexToChange = TravelListHomeViewController.allTravels.firstIndex(of: selectedTravelDetails)!
     }
 
     private func setKeyboardNotificationListeners() {
@@ -99,8 +99,8 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     fileprivate func setDefaultValues() {
         modeOfTransport.image = GetTravelModeInfo.getImage(ofString: selectedTravelDetails.modeOfTransport)
         dateOfJourney.text = selectedTravelDetails.date
-        fromLocation.text = selectedTravelDetails.from
-        toLocation.text = selectedTravelDetails.to
+        fromLocation.text = selectedTravelDetails.fromLocation
+        toLocation.text = selectedTravelDetails.toLocation
         reasonForTravel.text = selectedTravelDetails.reason
     }
 
@@ -168,16 +168,28 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     fileprivate func updateCell() {
-        var travelModelToUpdate = TravelModel()
-        travelModelToUpdate.id = selectedTravelDetails.id
-        travelModelToUpdate.from = fromLocation.text!
-        travelModelToUpdate.to = toLocation.text!
-        travelModelToUpdate.date = dateOfJourney.text!
-        travelModelToUpdate.reason = reasonForTravel.text!
-        travelModelToUpdate.modeOfTransport = GetTravelModeInfo.getString(ofImage: modeOfTransport.image!)
+//        var travelModelToUpdate = TravelModel()
+//        travelModelToUpdate.id = selectedTravelDetails.id
+//        travelModelToUpdate.from = fromLocation.text!
+//        travelModelToUpdate.to = toLocation.text!
+//        travelModelToUpdate.date = dateOfJourney.text!
+//        travelModelToUpdate.reason = reasonForTravel.text!
+//        travelModelToUpdate.modeOfTransport = GetTravelModeInfo.getString(ofImage: modeOfTransport.image!)
+
+        let newTravelModel = Travels(context: PersistantService.context)
+        TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId + 1
+        newTravelModel.id = Int16(selectedTravelDetails.id)
+        newTravelModel.fromLocation = fromLocation.text!
+        newTravelModel.toLocation = toLocation.text!
+        newTravelModel.date = dateOfJourney.text!
+        newTravelModel.modeOfTransport = GetTravelModeInfo.getString(ofImage: modeOfTransport.image!)
+        newTravelModel.reason = reasonForTravel.text!
+        TravelListHomeViewController.allTravels.append(newTravelModel)
+        PersistantService.saveContext()
+
 //        TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
         //Update Entry in Sqlite
-        SqliteConnection.updateTravel(ofId: selectedTravelDetails.id, with: travelModelToUpdate)
+//        SqliteConnection.updateTravel(ofId: selectedTravelDetails.id, with: travelModelToUpdate)
     }
 
     fileprivate func checkFromLocaion() -> Bool {
