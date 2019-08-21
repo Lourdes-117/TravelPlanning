@@ -51,7 +51,7 @@ class SqliteConnection {
 
     public static func insertRow(withDetails travelModels: [TravelModel]) {
         for travelModel in travelModels {
-            let insertUser = travelsTable.insert(Database.Expressions.id <- travelModel.id,
+            let insertUser = travelsTable.insert(Database.Expressions.id <- Int(travelModel.id),
                                                  Database.Expressions.fromLocation <- travelModel.from,
                                                  Database.Expressions.toLocation <- travelModel.to,
                                                  Database.Expressions.modeOfTransport <- travelModel.modeOfTransport,

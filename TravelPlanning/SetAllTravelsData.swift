@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreData
+
 class setAllTravelsData {
     public class func getDataFromDatabase() {
         let travels = SqliteConnection.getAllRows()
@@ -25,7 +27,19 @@ class setAllTravelsData {
             tempTravelModel.to = travel[Database.Expressions.toLocation]
             tempTravelModel.date = travel[Database.Expressions.dateOfTravel]
             tempTravelModel.reason = travel[Database.Expressions.reason]
-            TravelListHomeViewController.allTravels.append(tempTravelModel)
+//            TravelListHomeViewController.allTravels.append(tempTravelModel)
+        }
+    }
+
+    public class func getDataFromCoreData() {
+        print("Fetching Data From Core Data")
+        let fetchRequest: NSFetchRequest<Travels > = Travels.fetchRequest()
+        do {
+            let travelDataFromCoreData = try PersistantService.context.fetch(fetchRequest)
+            TravelListHomeViewController.allTravels.append(contentsOf: travelDataFromCoreData)
+            }
+        catch {
+            print("Error In Fetching Data From Core Data ")
         }
     }
 
@@ -46,9 +60,34 @@ class setAllTravelsData {
                 tempTravelModel.to = travel.to
                 tempTravelModel.date = travel.date
                 tempTravelModel.reason = travel.reason
-                TravelListHomeViewController.allTravels.append(tempTravelModel);
+//                TravelListHomeViewController.allTravels.append(tempTravelModel);
+
+                let travelCoreData = Travels(context: PersistantService.context)
+                travelCoreData.id = Int16(travel.id)
+                travelCoreData.fromLocation = travel.from
+                travelCoreData.toLocation = travel.to
+                travelCoreData.modeOfTransport = travel.modeOfTransport
+                travelCoreData.date = travel.date
+                travelCoreData.reason = travel.reason
+                TravelListHomeViewController.allTravels.append(travelCoreData)
+                PersistantService.saveContext()
+                print("Saved In Core Data ")
             }
-            SqliteConnection.insertRow(withDetails: TravelListHomeViewController.allTravels)
+            let fetchRequest: NSFetchRequest<Travels > = Travels.fetchRequest()
+            do {
+                let travelDataFromCoreData = try PersistantService.context.fetch(fetchRequest)
+                for travel in travelDataFromCoreData {
+                    print(Int(travel.id))
+                    print(travel.fromLocation)
+                    print(travel.toLocation)
+                    print(travel.modeOfTransport)
+                    print(travel.date)
+                    print(travel.reason)
+                }
+            } catch {
+                print("Error In Fetching Data From Core Data ")
+            }
+//            SqliteConnection.insertRow(withDetails: TravelListHomeViewController.allTravels)
         });
     }
 }

@@ -65,7 +65,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        indexToChange = TravelListHomeViewController.allTravels.firstIndex(of: selectedTravelDetails)!
+//        indexToChange = TravelListHomeViewController.allTravels.firstIndex(of: selectedTravelDetails)!
     }
 
     private func setKeyboardNotificationListeners() {
@@ -175,7 +175,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         travelModelToUpdate.date = dateOfJourney.text!
         travelModelToUpdate.reason = reasonForTravel.text!
         travelModelToUpdate.modeOfTransport = GetTravelModeInfo.getString(ofImage: modeOfTransport.image!)
-        TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
+//        TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
         //Update Entry in Sqlite
         SqliteConnection.updateTravel(ofId: selectedTravelDetails.id, with: travelModelToUpdate)
     }

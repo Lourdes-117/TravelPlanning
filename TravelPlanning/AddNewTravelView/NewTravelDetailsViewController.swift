@@ -156,18 +156,17 @@ class NewTravelDetailsViewController: UIViewController {
         let isAllFieldsValid = checkFromLocaion() && checkToLocaion() && checkReasonForTravel() && checkDateOfTravel() && isModeOfTransportSelected
         if(isAllFieldsValid) {
             print("All Fields Are Valid")
-            var newTravelModel:TravelModel = TravelModel()
+            let newTravelModel = Travels(context: PersistantService.context)
             TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId + 1
-            newTravelModel.id = TravelListHomeViewController.allTravelDetailsMaxId
-            newTravelModel.from = fromLocation.text!
-            newTravelModel.to = toLocation.text!
+            newTravelModel.id = Int16(TravelListHomeViewController.allTravelDetailsMaxId)
+            newTravelModel.fromLocation = fromLocation.text!
+            newTravelModel.toLocation = toLocation.text!
             newTravelModel.date = dateOfTravel.text!
-            newTravelModel.modeOfTransport = modeOfTransportSelectionButton.titleLabel?.text!
+            newTravelModel.modeOfTransport = modeOfTransportSelectionButton.titleLabel?.text! ?? ""
             newTravelModel.reason = reasonForTravel.text!
             TravelListHomeViewController.allTravels.append(newTravelModel)
             performSegue(withIdentifier: unwindSegue, sender: self)
-            //Insert Row in Database
-            SqliteConnection.insertRow(withDetails: [newTravelModel])
+            PersistantService.saveContext()
             return
         }
         print("Invalid Fields Found")

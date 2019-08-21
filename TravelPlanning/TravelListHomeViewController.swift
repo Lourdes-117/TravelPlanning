@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TravelListHomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -14,14 +15,19 @@ class TravelListHomeViewController: UIViewController {
     let addNewEntrySegueIdentifier:String = "AddNewEntrySegueIdentifier"
     let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     let dispatchGroup = DispatchGroup()
-    var selectedTravelDetail:TravelModel!
+    var selectedTravelDetail:Travels!
 
-    static var allTravels:[TravelModel] = []
+    static var allTravels:[Travels] = []
     static var allTravelDetailsMaxId:Int = 0
 
-    var pastTravels:[TravelModel] = []
-    var todayTravels:[TravelModel] = []
-    var futureTravels:[TravelModel] = []
+//    var pastTravels:[TravelModel] = []
+//    var todayTravels:[TravelModel] = []
+//    var futureTravels:[TravelModel] = []
+
+    var pastTravels:[Travels] = []
+    var todayTravels:[Travels] = []
+    var futureTravels:[Travels] = []
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,7 @@ class TravelListHomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("View Will Appear Called")
+        print(TravelListHomeViewController.allTravels)
         applyAllThemes()
         refreshViewController()
     }
@@ -72,7 +79,7 @@ class TravelListHomeViewController: UIViewController {
         let urlToFetchData:String = "https://api.myjson.com/bins/14u2y7"
         if(UserDefaults.standard.bool(forKey: Defaults.IS_DATABASE_UPDATED)) {
             print("Fetching Data From Database")
-            setAllTravelsData.getDataFromDatabase()
+            setAllTravelsData.getDataFromCoreData()
         } else {
             print("Fetching Data From API")
             setAllTravelsData.getDataFromAPI(urlToFetchData: urlToFetchData, dispatchGroup: dispatchGroup)
@@ -84,7 +91,7 @@ class TravelListHomeViewController: UIViewController {
     }
 
     fileprivate func seperateDate() {
-        (pastTravels, todayTravels, futureTravels) = DateSeperator.seperateDate(allTravels: TravelListHomeViewController.allTravels)
+        (pastTravels, todayTravels, futureTravels) = DateSeperator.seperateDates(allTravels: TravelListHomeViewController.allTravels)
     }
 
     @IBAction func unwindToTravelListHomeViewController(_ unwindSegue: UIStoryboardSegue) {
@@ -123,7 +130,7 @@ extension TravelListHomeViewController:UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TravelCell.travelCell) as! TravelCell
-        var travelDetailsToShowInSection:[TravelModel] = []
+        var travelDetailsToShowInSection:[Travels] = []
         var travelTime:TravelTime
 
         switch indexPath.section {
@@ -164,7 +171,7 @@ extension TravelListHomeViewController:UITableViewDataSource {
         guard let travelDecriptionViewController = segue.destination as? TravelDecriptionViewController else {
             return;
         }
-        travelDecriptionViewController.selectedTravelDetails = selectedTravelDetail
+//        travelDecriptionViewController.selectedTravelDetails = selectedTravelDetail
     }
 }
 
@@ -223,16 +230,17 @@ extension TravelListHomeViewController: UITableViewDelegate {
         }
     }
 
-    fileprivate func removeElementFromMainArray(elementToRemove: TravelModel) {
-        //Delete From SqlDatabase
-        SqliteConnection.deleteTravel(ofID: elementToRemove.id)
-        //Delete From Array
+    fileprivate func removeElementFromMainArray(elementToRemove: Travels) {
+//        Delete From SqlDatabase
+        SqliteConnection.deleteTravel(ofID: Int(elementToRemove.id))
+//        Delete From Array
         let indexToDelete: Int = TravelListHomeViewController.allTravels.firstIndex(of: elementToRemove)!
         if TravelListHomeViewController.allTravelDetailsMaxId ==  elementToRemove.id {
             TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId - 1
         }
         print(TravelListHomeViewController.allTravels[indexToDelete])
         TravelListHomeViewController.allTravels.remove(at: indexToDelete)
+        PersistantService.saveContext()
     }
 
     @objc func expandOrCloseSection(button:UIButton){
@@ -267,7 +275,7 @@ extension TravelListHomeViewController: UITableViewDelegate {
         }
     }
 
-    fileprivate func getIndicesToModify(array:[TravelModel], section:Int) -> [IndexPath] {
+    fileprivate func getIndicesToModify(array:[Travels], section:Int) -> [IndexPath] {
         var indexPathsToReturn:[IndexPath] = []
         for row in array.indices {
             let indexPathToAppend = IndexPath(row: row, section: section)

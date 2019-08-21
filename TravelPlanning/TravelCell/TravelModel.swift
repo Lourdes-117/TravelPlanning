@@ -14,8 +14,4 @@ struct TravelModel: Decodable, Equatable {
     var to:String!
     var date:String!
     var reason:String!
-
-    static func == (left: TravelModel, right: TravelModel) -> Bool{
-        return (left.id == right.id )
-    }
 }

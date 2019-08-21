@@ -20,9 +20,9 @@ class TravelCell: UITableViewCell {
 
     public static let travelCell = "TravelReusableIdentity"
 
-    func setValues(travelDetail:TravelModel, travelTime:TravelTime){
-        self.fromLocation.text = travelDetail.from
-        self.toLocation.text = travelDetail.to
+    func setValues(travelDetail:Travels, travelTime:TravelTime){
+        self.fromLocation.text = travelDetail.fromLocation
+        self.toLocation.text = travelDetail.toLocation
         self.dateOfTravel.text = travelDetail.date
         self.descriptionOfTravel.text = travelDetail.reason
         self.travelModeImage.image = GetTravelModeInfo.getImage(ofString: travelDetail.modeOfTransport)
