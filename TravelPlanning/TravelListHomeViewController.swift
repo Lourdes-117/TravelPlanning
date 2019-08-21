@@ -38,6 +38,13 @@ class TravelListHomeViewController: UIViewController {
         })
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View Will Appear Called")
+        applyAllThemes()
+        refreshViewController()
+    }
+
     fileprivate func applyAllThemes() {
         navigationController?.navigationBar.barTintColor = CurrentTheme.BACKGROUND_COLOR
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: CurrentTheme.FONT_COLOR!]
@@ -54,12 +61,6 @@ class TravelListHomeViewController: UIViewController {
     fileprivate func stopLoadingActivity() {
         activityIndicatorView.isHidden = true
         activityIndicatorView.stopAnimating()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("View Will Appear Called")
-        refreshViewController()
     }
 
     func refreshViewController() {
@@ -87,13 +88,6 @@ class TravelListHomeViewController: UIViewController {
         (pastTravels, todayTravels, futureTravels) = DateSeperator.seperateDate(allTravels: TravelListHomeViewController.allTravels)
     }
 
-    @IBAction func onClickRefreshButton(_ sender: Any) {
-        let urlToFetchData:String = "https://api.myjson.com/bins/14u2y7"
-        setAllTravelsData.getDataFromAPI(urlToFetchData: urlToFetchData, dispatchGroup: dispatchGroup)
-        dispatchGroup.notify(queue: .main, execute: {
-            self.refreshViewController()
-        })
-    }
     @IBAction func unwindToTravelListHomeViewController(_ unwindSegue: UIStoryboardSegue) {
         print("Segue Unwinded To Home Controller")
         refreshViewController();

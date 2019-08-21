@@ -42,4 +42,5 @@ struct RegistrationStatus {
 
 struct Defaults {
     static let IS_DATABASE_UPDATED = "isDatabaseUpdated"
+    static let IS_DARK_THEME_PREFERRED = "isDarkThemePreferred"
 }

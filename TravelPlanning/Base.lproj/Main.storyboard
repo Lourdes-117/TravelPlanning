@@ -10,6 +10,61 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="wo8-4j-yJW">
+            <objects>
+                <viewController id="QFg-0v-Yhg" customClass="SettingsViewController" customModule="TravelPlanning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xhI-mL-rfB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgs-NN-mFT">
+                                <rect key="frame" x="136.5" y="819" width="141" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Reload All Travels">
+                                    <color key="titleColor" red="0.8980392157" green="0.0084072236049999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickRefreshButton:" destination="QFg-0v-Yhg" eventType="touchUpInside" id="jXU-mY-ZNF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Dark Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-ef-SPb">
+                                <rect key="frame" x="25" y="113" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lpI-7D-ONm">
+                                <rect key="frame" x="340" y="113" width="51" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="onTintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="onThemeChange:" destination="QFg-0v-Yhg" eventType="valueChanged" id="hcF-Hi-Z6r"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fgs-NN-mFT" firstAttribute="centerX" secondItem="qgL-1q-aAr" secondAttribute="centerX" id="AgB-3p-0Z9"/>
+                            <constraint firstItem="lpI-7D-ONm" firstAttribute="top" secondItem="EN7-ef-SPb" secondAttribute="top" id="cen-Qc-zih"/>
+                            <constraint firstItem="qgL-1q-aAr" firstAttribute="trailing" secondItem="lpI-7D-ONm" secondAttribute="trailing" constant="25" id="geO-6s-lrh"/>
+                            <constraint firstItem="qgL-1q-aAr" firstAttribute="bottom" secondItem="fgs-NN-mFT" secondAttribute="bottom" constant="10" id="hZw-fc-A2w"/>
+                            <constraint firstItem="EN7-ef-SPb" firstAttribute="leading" secondItem="qgL-1q-aAr" secondAttribute="leading" constant="25" id="lLQ-5a-V6D"/>
+                            <constraint firstItem="EN7-ef-SPb" firstAttribute="top" secondItem="qgL-1q-aAr" secondAttribute="top" constant="25" id="qoE-HT-k8X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qgL-1q-aAr"/>
+                    </view>
+                    <connections>
+                        <outlet property="darkThemeSwitch" destination="lpI-7D-ONm" id="Mpc-Sj-FAn"/>
+                        <outletCollection property="allLabels" destination="EN7-ef-SPb" collectionClass="NSMutableArray" id="JF0-Aj-8xp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RRr-IC-XL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970" y="-1002"/>
+        </scene>
         <!--My Travels-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -198,9 +253,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Travels" largeTitleDisplayMode="always" id="c7n-3l-ZqU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="zGt-Xf-1jf">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="zGt-Xf-1jf">
                             <connections>
-                                <action selector="onClickRefreshButton:" destination="BYZ-38-t0r" id="TnZ-ca-qvV"/>
+                                <segue destination="QFg-0v-Yhg" kind="show" id="LHq-Wd-Mj1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
