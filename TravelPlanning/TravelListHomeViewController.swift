@@ -228,19 +228,12 @@ extension TravelListHomeViewController: UITableViewDelegate {
         //Delete From SqlDatabase
         SqliteConnection.deleteTravel(ofID: elementToRemove.id)
         //Delete From Array
-        var iterator: Int = 0
+        let indexToDelete: Int = TravelListHomeViewController.allTravels.firstIndex(of: elementToRemove)!
         if TravelListHomeViewController.allTravelDetailsMaxId ==  elementToRemove.id {
             TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId - 1
         }
-        for travelModeIterator in TravelListHomeViewController.allTravels {
-            if(travelModeIterator == elementToRemove) {
-                print("Deleted ", travelModeIterator)
-                print(TravelListHomeViewController.allTravels[iterator])
-                TravelListHomeViewController.allTravels.remove(at: iterator)
-                break
-            }
-            iterator = iterator + 1
-        }
+        print(TravelListHomeViewController.allTravels[indexToDelete])
+        TravelListHomeViewController.allTravels.remove(at: indexToDelete)
     }
 
     @objc func expandOrCloseSection(button:UIButton){

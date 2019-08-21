@@ -65,13 +65,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        for something in TravelListHomeViewController.allTravels {
-            if(something == selectedTravelDetails){
-                print(something)
-                break;
-            }
-            indexToChange = indexToChange + 1
-        }
+        indexToChange = TravelListHomeViewController.allTravels.firstIndex(of: selectedTravelDetails)!
     }
 
     private func setKeyboardNotificationListeners() {
