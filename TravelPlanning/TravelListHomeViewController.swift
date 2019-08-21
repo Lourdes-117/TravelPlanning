@@ -10,7 +10,6 @@ import UIKit
 
 class TravelListHomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let TravelCell = "TravelReusableIdentity"
     let cellDescriptionSegueIdentifier:String = "CellDescriptionSegueIdentifier"
     let addNewEntrySegueIdentifier:String = "AddNewEntrySegueIdentifier"
     let activityIndicatorView = UIActivityIndicatorView(style: .gray)
@@ -123,7 +122,7 @@ extension TravelListHomeViewController:UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TravelCell) as! TravelCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TravelCell.travelCell) as! TravelCell
         var travelDetailsToShowInSection:[TravelModel] = []
         var travelTime:TravelTime
 

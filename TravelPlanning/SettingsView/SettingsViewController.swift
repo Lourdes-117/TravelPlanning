@@ -41,9 +41,10 @@ class SettingsViewController: UIViewController {
     }
 
     fileprivate func applyTheme() {
+        let animationDuration:TimeInterval = 0.4
         navigationController?.navigationBar.barTintColor = CurrentTheme.BACKGROUND_COLOR
     navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: CurrentTheme.FONT_COLOR!]
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: animationDuration) {
             self.view.layer.backgroundColor = CurrentTheme.BACKGROUND_COLOR.cgColor
             self.allLabels.forEach { (label) in
                 label.textColor = CurrentTheme.FONT_COLOR

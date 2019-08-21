@@ -18,6 +18,8 @@ class TravelCell: UITableViewCell {
     @IBOutlet weak var travelTimeIndicator: UIView!
     @IBOutlet var allTextsInView: [UILabel]!
 
+    public static let travelCell = "TravelReusableIdentity"
+
     func setValues(travelDetail:TravelModel, travelTime:TravelTime){
         self.fromLocation.text = travelDetail.from
         self.toLocation.text = travelDetail.to

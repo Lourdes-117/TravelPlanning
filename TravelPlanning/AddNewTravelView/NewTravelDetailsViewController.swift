@@ -34,7 +34,7 @@ class NewTravelDetailsViewController: UIViewController {
     //DatePicker
     private var dateOfTravelPicker:UIDatePicker?
 
-    let HomeControllerUnwindSegue = "unwindToTravelListHomeViewController"
+    let unwindSegue = "unwindToTravelListHomeViewController"
     let animationTimeDuration:TimeInterval = 0.3
     var isModeOfTransportSelected = false
     
@@ -165,7 +165,7 @@ class NewTravelDetailsViewController: UIViewController {
             newTravelModel.modeOfTransport = modeOfTransportSelectionButton.titleLabel?.text!
             newTravelModel.reason = reasonForTravel.text!
             TravelListHomeViewController.allTravels.append(newTravelModel)
-            performSegue(withIdentifier: HomeControllerUnwindSegue, sender: self)
+            performSegue(withIdentifier: unwindSegue, sender: self)
             //Insert Row in Database
             SqliteConnection.insertRow(withDetails: [newTravelModel])
             return

@@ -8,7 +8,7 @@
 
 import UIKit
 class ModeOfTravelSelectionViewController: UIViewController {
-    let unWindToDescriptionPageIdentifier = "unwindToTravelDescriptionViewControllerIdentifier"
+    let unwindSegue = "unwindToTravelDescriptionViewControllerIdentifier"
     var selectedModeOfTransportImage:UIImage!
     @IBOutlet var modeOfTransportButtonCollection: [UIButton]!
     @IBOutlet weak var contentBackgroundView: UIView!
@@ -28,7 +28,7 @@ class ModeOfTravelSelectionViewController: UIViewController {
 
     @IBAction func onSelectModeOfTransport(_ sender: UIButton) {
         selectedModeOfTransportImage = sender.imageView?.image!
-        performSegue(withIdentifier: unWindToDescriptionPageIdentifier, sender: self)
+        performSegue(withIdentifier: unwindSegue, sender: self)
     }
 
     @IBAction func onClickCancelButton(_ sender: Any) {

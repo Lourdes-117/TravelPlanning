@@ -32,7 +32,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollContentView: UIView!
     @IBOutlet var allLabels: [UILabel]!
 
-    let modeOfTravelSelectionSegueIdentifier = "ModeOfTravelSelectionViewSegueIdentifier"
+    let segueIdentifier = "ModeOfTravelSelectionViewSegueIdentifier"
     let editTravelText = "Edit This Travel"
     let okText = "Ok"
     var selectedTravelDetails: TravelModel!
@@ -137,7 +137,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
 
     
     @objc func onTapUIImageView(gesture: UIGestureRecognizer) {
-        performSegue(withIdentifier: modeOfTravelSelectionSegueIdentifier, sender: self)
+        performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 
     @IBAction func onClickEditTravelButton(_ sender: Any) {
