@@ -54,7 +54,6 @@ class NewTravelDetailsViewController: UIViewController {
         dateOfTravel.applyTextFieldTheme()
         reasonForTravel.applyTextViewTheme()
 
-        view.backgroundColor = CurrentTheme.BACKGROUND_COLOR
         allLabels.forEach { (label) in
             label.textColor = CurrentTheme.FONT_COLOR
         }
@@ -187,5 +186,73 @@ class NewTravelDetailsViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         print("New Travel Details View Safe From Memory Leaks")
+    }
+}
+
+
+//textField Delegate
+extension NewTravelDetailsViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case fromLocation:
+            if(!checkFromLocaion()) {
+                return false
+            }
+            toLocation.becomeFirstResponder()
+        case toLocation:
+            if(!checkToLocaion()) {
+                return false
+            }
+            modeOfTransportSelectionButton.becomeFirstResponder()
+        default:
+            print("")
+        }
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case fromLocation:
+            let _ = checkFromLocaion()
+        case toLocation:
+            let _ = checkToLocaion()
+        default:
+            print("")
+        }
+        view.endEditing(true)
+    }
+}
+
+
+//textView Delegate
+extension NewTravelDetailsViewController:UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        view.endEditing(true)
+        let _ = checkReasonForTravel()
+    }
+}
+
+
+//label Delegate
+extension UILabel {
+    public func setStatusForLabel(ofTextField textField: UITextField?, ofTextView textView:UITextView?, validityStatus IsValid:Bool) {
+        self.isHidden = false
+        if(IsValid) {
+            self.text! = RegistrationStatus.VALID_FIELD
+            self.textColor = UIColor.GREEN
+            guard let textFieldUnwrapped = textField else {
+                textView!.setBottomBorder(withColor: UIColor.DARK_BLUE.cgColor)
+                return
+            }
+            textFieldUnwrapped.setBottomBorder(withColor: UIColor.DARK_BLUE.cgColor)
+        } else {
+            self.text! = RegistrationStatus.INVALID_FIELD
+            self.textColor = UIColor.RED
+            guard let textFieldUnwrapped = textField else {
+                textView!.setBottomBorder(withColor: UIColor.RED.cgColor)
+                return
+            }
+            textFieldUnwrapped.setBottomBorder(withColor: UIColor.RED.cgColor)
+        }
     }
 }

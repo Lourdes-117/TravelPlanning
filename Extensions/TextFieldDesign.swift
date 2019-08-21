@@ -25,6 +25,6 @@ extension UITextField {
     }
 
     public func applyTextFieldTheme(){
-        self.setBottomBorder(withColor: Colors.DARK_BLUE.cgColor)
+        self.setBottomBorder(withColor: UIColor.DARK_BLUE.cgColor)
     }
 }

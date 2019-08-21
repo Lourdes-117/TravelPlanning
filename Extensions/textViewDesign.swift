@@ -24,6 +24,6 @@ extension UITextView {
     }
 
     public func applyTextViewTheme(){
-        self.setBottomBorder(withColor: Colors.DARK_BLUE.cgColor)
+        self.setBottomBorder(withColor: UIColor.DARK_BLUE.cgColor)
     }
 }

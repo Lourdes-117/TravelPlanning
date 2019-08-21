@@ -1,5 +1,5 @@
 //
-//  Colors.swift
+//  UIColor.swift
 //  TravelPlanning
 //
 //  Created by Tringapps on 13/08/19.
@@ -7,7 +7,7 @@
 //
 
 import UIKit
-struct Colors {
+extension UIColor {
     static let DARK_BLUE = UIColor(red: 83.0/255.0, green: 144.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     static let LIGHT_BLUE = UIColor(red: 129.0/255.0, green: 224.0/255.0, blue: 254.0/255.0, alpha: 1.0)
     static let DARK_RED = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)

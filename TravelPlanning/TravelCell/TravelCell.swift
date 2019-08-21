@@ -27,16 +27,16 @@ class TravelCell: UITableViewCell {
         setCardViewDesign()
         switch travelTime {
         case .Past:
-            travelTimeIndicator.backgroundColor = Colors.DARK_RED
+            travelTimeIndicator.backgroundColor = UIColor.DARK_RED
         case .Today:
-            travelTimeIndicator.backgroundColor = Colors.GREEN
+            travelTimeIndicator.backgroundColor = UIColor.GREEN
         case .Future:
-            travelTimeIndicator.backgroundColor = Colors.YELLOW
+            travelTimeIndicator.backgroundColor = UIColor.YELLOW
         }
     }
 
     func setCardViewDesign() {
-        contentView.backgroundColor = UIColor.init(red: 244/255, green: 244/255, blue: 244/255, alpha: 0.2)
+        contentView.backgroundColor = CurrentTheme.TINT_COLOR
         let cornerRadius:CGFloat = 3.0
         backgroundCardView.layer.cornerRadius = cornerRadius
         backgroundCardView.layer.masksToBounds = false

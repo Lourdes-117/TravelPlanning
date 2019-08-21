@@ -23,9 +23,7 @@
 		5E9B02AF230C2C8B00AE6CAF /* CurrentTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B02AE230C2C8B00AE6CAF /* CurrentTheme.swift */; };
 		5E9B02B1230C2CE700AE6CAF /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B02B0230C2CE700AE6CAF /* ThemeProtocol.swift */; };
 		5EA8B183230131F50020D664 /* DateSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B182230131F50020D664 /* DateSeperator.swift */; };
-		5EA8B186230143B40020D664 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B185230143B40020D664 /* TableViewDataSource.swift */; };
 		5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B1872301481F0020D664 /* ExpandedSate.swift */; };
-		5EA8B18C230157AD0020D664 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA8B18B230157AD0020D664 /* TableViewDelegate.swift */; };
 		5EA8B18E23017D3C0020D664 /* allTravelsDataApi.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EA8B18D23017D3C0020D664 /* allTravelsDataApi.json */; };
 		5EAF152923012A4C00FC19DA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF152823012A4C00FC19DA /* Strings.swift */; };
 		5EAFF0E022FD353100C67211 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAFF0DF22FD353100C67211 /* ApiCall.swift */; };
@@ -37,9 +35,6 @@
 		5EC25ABA22FC49D500D9DA37 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AB922FC49D500D9DA37 /* TravelCell.swift */; };
 		5EC25ABC22FC51BE00D9DA37 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25ABB22FC51BE00D9DA37 /* TravelModel.swift */; };
 		5ECD942E2303D0D500AD6A63 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD942D2303D0D500AD6A63 /* StringExtension.swift */; };
-		5ECD94322303D25700AD6A63 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94312303D25700AD6A63 /* TextFieldDelegate.swift */; };
-		5ECD94342303D28600AD6A63 /* TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94332303D28600AD6A63 /* TextViewDelegate.swift */; };
-		5ECD94362303D48E00AD6A63 /* LabelStatusSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94352303D48E00AD6A63 /* LabelStatusSetter.swift */; };
 		5ECD94382303D54800AD6A63 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */; };
 		5ECD943A2303D59F00AD6A63 /* textViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94392303D59F00AD6A63 /* textViewDesign.swift */; };
 		5ECD943C2303E8D100AD6A63 /* ViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */; };
@@ -135,9 +130,7 @@
 		5E9B02AE230C2C8B00AE6CAF /* CurrentTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTheme.swift; sourceTree = "<group>"; };
 		5E9B02B0230C2CE700AE6CAF /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
 		5EA8B182230131F50020D664 /* DateSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSeperator.swift; sourceTree = "<group>"; };
-		5EA8B185230143B40020D664 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		5EA8B1872301481F0020D664 /* ExpandedSate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedSate.swift; sourceTree = "<group>"; };
-		5EA8B18B230157AD0020D664 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 		5EA8B18D23017D3C0020D664 /* allTravelsDataApi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allTravelsDataApi.json; sourceTree = "<group>"; };
 		5EAF152823012A4C00FC19DA /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		5EAFF0DF22FD353100C67211 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
@@ -151,9 +144,6 @@
 		5EC25AB922FC49D500D9DA37 /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		5EC25ABB22FC51BE00D9DA37 /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		5ECD942D2303D0D500AD6A63 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		5ECD94312303D25700AD6A63 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
-		5ECD94332303D28600AD6A63 /* TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDelegate.swift; sourceTree = "<group>"; };
-		5ECD94352303D48E00AD6A63 /* LabelStatusSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStatusSetter.swift; sourceTree = "<group>"; };
 		5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
 		5ECD94392303D59F00AD6A63 /* textViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewDesign.swift; sourceTree = "<group>"; };
 		5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesign.swift; sourceTree = "<group>"; };
@@ -186,7 +176,6 @@
 		5E06D5732302E0A700DE6EE1 /* AddNewTravelView */ = {
 			isa = PBXGroup;
 			children = (
-				5ECD94302303D23300AD6A63 /* Extensions */,
 				5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */,
 			);
 			path = AddNewTravelView;
@@ -224,20 +213,10 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		5EA8B184230143990020D664 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				5EA8B185230143B40020D664 /* TableViewDataSource.swift */,
-				5EA8B18B230157AD0020D664 /* TableViewDelegate.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		5EAF1527230129F400FC19DA /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				5EAF152823012A4C00FC19DA /* Strings.swift */,
-				5E06D56F2302B7D500DE6EE1 /* Colors.swift */,
 				5E9B029C230BCD8800AE6CAF /* Database.swift */,
 			);
 			path = Constants;
@@ -280,7 +259,6 @@
 			children = (
 				5E06D5732302E0A700DE6EE1 /* AddNewTravelView */,
 				5E06D56823027F8500DE6EE1 /* TravelDescriptionView */,
-				5EA8B184230143990020D664 /* Extensions */,
 				5EAFF0DE22FD350A00C67211 /* DataBase */,
 				5EC25AB822FC49B900D9DA37 /* TravelCell */,
 				5EC25AA622FC3FB400D9DA37 /* AppDelegate.swift */,
@@ -314,16 +292,7 @@
 				5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */,
 				5ECD94392303D59F00AD6A63 /* textViewDesign.swift */,
 				5ECD943B2303E8D100AD6A63 /* ViewDesign.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		5ECD94302303D23300AD6A63 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				5ECD94312303D25700AD6A63 /* TextFieldDelegate.swift */,
-				5ECD94332303D28600AD6A63 /* TextViewDelegate.swift */,
-				5ECD94352303D48E00AD6A63 /* LabelStatusSetter.swift */,
+				5E06D56F2302B7D500DE6EE1 /* Colors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -460,22 +429,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EA8B18C230157AD0020D664 /* TableViewDelegate.swift in Sources */,
 				5EAFF0E022FD353100C67211 /* ApiCall.swift in Sources */,
-				5ECD94322303D25700AD6A63 /* TextFieldDelegate.swift in Sources */,
 				5ECD943A2303D59F00AD6A63 /* textViewDesign.swift in Sources */,
 				5EC25AA922FC3FB400D9DA37 /* TravelListHomeViewController.swift in Sources */,
 				5E9B029F230BF29100AE6CAF /* setAllTravelsData.swift in Sources */,
 				5E06D5722302BFD300DE6EE1 /* TravelTimeEnum.swift in Sources */,
-				5ECD94362303D48E00AD6A63 /* LabelStatusSetter.swift in Sources */,
 				5E06D5702302B7D500DE6EE1 /* Colors.swift in Sources */,
 				5ECD944023041AB500AD6A63 /* modeOfTravelSelectionViewController.swift in Sources */,
 				5ECD943C2303E8D100AD6A63 /* ViewDesign.swift in Sources */,
-				5EA8B186230143B40020D664 /* TableViewDataSource.swift in Sources */,
 				5EC25ABA22FC49D500D9DA37 /* TravelCell.swift in Sources */,
 				5E06D56C2302896C00DE6EE1 /* GetTravelModeImage.swift in Sources */,
 				5ECD94422304371D00AD6A63 /* AlertCreator.swift in Sources */,
-				5ECD94342303D28600AD6A63 /* TextViewDelegate.swift in Sources */,
 				5ECD942E2303D0D500AD6A63 /* StringExtension.swift in Sources */,
 				5E9B029B230BCC0300AE6CAF /* SqliteConnection.swift in Sources */,
 				5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */,

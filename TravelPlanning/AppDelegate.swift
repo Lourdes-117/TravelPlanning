@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         SqliteConnection.initializeDatabase()
-        CurrentTheme.setTheme(themeToSet: DarkTheme())
+        CurrentTheme.setTheme(themeToSet: LightTheme())
         print("Application Finished Launching")
         return true
     }
