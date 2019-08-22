@@ -41,20 +41,6 @@ class setAllTravelsData {
                 PersistantService.saveContext()
                 print("Saved In Core Data ")
             }
-            let fetchRequest: NSFetchRequest<TravelModel > = TravelModel.fetchRequest()
-            do {
-                let travelDataFromCoreData = try PersistantService.context.fetch(fetchRequest)
-                for travel in travelDataFromCoreData {
-                    print(Int(travel.id))
-                    print(travel.fromLocation)
-                    print(travel.toLocation)
-                    print(travel.modeOfTransport)
-                    print(travel.date)
-                    print(travel.reason)
-                }
-            } catch {
-                print("Error In Fetching Data From Core Data ")
-            }
         });
     }
 }

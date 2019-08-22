@@ -53,8 +53,10 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func onClickRefreshButton(_ sender: Any) {
+        for entry in TravelListHomeViewController.allTravels {
+            PersistantService.context.delete(entry)
+        }
         TravelListHomeViewController.allTravels.removeAll()
-        PersistantService.saveContext()
         let urlToFetchData:String = "https://api.myjson.com/bins/14u2y7"
         setAllTravelsData.getDataFromAPI(urlToFetchData: urlToFetchData, dispatchGroup: DispatchGroup())
     }
