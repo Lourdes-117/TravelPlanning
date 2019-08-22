@@ -169,9 +169,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     fileprivate func updateCell() {
-//        PersistantService.context.delete(selectedTravelDetails)
-//        PersistantService.saveContext()
-        let newTravelModel = Travels(context: PersistantService.context)
+        let newTravelModel = TravelListHomeViewController.allTravels[indexToChange]
         TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId + 1
         newTravelModel.id = Int16(selectedTravelDetails.id)
         newTravelModel.fromLocation = fromLocation.text!
@@ -179,7 +177,6 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         newTravelModel.date = dateOfJourney.text!
         newTravelModel.modeOfTransport = GetTravelModeInfo.getString(ofImage: modeOfTransport.image!)
         newTravelModel.reason = reasonForTravel.text!
-        TravelListHomeViewController.allTravels.append(newTravelModel)
         PersistantService.saveContext()
 
     }

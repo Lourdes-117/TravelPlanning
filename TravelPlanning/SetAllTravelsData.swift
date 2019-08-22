@@ -33,8 +33,8 @@ class setAllTravelsData {
                 }
                 let travelCoreData = Travels(context: PersistantService.context)
                 travelCoreData.id = Int16(travel.id)
-                travelCoreData.fromLocation = travel.from
-                travelCoreData.toLocation = travel.to
+                travelCoreData.fromLocation = travel.fromLocation
+                travelCoreData.toLocation = travel.toLocation
                 travelCoreData.modeOfTransport = travel.modeOfTransport
                 travelCoreData.date = travel.date
                 travelCoreData.reason = travel.reason
