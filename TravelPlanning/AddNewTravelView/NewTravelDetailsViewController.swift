@@ -43,6 +43,7 @@ class NewTravelDetailsViewController: UIViewController {
         print("New Travel Details Veiw Loaded")
         initializeDatePicker()
         initializeDelegates()
+        setKeyboardListeners()
         applyAllFieldThemes()
     }
 
@@ -85,7 +86,7 @@ class NewTravelDetailsViewController: UIViewController {
         dateOfTravel.text = dateFormatter.string(from: datepick.date)
     }
 
-    fileprivate func addKeyboardObersers() {
+    fileprivate func setKeyboardListeners() {
         NotificationCenter.default.addObserver(self, selector: #selector(moveScrollViewUp(notification:)), name: UIResponder.keyboardWillHideNotification , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(moveScrollViewUp(notification:)), name: UIResponder.keyboardWillChangeFrameNotification , object: nil)
     }

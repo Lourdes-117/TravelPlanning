@@ -20,10 +20,6 @@ class TravelListHomeViewController: UIViewController {
     static var allTravels:[TravelModel] = []
     static var allTravelDetailsMaxId:Int = 0
 
-//    var pastTravels:[TravelModel] = []
-//    var todayTravels:[TravelModel] = []
-//    var futureTravels:[TravelModel] = []
-
     var pastTravels:[TravelModel] = []
     var todayTravels:[TravelModel] = []
     var futureTravels:[TravelModel] = []
@@ -233,7 +229,7 @@ extension TravelListHomeViewController: UITableViewDelegate {
 
         //Delete From Core Date
         PersistantService.context.delete(elementToRemove)
-//        Delete From Array
+        //Delete From Array
         let indexToDelete: Int = TravelListHomeViewController.allTravels.firstIndex(of: elementToRemove)!
         if TravelListHomeViewController.allTravelDetailsMaxId ==  elementToRemove.id {
             TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId - 1
