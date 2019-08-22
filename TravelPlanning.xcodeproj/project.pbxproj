@@ -31,12 +31,11 @@
 		5EC25AAE22FC3FB600D9DA37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EC25AAD22FC3FB600D9DA37 /* Assets.xcassets */; };
 		5EC25AB122FC3FB600D9DA37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC25AAF22FC3FB600D9DA37 /* LaunchScreen.storyboard */; };
 		5EC25ABA22FC49D500D9DA37 /* TravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC25AB922FC49D500D9DA37 /* TravelCell.swift */; };
-		5EC458EE230D591C00F2F762 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC458E0230D58C100F2F762 /* SQLite.framework */; };
 		5EC458EF230D594700F2F762 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC458E0230D58C100F2F762 /* SQLite.framework */; };
 		5EC458F0230D594700F2F762 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC458E0230D58C100F2F762 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5EC458F6230D5B5B00F2F762 /* TravelModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EC458F4230D5B5B00F2F762 /* TravelModel.xcdatamodeld */; };
-		5EC4591A230D67B600F2F762 /* Travels+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC45918230D67B600F2F762 /* Travels+CoreDataClass.swift */; };
-		5EC4591B230D67B600F2F762 /* Travels+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC45919230D67B600F2F762 /* Travels+CoreDataProperties.swift */; };
+		5EC458F6230D5B5B00F2F762 /* TravelModelFile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EC458F4230D5B5B00F2F762 /* TravelModelFile.xcdatamodeld */; };
+		5EC4591A230D67B600F2F762 /* TravelModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC45918230D67B600F2F762 /* TravelModel+CoreDataClass.swift */; };
+		5EC4591B230D67B600F2F762 /* TravelModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC45919230D67B600F2F762 /* TravelModel+CoreDataProperties.swift */; };
 		5EC4591E230D681F00F2F762 /* PersistantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4591D230D681F00F2F762 /* PersistantService.swift */; };
 		5ECD942E2303D0D500AD6A63 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD942D2303D0D500AD6A63 /* StringExtension.swift */; };
 		5ECD94382303D54800AD6A63 /* TextFieldDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */; };
@@ -148,8 +147,8 @@
 		5EC25AB922FC49D500D9DA37 /* TravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCell.swift; sourceTree = "<group>"; };
 		5EC458D5230D58C100F2F762 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		5EC458F5230D5B5B00F2F762 /* TravelModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelModel.xcdatamodel; sourceTree = "<group>"; };
-		5EC45918230D67B600F2F762 /* Travels+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Travels+CoreDataClass.swift"; sourceTree = "<group>"; };
-		5EC45919230D67B600F2F762 /* Travels+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Travels+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5EC45918230D67B600F2F762 /* TravelModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TravelModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5EC45919230D67B600F2F762 /* TravelModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TravelModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5EC4591D230D681F00F2F762 /* PersistantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantService.swift; sourceTree = "<group>"; };
 		5ECD942D2303D0D500AD6A63 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5ECD94372303D54800AD6A63 /* TextFieldDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesign.swift; sourceTree = "<group>"; };
@@ -165,7 +164,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EC458EF230D594700F2F762 /* SQLite.framework in Frameworks */,
-				5EC458EE230D591C00F2F762 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,9 +304,9 @@
 		5EC4591C230D67CD00F2F762 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				5EC45918230D67B600F2F762 /* Travels+CoreDataClass.swift */,
-				5EC45919230D67B600F2F762 /* Travels+CoreDataProperties.swift */,
-				5EC458F4230D5B5B00F2F762 /* TravelModel.xcdatamodeld */,
+				5EC45918230D67B600F2F762 /* TravelModel+CoreDataClass.swift */,
+				5EC45919230D67B600F2F762 /* TravelModel+CoreDataProperties.swift */,
+				5EC458F4230D5B5B00F2F762 /* TravelModelFile.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -460,7 +458,7 @@
 				5EAFF0E022FD353100C67211 /* ApiCall.swift in Sources */,
 				5ECD943A2303D59F00AD6A63 /* textViewDesign.swift in Sources */,
 				5EC25AA922FC3FB400D9DA37 /* TravelListHomeViewController.swift in Sources */,
-				5EC458F6230D5B5B00F2F762 /* TravelModel.xcdatamodeld in Sources */,
+				5EC458F6230D5B5B00F2F762 /* TravelModelFile.xcdatamodeld in Sources */,
 				5E9B029F230BF29100AE6CAF /* SetAllTravelsData.swift in Sources */,
 				5E06D5722302BFD300DE6EE1 /* TravelTimeEnum.swift in Sources */,
 				5E06D5702302B7D500DE6EE1 /* Colors.swift in Sources */,
@@ -471,11 +469,11 @@
 				5E9DA3ED230D4216002802C3 /* SettingsViewController.swift in Sources */,
 				5ECD94422304371D00AD6A63 /* AlertCreator.swift in Sources */,
 				5ECD942E2303D0D500AD6A63 /* StringExtension.swift in Sources */,
-				5EC4591B230D67B600F2F762 /* Travels+CoreDataProperties.swift in Sources */,
+				5EC4591B230D67B600F2F762 /* TravelModel+CoreDataProperties.swift in Sources */,
 				5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */,
 				5E9B02AF230C2C8B00AE6CAF /* CurrentTheme.swift in Sources */,
 				5E9B02AB230C2B1100AE6CAF /* DarkTheme.swift in Sources */,
-				5EC4591A230D67B600F2F762 /* Travels+CoreDataClass.swift in Sources */,
+				5EC4591A230D67B600F2F762 /* TravelModel+CoreDataClass.swift in Sources */,
 				5E06D56A23027FBD00DE6EE1 /* TravelDecriptionViewController.swift in Sources */,
 				5EBFCB48230E5CD8002FCDF7 /* TravelModel.swift in Sources */,
 				5ECD94382303D54800AD6A63 /* TextFieldDesign.swift in Sources */,
@@ -696,13 +694,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5EC458F4230D5B5B00F2F762 /* TravelModel.xcdatamodeld */ = {
+		5EC458F4230D5B5B00F2F762 /* TravelModelFile.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				5EC458F5230D5B5B00F2F762 /* TravelModel.xcdatamodel */,
 			);
 			currentVersion = 5EC458F5230D5B5B00F2F762 /* TravelModel.xcdatamodel */;
-			path = TravelModel.xcdatamodeld;
+			path = TravelModelFile.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

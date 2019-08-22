@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension Travels {
+extension TravelModel {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Travels> {
-        return NSFetchRequest<Travels>(entityName: "Travels")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<TravelModel> {
+        return NSFetchRequest<TravelModel>(entityName: "TravelModel")
     }
 
     @NSManaged public var id: Int16

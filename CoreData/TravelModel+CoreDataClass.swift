@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-@objc(Travels)
-public class Travels: NSManagedObject {
-
+@objc(TravelModel)
+public class TravelModel: NSManagedObject{
 }

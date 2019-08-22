@@ -11,8 +11,7 @@ import CoreData
 
 class setAllTravelsData {
     public class func getDataFromCoreData() {
-        print("Fetching Data From Core Data")
-        let fetchRequest: NSFetchRequest<Travels > = Travels.fetchRequest()
+        let fetchRequest: NSFetchRequest<TravelModel > = TravelModel.fetchRequest()
         do {
             let travelDataFromCoreData = try PersistantService.context.fetch(fetchRequest)
             TravelListHomeViewController.allTravels.append(contentsOf: travelDataFromCoreData)
@@ -26,15 +25,15 @@ class setAllTravelsData {
         UserDefaults.standard.set(true, forKey: Defaults.IS_DATABASE_UPDATED)
         TravelListHomeViewController.allTravels.removeAll()
         ApiCall.getJsonArrayFromApi(fromUrl: urlToFetchData, dispatchGroup: dispatchGroup, completion: {
-            (travels: [TravelModel]) in
+            (travels: [TravelModelDecodable]) in
             for travel in travels {
                 if(TravelListHomeViewController.allTravelDetailsMaxId < travel.id) {
                     TravelListHomeViewController.allTravelDetailsMaxId = travel.id
                 }
-                let travelCoreData = Travels(context: PersistantService.context)
+                let travelCoreData = TravelModel(context: PersistantService.context)
                 travelCoreData.id = Int16(travel.id)
-                travelCoreData.fromLocation = travel.fromLocation
-                travelCoreData.toLocation = travel.toLocation
+                travelCoreData.fromLocation = travel.from
+                travelCoreData.toLocation = travel.to
                 travelCoreData.modeOfTransport = travel.modeOfTransport
                 travelCoreData.date = travel.date
                 travelCoreData.reason = travel.reason
@@ -42,7 +41,7 @@ class setAllTravelsData {
                 PersistantService.saveContext()
                 print("Saved In Core Data ")
             }
-            let fetchRequest: NSFetchRequest<Travels > = Travels.fetchRequest()
+            let fetchRequest: NSFetchRequest<TravelModel > = TravelModel.fetchRequest()
             do {
                 let travelDataFromCoreData = try PersistantService.context.fetch(fetchRequest)
                 for travel in travelDataFromCoreData {

@@ -32,10 +32,10 @@ class DateSeperator {
 //        return (pastTravels, todayTravels, futureTravels)
 //    }
 
-    class func seperateDates(allTravels:[Travels]) -> ([Travels], [Travels], [Travels]){
-        var pastTravels: [Travels] = []
-        var todayTravels: [Travels] = []
-        var futureTravels: [Travels] = []
+    class func seperateDates(allTravels:[TravelModel]) -> ([TravelModel], [TravelModel], [TravelModel]){
+        var pastTravels: [TravelModel] = []
+        var todayTravels: [TravelModel] = []
+        var futureTravels: [TravelModel] = []
 
         let date = Date()
         let dateFormatter = DateFormatter()

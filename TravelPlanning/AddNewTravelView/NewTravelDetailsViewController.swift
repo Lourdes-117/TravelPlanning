@@ -156,7 +156,7 @@ class NewTravelDetailsViewController: UIViewController {
         let isAllFieldsValid = checkFromLocaion() && checkToLocaion() && checkReasonForTravel() && checkDateOfTravel() && isModeOfTransportSelected
         if(isAllFieldsValid) {
             print("All Fields Are Valid")
-            let newTravelModel = Travels(context: PersistantService.context)
+            let newTravelModel = TravelModel(context: PersistantService.context)
             TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId + 1
             newTravelModel.id = Int16(TravelListHomeViewController.allTravelDetailsMaxId)
             newTravelModel.fromLocation = fromLocation.text!

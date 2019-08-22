@@ -36,7 +36,7 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     let segueIdentifier = "ModeOfTravelSelectionViewSegueIdentifier"
     let editTravelText = "Edit This Travel"
     let okText = "Ok"
-    var selectedTravelDetails: Travels!
+    var selectedTravelDetails: TravelModel!
     var indexToChange = 0
 
     override func viewDidLoad() {

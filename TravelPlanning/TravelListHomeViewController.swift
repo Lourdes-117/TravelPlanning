@@ -15,18 +15,18 @@ class TravelListHomeViewController: UIViewController {
     let addNewEntrySegueIdentifier:String = "AddNewEntrySegueIdentifier"
     let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     let dispatchGroup = DispatchGroup()
-    var selectedTravelDetail:Travels!
+    var selectedTravelDetail:TravelModel!
 
-    static var allTravels:[Travels] = []
+    static var allTravels:[TravelModel] = []
     static var allTravelDetailsMaxId:Int = 0
 
 //    var pastTravels:[TravelModel] = []
 //    var todayTravels:[TravelModel] = []
 //    var futureTravels:[TravelModel] = []
 
-    var pastTravels:[Travels] = []
-    var todayTravels:[Travels] = []
-    var futureTravels:[Travels] = []
+    var pastTravels:[TravelModel] = []
+    var todayTravels:[TravelModel] = []
+    var futureTravels:[TravelModel] = []
 
 
     override func viewDidLoad() {
@@ -77,7 +77,7 @@ class TravelListHomeViewController: UIViewController {
     fileprivate func initializeTravelData() {
         let urlToFetchData:String = "https://api.myjson.com/bins/14u2y7"
         if(UserDefaults.standard.bool(forKey: Defaults.IS_DATABASE_UPDATED)) {
-            print("Fetching Data From Database")
+            print("Fetching Data From Core Data")
             setAllTravelsData.getDataFromCoreData()
         } else {
             print("Fetching Data From API")
@@ -129,7 +129,7 @@ extension TravelListHomeViewController:UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TravelCell.travelCell) as! TravelCell
-        var travelDetailsToShowInSection:[Travels] = []
+        var travelDetailsToShowInSection:[TravelModel] = []
         var travelTime:TravelTime
 
         switch indexPath.section {
@@ -229,7 +229,7 @@ extension TravelListHomeViewController: UITableViewDelegate {
         }
     }
 
-    fileprivate func removeElementFromMainArray(elementToRemove: Travels) {
+    fileprivate func removeElementFromMainArray(elementToRemove: TravelModel) {
 
         //Delete From Core Date
         PersistantService.context.delete(elementToRemove)
@@ -275,7 +275,7 @@ extension TravelListHomeViewController: UITableViewDelegate {
         }
     }
 
-    fileprivate func getIndicesToModify(array:[Travels], section:Int) -> [IndexPath] {
+    fileprivate func getIndicesToModify(array:[TravelModel], section:Int) -> [IndexPath] {
         var indexPathsToReturn:[IndexPath] = []
         for row in array.indices {
             let indexPathToAppend = IndexPath(row: row, section: section)
