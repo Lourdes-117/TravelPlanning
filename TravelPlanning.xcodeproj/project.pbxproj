@@ -12,7 +12,6 @@
 		5E06D5702302B7D500DE6EE1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D56F2302B7D500DE6EE1 /* Colors.swift */; };
 		5E06D5722302BFD300DE6EE1 /* TravelTimeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D5712302BFD300DE6EE1 /* TravelTimeEnum.swift */; };
 		5E06D5752302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */; };
-		5E9B029B230BCC0300AE6CAF /* SqliteConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B029A230BCC0300AE6CAF /* SqliteConnection.swift */; };
 		5E9B029D230BCD8800AE6CAF /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B029C230BCD8800AE6CAF /* Database.swift */; };
 		5E9B029F230BF29100AE6CAF /* SetAllTravelsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B029E230BF29100AE6CAF /* SetAllTravelsData.swift */; };
 		5E9B02AB230C2B1100AE6CAF /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B02AA230C2B1100AE6CAF /* DarkTheme.swift */; };
@@ -126,7 +125,6 @@
 		5E06D56F2302B7D500DE6EE1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5E06D5712302BFD300DE6EE1 /* TravelTimeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeEnum.swift; sourceTree = "<group>"; };
 		5E06D5742302E0CC00DE6EE1 /* NewTravelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTravelDetailsViewController.swift; sourceTree = "<group>"; };
-		5E9B029A230BCC0300AE6CAF /* SqliteConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteConnection.swift; sourceTree = "<group>"; };
 		5E9B029C230BCD8800AE6CAF /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		5E9B029E230BF29100AE6CAF /* SetAllTravelsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAllTravelsData.swift; sourceTree = "<group>"; };
 		5E9B02AA230C2B1100AE6CAF /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				5EAFF0DF22FD353100C67211 /* ApiCall.swift */,
-				5E9B029A230BCC0300AE6CAF /* SqliteConnection.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -475,7 +472,6 @@
 				5ECD94422304371D00AD6A63 /* AlertCreator.swift in Sources */,
 				5ECD942E2303D0D500AD6A63 /* StringExtension.swift in Sources */,
 				5EC4591B230D67B600F2F762 /* Travels+CoreDataProperties.swift in Sources */,
-				5E9B029B230BCC0300AE6CAF /* SqliteConnection.swift in Sources */,
 				5EA8B1882301481F0020D664 /* ExpandedSate.swift in Sources */,
 				5E9B02AF230C2C8B00AE6CAF /* CurrentTheme.swift in Sources */,
 				5E9B02AB230C2B1100AE6CAF /* DarkTheme.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
 
@@ -168,14 +169,8 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
     }
 
     fileprivate func updateCell() {
-//        var travelModelToUpdate = TravelModel()
-//        travelModelToUpdate.id = selectedTravelDetails.id
-//        travelModelToUpdate.from = fromLocation.text!
-//        travelModelToUpdate.to = toLocation.text!
-//        travelModelToUpdate.date = dateOfJourney.text!
-//        travelModelToUpdate.reason = reasonForTravel.text!
-//        travelModelToUpdate.modeOfTransport = GetTravelModeInfo.getString(ofImage: modeOfTransport.image!)
-
+//        PersistantService.context.delete(selectedTravelDetails)
+//        PersistantService.saveContext()
         let newTravelModel = Travels(context: PersistantService.context)
         TravelListHomeViewController.allTravelDetailsMaxId = TravelListHomeViewController.allTravelDetailsMaxId + 1
         newTravelModel.id = Int16(selectedTravelDetails.id)
@@ -187,9 +182,6 @@ class TravelDecriptionViewController: UIViewController, UITextFieldDelegate {
         TravelListHomeViewController.allTravels.append(newTravelModel)
         PersistantService.saveContext()
 
-//        TravelListHomeViewController.allTravels[indexToChange] = travelModelToUpdate
-        //Update Entry in Sqlite
-//        SqliteConnection.updateTravel(ofId: selectedTravelDetails.id, with: travelModelToUpdate)
     }
 
     fileprivate func checkFromLocaion() -> Bool {

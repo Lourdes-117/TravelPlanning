@@ -231,8 +231,6 @@ extension TravelListHomeViewController: UITableViewDelegate {
     }
 
     fileprivate func removeElementFromMainArray(elementToRemove: Travels) {
-//        Delete From SqlDatabase
-//        SqliteConnection.deleteTravel(ofID: Int(elementToRemove.id))
 
         //Delete From Core Date
         PersistantService.context.delete(elementToRemove)
